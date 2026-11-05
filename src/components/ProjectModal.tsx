@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Check, Copy, Terminal, CheckCircle2, Play } from 'lucide-react';
+import { X, Check, Copy, Terminal, CheckCircle2, FlaskConical, FileCheck } from 'lucide-react';
 import { Project } from '../types';
 import { RastriginSurface3D } from './RastriginSurface3D';
 
@@ -10,7 +10,6 @@ interface ProjectModalProps {
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [copied, setCopied] = useState(false);
-  const [showInteractive3D, setShowInteractive3D] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -38,8 +37,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Header */}
         <div className="flex items-start justify-between p-6 border-b border-slate-200 dark:border-slate-800">
           <div>
-            <div className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-              {project.categoryLabel} · Estudo Técnico
+            <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
+              <span>{project.categoryLabel}</span>
+              <span>·</span>
+              {project.provenance === 'cv_confirmado' ? (
+                <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
+                  <FileCheck className="w-3.5 h-3.5" />
+                  <span>Realização comprovada</span>
+                </span>
+              ) : (
+                <span className="flex items-center gap-1 text-slate-400 dark:text-slate-500">
+                  <FlaskConical className="w-3.5 h-3.5" />
+                  <span>Estudo técnico</span>
+                </span>
+              )}
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">
               {project.title}
@@ -60,7 +71,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Body */}
         <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
-          {/* Technical Specifications (Factual & Honest) */}
+          {/* Specifications */}
           {project.specs && project.specs.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 rounded-lg bg-slate-50 dark:bg-[#070b10] border border-slate-200 dark:border-slate-800">
               {project.specs.map((spec, i) => (
@@ -74,31 +85,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
           )}
 
-          {/* Interactive Simulation Launcher for Rastrigin */}
+          {/* Preserved Interactive 3D Simulation for Rastrigin */}
           {project.id === 'rastrigin-optimization' && (
-            <div className="rounded-lg border border-slate-200 dark:border-slate-800 p-4 bg-slate-50 dark:bg-[#070b10]">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-xs font-mono font-semibold text-slate-900 dark:text-white">
-                    Simulação Interativa 3D
-                  </h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    Explore a rotação e convergência dos algoritmos diretamente na tela
-                  </p>
-                </div>
-                <button
-                  onClick={() => setShowInteractive3D(!showInteractive3D)}
-                  className="px-3 py-1.5 text-xs font-medium rounded-md bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
-                >
-                  {showInteractive3D ? 'Ocultar Simulador' : 'Carregar Simulador 3D'}
-                </button>
+            <div className="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+              <div className="p-3 bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
+                <span className="font-mono font-medium text-slate-700 dark:text-slate-300">
+                  Simulação Interativa 3D (Arraste para rotacionar)
+                </span>
+                <span className="font-mono text-emerald-600 dark:text-emerald-400 text-[11px]">
+                  Controles ativos
+                </span>
               </div>
-
-              {showInteractive3D && (
-                <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                  <RastriginSurface3D />
-                </div>
-              )}
+              <div className="p-2 bg-[#090e15]">
+                <RastriginSurface3D />
+              </div>
             </div>
           )}
 
@@ -125,7 +125,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
             <div className="p-4 rounded-lg bg-slate-50 dark:bg-[#070b10] border border-slate-200 dark:border-slate-800">
               <h4 className="text-xs font-mono font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
-                Abordagem Técnica
+                Solução Implementada
               </h4>
               <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                 {project.solution}
@@ -173,7 +173,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Tech Stack */}
           <div>
             <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-              Tecnologias Utilizadas
+              Tecnologias & Metodologias
             </h3>
             <div className="flex flex-wrap items-center gap-2">
               {project.techStack.map((tech, i) => (

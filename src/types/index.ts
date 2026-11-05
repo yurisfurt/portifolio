@@ -14,6 +14,8 @@ export interface Project {
   featured?: boolean;
   featuredType?: 'rastrigin' | 'n8n' | 'dashboard';
   imageLabel?: string;
+  provenance?: 'cv_confirmado' | 'estudo_em_validacao';
+  provenanceLabel?: string;
   challenge: string;
   solution: string;
   methodology: string[];
@@ -31,7 +33,7 @@ export interface SkillCategory {
   description: string;
   skills: {
     name: string;
-    level: string;
+    level?: string;
     description: string;
     tools: string[];
   }[];
@@ -46,4 +48,11 @@ export interface ExperienceItem {
   description: string;
   highlights: string[];
   skills: string[];
+}
+
+export interface EducationItem {
+  course: string;
+  institution: string;
+  period: string;
+  location: string;
 }

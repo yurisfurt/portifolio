@@ -12,13 +12,20 @@ import { Menu, ArrowRight } from 'lucide-react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<SectionId>('inicio');
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(true);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
-  const [isDark, setIsDark] = useState<boolean>(true);
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('portfolio-theme');
+      if (saved) return saved === 'dark';
+    }
+    return true;
+  });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Theme synchronization
+  // Theme synchronization and persistence
   useEffect(() => {
+    localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
     if (isDark) {
       document.documentElement.classList.add('dark');
       document.body.className = 'bg-[#0a0e14] text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300';
