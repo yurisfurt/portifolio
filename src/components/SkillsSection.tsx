@@ -1,47 +1,50 @@
 import React, { useState } from 'react';
-import { SKILL_CATEGORIES } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const SkillsSection: React.FC = () => {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
+
+  const categories = t.skillCategories;
 
   const filteredCategories =
     selectedCategory === 'todos'
-      ? SKILL_CATEGORIES
-      : SKILL_CATEGORIES.filter((c) => c.id === selectedCategory);
+      ? categories
+      : categories.filter((c) => c.id === selectedCategory);
 
   return (
-    <section id="competencias" className="py-14 border-t border-slate-200 dark:border-slate-800/80 scroll-mt-6">
+    <section id="competencias" className="py-14 border-t border-[#DCE4E1] dark:border-[#344A52] scroll-mt-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-8">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Competências
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#243746] dark:text-[#E7E9E6]">
+            {t.skills.sectionTitle}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Tecnologias e metodologias agrupadas por aplicação prática.
+          <p className="text-xs sm:text-sm text-[#668B91] dark:text-[#89ABB0] mt-1">
+            {t.skills.sectionSubtitle}
           </p>
         </div>
 
         {/* Filter Segmented Control */}
-        <div className="flex flex-wrap items-center gap-1 p-0.5 bg-slate-100 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+        <div className="flex flex-wrap items-center gap-1 p-1 bg-[#FFFFFF] dark:bg-[#2D3B44] rounded-lg border border-[#DCE4E1] dark:border-[#344A52] shadow-2xs">
           <button
             onClick={() => setSelectedCategory('todos')}
-            className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+            className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
               selectedCategory === 'todos'
-                ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs'
-                : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                ? 'bg-[#243746] text-[#FFFFFF] dark:bg-[#E7E9E6] dark:text-[#202C34] shadow-xs font-semibold'
+                : 'text-[#668B91] hover:text-[#243746] dark:text-[#89ABB0] dark:hover:text-[#E7E9E6]'
             }`}
           >
-            Todas
+            {t.skills.filterAll}
           </button>
-          {SKILL_CATEGORIES.map((cat) => (
+          {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
                 selectedCategory === cat.id
-                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs'
-                  : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                  ? 'bg-[#243746] text-[#FFFFFF] dark:bg-[#E7E9E6] dark:text-[#202C34] shadow-xs font-semibold'
+                  : 'text-[#668B91] hover:text-[#243746] dark:text-[#89ABB0] dark:hover:text-[#E7E9E6]'
               }`}
             >
               {cat.title}
@@ -55,36 +58,38 @@ export const SkillsSection: React.FC = () => {
         {filteredCategories.map((category) => (
           <div
             key={category.id}
-            className="rounded-xl bg-white dark:bg-[#0d1219] border border-slate-200 dark:border-slate-800/80 p-5 shadow-xs"
+            className="rounded-xl bg-[#FFFFFF] dark:bg-[#2D3B44] border border-[#DCE4E1] dark:border-[#344A52] p-5 shadow-xs"
           >
-            <div className="pb-3 border-b border-slate-100 dark:border-slate-800/80">
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
+            <div className="pb-3 border-b border-[#DCE4E1]/80 dark:border-[#344A52]">
+              <h3 className="text-sm font-bold text-[#243746] dark:text-[#E7E9E6]">
                 {category.title}
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              <p className="text-xs text-[#668B91] dark:text-[#89ABB0] mt-0.5">
                 {category.description}
               </p>
             </div>
 
-            <div className="divide-y divide-slate-100 dark:divide-slate-800/60 mt-2">
+            <div className="divide-y divide-[#DCE4E1]/60 dark:divide-[#344A52]/60 mt-2">
               {category.skills.map((skill, idx) => (
                 <div key={idx} className="py-3 first:pt-2 last:pb-1">
                   <div className="flex items-baseline justify-between mb-1">
-                    <span className="text-xs font-medium text-slate-900 dark:text-slate-200">
+                    <span className="text-xs font-semibold text-[#243746] dark:text-[#E7E9E6]">
                       {skill.name}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
-                      {skill.level}
-                    </span>
+                    {skill.level && (
+                      <span className="text-[11px] font-mono text-[#668B91] dark:text-[#89ABB0]">
+                        {skill.level}
+                      </span>
+                    )}
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                  <p className="text-xs text-[#243746]/80 dark:text-[#E7E9E6]/80 leading-relaxed">
                     {skill.description}
                   </p>
                   <div className="flex flex-wrap items-center gap-1.5 mt-2">
                     {skill.tools.map((t, i) => (
                       <span
                         key={i}
-                        className="text-[10px] font-mono text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 px-1.5 py-0.5 rounded"
+                        className="text-[10px] font-mono text-[#668B91] dark:text-[#89ABB0] bg-[#F5F3EF] dark:bg-[#202C34] border border-[#DCE4E1] dark:border-[#344A52] px-1.5 py-0.5 rounded"
                       >
                         {t}
                       </span>

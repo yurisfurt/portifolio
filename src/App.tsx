@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { ProjectCatalog } from './components/ProjectCatalog';
 import { SkillsSection } from './components/SkillsSection';
-import { ExperienceSection } from './components/ExperienceSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { ProjectModal } from './components/ProjectModal';
 import { SectionId, Project } from './types';
 import { PERSONAL_INFO } from './data/portfolioData';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Menu, ArrowRight } from 'lucide-react';
 
-export default function App() {
+function PortfolioContent() {
+  const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState<SectionId>('inicio');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(true);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
@@ -19,7 +20,8 @@ export default function App() {
       const saved = localStorage.getItem('portfolio-theme');
       if (saved) return saved === 'dark';
     }
-    return true;
+    // Default: light mode as requested
+    return false;
   });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -28,19 +30,19 @@ export default function App() {
     localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
     if (isDark) {
       document.documentElement.classList.add('dark');
-      document.body.className = 'bg-[#0a0e14] text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300';
+      document.body.className = 'bg-[#202C34] text-[#E7E9E6] antialiased selection:bg-[#89ABB0]/20 selection:text-[#E7E9E6]';
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.className = 'bg-[#fafafa] text-slate-900 antialiased selection:bg-emerald-500/20 selection:text-emerald-700';
+      document.body.className = 'bg-[#F5F3EF] text-[#243746] antialiased selection:bg-[#668B91]/20 selection:text-[#243746]';
     }
   }, [isDark]);
 
-  // Scroll spy to detect active section automatically
+  // Scroll spy for active section
   useEffect(() => {
-    const sectionIds: SectionId[] = ['inicio', 'projetos', 'competencias', 'experiencia', 'sobre-mim', 'contato'];
+    const sectionIds: SectionId[] = ['inicio', 'projetos', 'competencias', 'sobre-mim', 'contato'];
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 180;
 
       for (const id of sectionIds) {
         const element = document.getElementById(id);
@@ -68,7 +70,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex bg-[#fafafa] dark:bg-[#0a0e14] text-slate-900 dark:text-slate-100 transition-colors">
+    <div className="min-h-screen flex bg-[#F5F3EF] dark:bg-[#202C34] text-[#243746] dark:text-[#E7E9E6] transition-colors">
       {/* Structural Sidebar Integrated into Left Edge */}
       <Sidebar
         activeSection={activeSection}
@@ -89,38 +91,38 @@ export default function App() {
         `}
       >
         <div className="max-w-5xl mx-auto w-full">
-          {/* Mobile-Only Minimal Header Bar */}
-          <div className="md:hidden flex items-center justify-between pb-6 mb-6 border-b border-slate-200 dark:border-slate-800">
-            <span className="text-sm font-bold tracking-tight text-slate-900 dark:text-white">
-              {PERSONAL_INFO.name}
+          {/* Mobile-Only Header Bar */}
+          <div className="md:hidden flex items-center justify-between pb-5 mb-6 border-b border-[#DCE4E1] dark:border-[#344A52]">
+            <span className="text-sm font-bold tracking-tight text-[#243746] dark:text-[#E7E9E6]">
+              {PERSONAL_INFO.shortName}
             </span>
             <button
               onClick={() => setIsMobileOpen(true)}
-              className="p-1.5 text-slate-600 dark:text-slate-300 rounded-md border border-slate-200 dark:border-slate-800"
+              className="p-1.5 text-[#243746] dark:text-[#E7E9E6] rounded-md border border-[#DCE4E1] dark:border-[#344A52] bg-[#FFFFFF] dark:bg-[#2D3B44]"
               title="Menu"
             >
               <Menu className="w-5 h-5" />
             </button>
           </div>
 
-          {/* SECTION 1: INÍCIO (Minimal, Clean Hero) */}
+          {/* SECTION 1: INÍCIO (Editorial Minimal Hero) */}
           <section id="inicio" className="pt-6 sm:pt-14 pb-16 scroll-mt-20">
             <div className="max-w-2xl space-y-4">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
-                {PERSONAL_INFO.headline}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#243746] dark:text-[#E7E9E6] tracking-tight leading-[1.12]">
+                {t.hero.headline}
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                {PERSONAL_INFO.subheadline}
+              <p className="text-base sm:text-lg text-[#668B91] dark:text-[#89ABB0] leading-relaxed">
+                {t.hero.subheadline}
               </p>
 
-              {/* Single Primary Action Button in Highlight */}
+              {/* Single Primary Action Button */}
               <div className="pt-2">
                 <button
                   onClick={() => handleNavigate('projetos')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors shadow-xs"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#243746] hover:bg-[#1a2833] dark:bg-[#E7E9E6] dark:hover:bg-[#FFFFFF] text-white dark:text-[#202C34] text-xs font-bold rounded-lg transition-colors shadow-xs"
                 >
-                  <span>Ver projetos</span>
+                  <span>{t.hero.ctaProjects}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -128,13 +130,13 @@ export default function App() {
           </section>
 
           {/* SECTION 2: PROJETOS (Portfolio Cards Grid) */}
-          <section id="projetos" className="py-12 border-t border-slate-200 dark:border-slate-800/80 scroll-mt-6">
+          <section id="projetos" className="py-12 border-t border-[#DCE4E1] dark:border-[#344A52] scroll-mt-6">
             <div className="mb-8">
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-                Projetos
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#243746] dark:text-[#E7E9E6]">
+                {t.projects.sectionTitle}
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-                Estudos de caso em otimização matemática, fluxos de automação e modelagem de dados.
+              <p className="text-xs sm:text-sm text-[#668B91] dark:text-[#89ABB0] mt-1">
+                {t.projects.sectionSubtitle}
               </p>
             </div>
 
@@ -144,34 +146,39 @@ export default function App() {
           {/* SECTION 3: COMPETÊNCIAS */}
           <SkillsSection />
 
-          {/* SECTION 4: EXPERIÊNCIA PROFISSIONAL */}
-          <ExperienceSection />
-
-          {/* SECTION 5: SOBRE MIM */}
+          {/* SECTION 4: SOBRE MIM (With Integrated Background, No Timeline) */}
           <AboutSection />
 
-          {/* SECTION 6: CONTATO */}
+          {/* SECTION 5: CONTATO */}
           <ContactSection />
 
           {/* Clean Editorial Footer */}
-          <footer className="py-10 mt-14 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400 dark:text-slate-500">
+          <footer className="py-10 mt-14 border-t border-[#DCE4E1] dark:border-[#344A52] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-[#668B91] dark:text-[#89ABB0]">
             <div>
-              {PERSONAL_INFO.name} · {PERSONAL_INFO.role}
+              {PERSONAL_INFO.shortName} · {t.footer.role}
             </div>
             <div>
-              <a href="#inicio" className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
-                Voltar ao topo ↑
+              <a href="#inicio" className="hover:text-[#243746] dark:hover:text-[#E7E9E6] transition-colors">
+                {t.footer.backToTop}
               </a>
             </div>
           </footer>
         </div>
       </main>
 
-      {/* Case Study Modal */}
+      {/* Case Study Modal with Embedded Rastrigin 3D */}
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
       />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <PortfolioContent />
+    </LanguageProvider>
   );
 }

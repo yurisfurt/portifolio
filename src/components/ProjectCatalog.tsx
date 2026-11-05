@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Project, ProjectCategory } from '../types';
-import { FEATURED_PROJECTS, OTHER_PROJECTS } from '../data/portfolioData';
 import { ProjectCard } from './ProjectCard';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProjectCatalogProps {
   onSelectProject: (project: Project) => void;
 }
 
 export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject }) => {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState<ProjectCategory>('todos');
 
-  const allProjects = [...FEATURED_PROJECTS, ...OTHER_PROJECTS];
+  const allProjects = t.projectList;
 
   const filteredProjects =
     filter === 'todos'
@@ -20,46 +21,46 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
   return (
     <div className="space-y-6">
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-1 p-0.5 bg-slate-100 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 self-start">
+      <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#FFFFFF] dark:bg-[#2D3B44] rounded-lg border border-[#DCE4E1] dark:border-[#344A52] self-start shadow-2xs">
         <button
           onClick={() => setFilter('todos')}
-          className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+          className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
             filter === 'todos'
-              ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs'
-              : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+              ? 'bg-[#243746] text-[#FFFFFF] dark:bg-[#E7E9E6] dark:text-[#202C34] shadow-xs font-semibold'
+              : 'text-[#668B91] hover:text-[#243746] dark:text-[#89ABB0] dark:hover:text-[#E7E9E6]'
           }`}
         >
-          Todos ({allProjects.length})
-        </button>
-        <button
-          onClick={() => setFilter('otimizacao')}
-          className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
-            filter === 'otimizacao'
-              ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs'
-              : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
-          }`}
-        >
-          Otimização & PCP
-        </button>
-        <button
-          onClick={() => setFilter('automacao')}
-          className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
-            filter === 'automacao'
-              ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs'
-              : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
-          }`}
-        >
-          Automação & ETL
+          {t.projects.filterAll} ({allProjects.length})
         </button>
         <button
           onClick={() => setFilter('analytics')}
-          className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+          className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
             filter === 'analytics'
-              ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs'
-              : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+              ? 'bg-[#243746] text-[#FFFFFF] dark:bg-[#E7E9E6] dark:text-[#202C34] shadow-xs font-semibold'
+              : 'text-[#668B91] hover:text-[#243746] dark:text-[#89ABB0] dark:hover:text-[#E7E9E6]'
           }`}
         >
-          Análise de Dados & BI
+          {t.projects.filterAnalytics}
+        </button>
+        <button
+          onClick={() => setFilter('otimizacao')}
+          className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+            filter === 'otimizacao'
+              ? 'bg-[#243746] text-[#FFFFFF] dark:bg-[#E7E9E6] dark:text-[#202C34] shadow-xs font-semibold'
+              : 'text-[#668B91] hover:text-[#243746] dark:text-[#89ABB0] dark:hover:text-[#E7E9E6]'
+          }`}
+        >
+          {t.projects.filterOptimization}
+        </button>
+        <button
+          onClick={() => setFilter('automacao')}
+          className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+            filter === 'automacao'
+              ? 'bg-[#243746] text-[#FFFFFF] dark:bg-[#E7E9E6] dark:text-[#202C34] shadow-xs font-semibold'
+              : 'text-[#668B91] hover:text-[#243746] dark:text-[#89ABB0] dark:hover:text-[#E7E9E6]'
+          }`}
+        >
+          {t.projects.filterAutomation}
         </button>
       </div>
 

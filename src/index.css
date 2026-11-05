@@ -5,11 +5,26 @@
   :root {
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    
+    --canvas: #F5F3EF;
+    --surface: #FFFFFF;
+    --petrol: #243746;
+    --petrol-soft: #668B91;
+    --neutral-border: #DCE4E1;
+  }
+
+  .dark {
+    --canvas: #202C34;
+    --surface: #2D3B44;
+    --petrol: #E7E9E6;
+    --petrol-soft: #89ABB0;
+    --neutral-border: #344A52;
   }
 
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    background-color: var(--canvas);
   }
 
   code, pre, .font-mono {
@@ -17,18 +32,18 @@
   }
 }
 
-/* Custom scrollbar for clean minimal aesthetic */
+/* Custom scrollbar for subtle minimal aesthetic */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(102, 139, 145, 0.25);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(102, 139, 145, 0.45);
 }

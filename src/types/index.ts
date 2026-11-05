@@ -1,4 +1,6 @@
-export type SectionId = 'inicio' | 'projetos' | 'competencias' | 'experiencia' | 'sobre-mim' | 'contato';
+export type SectionId = 'inicio' | 'projetos' | 'competencias' | 'sobre-mim' | 'contato';
+
+export type Language = 'pt' | 'en';
 
 export type ProjectCategory = 'todos' | 'otimizacao' | 'automacao' | 'analytics';
 
