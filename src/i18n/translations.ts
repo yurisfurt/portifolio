@@ -1,4 +1,4 @@
-import { Project, SkillCategory, EducationItem } from '../types';
+import { Project, SkillCategory, EducationItem, CodeSnippetItem, OtherWorkItem } from '../types';
 
 export interface Translations {
   nav: {
@@ -17,10 +17,18 @@ export interface Translations {
     headline: string;
     subheadline: string;
     ctaProjects: string;
+    ctaContact: string;
   };
   projects: {
     sectionTitle: string;
     sectionSubtitle: string;
+    flagshipBadge: string;
+    flagshipTitle: string;
+    flagshipSubtitle: string;
+    flagshipDescription: string;
+    flagshipDeveloper: string;
+    flagshipStats: { label: string; value: string }[];
+    flagshipExploreBtn: string;
     filterAll: string;
     filterOptimization: string;
     filterAutomation: string;
@@ -41,6 +49,34 @@ export interface Translations {
     interactive3DTitle: string;
     interactive3DSubtitle: string;
     interactive3DActive: string;
+    benchmarkGraphTitle: string;
+    benchmarkGraphSubtitle: string;
+  };
+  snippets: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    emptyPhotoNotice: string;
+    viewCode: string;
+    copyCode: string;
+    copied: string;
+    languageLabel: string;
+    viewDetails: string;
+    hideDetails: string;
+    statusReady: string;
+    previewModalTitle: string;
+    close: string;
+  };
+  otherWorks: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    viewDetails: string;
+    hideDetails: string;
+    viewCode: string;
+    copyCode: string;
+    copied: string;
+    statusReady: string;
+    previewModalTitle: string;
+    close: string;
   };
   rastrigin: {
     badge: string;
@@ -63,11 +99,6 @@ export interface Translations {
     convergenceView: string;
     minReached: string;
   };
-  skills: {
-    sectionTitle: string;
-    sectionSubtitle: string;
-    filterAll: string;
-  };
   about: {
     sectionTitle: string;
     sectionSubtitle: string;
@@ -75,6 +106,20 @@ export interface Translations {
     p2: string;
     p3: string;
     educationTitle: string;
+    educationSummary: string;
+    educationItems: {
+      course: string;
+      institution: string;
+      focus: string;
+    }[];
+    skillsTitle: string;
+    skillsSubtitle: string;
+    competencyDomains: {
+      title: string;
+      description: string;
+      items: string[];
+    }[];
+    stackLabel: string;
     specialtyLabel: string;
     specialtyValue: string;
     locationLabel: string;
@@ -109,6 +154,8 @@ export interface Translations {
     backToTop: string;
   };
   projectList: Project[];
+  snippetList: CodeSnippetItem[];
+  otherWorksList: OtherWorkItem[];
   skillCategories: SkillCategory[];
   education: EducationItem[];
 }
@@ -128,19 +175,31 @@ export const translationsPt: Translations = {
   },
   hero: {
     headline: 'Dados que geram soluções.',
-    subheadline: 'Engenheiro de Produção com experiência em processos industriais, projetos, análise de dados e melhoria contínua. Atuação na integração entre processos, tecnologia e análise para desenvolver soluções práticas e apoiar a tomada de decisão.',
-    ctaProjects: 'Ver projetos'
+    subheadline: 'Engenheiro de Produção especializado em modelagem de dados, otimização matemática e automação de processos. Desenvolvimento de ferramentas práticas que transformam operações e sustentam a tomada de decisão.',
+    ctaProjects: 'Ver projetos em destaque',
+    ctaContact: 'Fale comigo'
   },
   projects: {
-    sectionTitle: 'Projetos',
-    sectionSubtitle: 'Estudos de caso em otimização matemática, fluxos de automação e modelagem de dados.',
-    filterAll: 'Todos',
-    filterOptimization: 'Otimização & PCP',
-    filterAutomation: 'Automação & Processos',
+    sectionTitle: 'Projetos em Destaque',
+    sectionSubtitle: 'Soluções desenvolvidas com foco em visualização analítica, otimização computacional e integração de fluxos.',
+    flagshipBadge: 'Projeto Principal · Central de Dados Governamental',
+    flagshipTitle: 'Central de Dados — Programa Defesa Civil na Escola',
+    flagshipSubtitle: 'Painel Estadual de Acompanhamento Escolar & Indicadores (SC)',
+    flagshipDescription: 'Solução centralizada para consolidação, cruzamento e consulta das informações das escolas participantes do programa nos municípios catarinenses. Permite filtragem dinâmica por Município, COREDEC, CRE e COMPDEC, monitorando status de adesão, capacitação de novos professores e métricas de impacto educacional.',
+    flagshipDeveloper: 'Projeto desenvolvido com apoio técnico de Eng. Yuri Furtwaengler',
+    flagshipStats: [
+      { label: 'Abrangência Territorial', value: '295 Municípios de SC' },
+      { label: 'Estrutura de Filtragem', value: 'COREDEC / CRE / COMPDEC' },
+      { label: 'Monitoramento', value: 'INEP, Professores & Alunos' }
+    ],
+    flagshipExploreBtn: 'Ver Estudo de Caso Completo',
+    filterAll: 'Todos (3)',
+    filterOptimization: 'Otimização Matemática',
+    filterAutomation: 'Automação n8n',
     filterAnalytics: 'Análise de Dados & BI',
-    viewProject: 'Ver projeto',
+    viewProject: 'Ver detalhes',
     technicalStudy: 'Estudo técnico',
-    confirmedDeliverable: 'Realização',
+    confirmedDeliverable: 'Realização autoral',
     specDetailsAvailable: 'Especificações técnicas disponíveis',
     modalTitle: 'Estudo Técnico',
     overview: 'Visão Geral',
@@ -149,11 +208,39 @@ export const translationsPt: Translations = {
     methodology: 'Metodologia & Etapas',
     techStack: 'Tecnologias & Metodologias',
     close: 'Fechar',
-    copyCode: 'Copiar',
-    codeCopied: 'Copiado',
-    interactive3DTitle: 'Simulação Interativa 3D (Arraste para rotacionar)',
+    copyCode: 'Copiar código',
+    codeCopied: 'Copiado para a área de transferência',
+    interactive3DTitle: 'Simulação Interativa 3D (Clique e arraste para rotacionar)',
     interactive3DSubtitle: 'Explore a rotação e convergência dos algoritmos diretamente na tela',
-    interactive3DActive: 'Controles ativos'
+    interactive3DActive: 'Visualizador ativo',
+    benchmarkGraphTitle: 'Benchmark Real de Speedup: Paralelo vs Sequencial (PAR/SEQ)',
+    benchmarkGraphSubtitle: 'Curva experimental de aceleração em janela de 60s escalando de 2 até 9 workers'
+  },
+  snippets: {
+    sectionTitle: 'Demais Trabalhos',
+    sectionSubtitle: 'Automações, ferramentas utilitárias e rotinas práticas desenvolvidas para resolver desafios operacionais e analíticos específicos.',
+    emptyPhotoNotice: 'Preview gráfico em breve',
+    viewCode: 'Ver código',
+    copyCode: 'Copiar código',
+    copied: 'Copiado!',
+    languageLabel: 'Linguagem',
+    viewDetails: 'Ver detalhes & código',
+    hideDetails: 'Recolher',
+    statusReady: 'Praticamente Pronto & Alta Eficiência',
+    previewModalTitle: 'Registro Visual & Código do Utilitário',
+    close: 'Fechar'
+  },
+  otherWorks: {
+    sectionTitle: 'Demais Trabalhos',
+    sectionSubtitle: 'Automações, ferramentas utilitárias e rotinas práticas desenvolvidas para resolver desafios operacionais e analíticos específicos.',
+    viewDetails: 'Ver detalhes & código',
+    hideDetails: 'Recolher',
+    viewCode: 'Ver código',
+    copyCode: 'Copiar código',
+    copied: 'Copiado!',
+    statusReady: 'Praticamente Pronto & Alta Eficiência',
+    previewModalTitle: 'Registro Visual & Código do Utilitário',
+    close: 'Fechar'
   },
   rastrigin: {
     badge: 'Função de Teste de Rastrigin',
@@ -176,25 +263,53 @@ export const translationsPt: Translations = {
     convergenceView: 'Convergência',
     minReached: 'Mínimo alcançado'
   },
-  skills: {
-    sectionTitle: 'Competências',
-    sectionSubtitle: 'Tecnologias e metodologias agrupadas por aplicação prática.',
-    filterAll: 'Todas'
-  },
   about: {
-    sectionTitle: 'Sobre Mim',
-    sectionSubtitle: 'Formação em Engenharia de Produção e Técnico em Informática, com atuação em processos industriais, dados e tecnologia.',
-    p1: 'Sou Engenheiro de Produção com experiência prática em processos industriais, projetos, análise de dados e melhoria contínua.',
-    p2: 'Minha atuação é focada na integração entre processos, tecnologia e análise para desenvolver soluções práticas, aumentar a eficiência operacional e apoiar a tomada de decisões estratégicas.',
-    p3: 'Possuo vivência em implantação e transição de sistemas corporativos (como a implementação do SAP na Intelbras durante a migração do TOTVS), análise e modelagem de processos em chão de fábrica e construção de ferramentas para centralização e acompanhamento de dados.',
-    educationTitle: 'Formação Acadêmica',
+    sectionTitle: 'Sobre Mim & Competências',
+    sectionSubtitle: 'Engenheiro de Produção conectando rigor industrial, modelagem analítica e automação computacional.',
+    p1: 'Sou Engenheiro de Produção com atuação centrada na interseção entre processos industriais, inteligência de dados e tecnologia aplicada. Minha abordagem une a visão sistêmica da engenharia à capacidade técnica de desenvolver ferramentas práticas de software.',
+    p2: 'Tenho experiência no desenho e na entrega de soluções reais: desde a concepção de centrais de visualização estratégica para a gestão pública (como o painel estadual da Defesa Civil de SC) até o desenvolvimento de algoritmos heurísticos para otimização matemática e pipelines automatizados de dados com orquestração ágil.',
+    p3: 'Busco sempre eliminar atritos operacionais, estruturar dados dispersos em visões claras e construir ferramentas que realmente auxiliem as equipes na tomada de decisões seguras e embasadas.',
+    educationTitle: 'Formação & Fundamentos Técnicos',
+    educationSummary: 'Sólida base combinando a visão gerencial e quantitativa da Engenharia de Produção com o conhecimento prático em computação e arquitetura de sistemas.',
+    educationItems: [
+      {
+        course: 'Engenharia de Produção (Bacharelado)',
+        institution: 'Anhanguera Educacional',
+        focus: 'Pesquisa operacional, gestão de processos industriais, modelagem quantitativa e melhoria contínua.'
+      },
+      {
+        course: 'Formação Técnica em Informática & Processos',
+        institution: 'SENAI',
+        focus: 'Lógica computacional, arquitetura de sistemas, modelagem de dados e tecnologia aplicada.'
+      }
+    ],
+    skillsTitle: 'Competências Essenciais',
+    skillsSubtitle: 'Domínios técnicos consolidados através de prática em projetos reais e modelagem computacional.',
+    competencyDomains: [
+      {
+        title: 'Análise de Dados & BI',
+        description: 'Construção de centrais de dados, dashboards gerenciais, modelagem de indicadores (KPIs), estruturação de dados públicos e de operações.',
+        items: ['Dashboards Interativos', 'KPIs & Indicadores Estratégicos', 'SQL', 'Tratamento de Dados', 'Power BI & Looker Studio']
+      },
+      {
+        title: 'Otimização & Pesquisa Operacional',
+        description: 'Algoritmos metaheurísticos e computacionais para exploração de superfícies não-lineares, balanceamento e resolução de problemas complexos.',
+        items: ['Algoritmos Genéticos (AG)', 'Particle Swarm (PSO)', 'NumPy / SciPy', 'Funções Multimodais', 'Modelagem em Python']
+      },
+      {
+        title: 'Automação & Integração de Fluxos',
+        description: 'Orquestração de pipelines de dados orientados a eventos, integração de APIs, webhooks e eliminação de tarefas manuais repetitivas.',
+        items: ['n8n Workflow Automation', 'Webhooks & REST APIs', 'PostgreSQL', 'Scripts Python', 'Integração de Sistemas']
+      }
+    ],
+    stackLabel: 'Tecnologias & Ferramentas',
     specialtyLabel: 'Especialidade',
     specialtyValue: 'Engenharia de Produção & Análise de Dados',
     locationLabel: 'Localização',
     languagesLabel: 'Idiomas',
-    nativeLevel: 'Nativo',
-    intermediateLevel: 'Intermediário',
-    status: 'Disponível para novos projetos e oportunidades'
+    nativeLevel: 'Português (Nativo)',
+    intermediateLevel: 'Inglês (Intermediário)',
+    status: 'Disponível para projetos técnicos e novas oportunidades'
   },
   contact: {
     sectionTitle: 'Contato',
@@ -203,7 +318,7 @@ export const translationsPt: Translations = {
     phoneLabel: 'Telefone',
     locationLabel: 'Localização',
     copyEmail: 'Copiar e-mail',
-    emailCopied: 'E-mail copiado',
+    emailCopied: 'E-mail copiado!',
     socialLabel: 'Perfis Profissionais',
     formTitle: 'Enviar uma Mensagem',
     nameField: 'Nome',
@@ -218,322 +333,264 @@ export const translationsPt: Translations = {
     successMessage: 'Obrigado pelo contato! Retornarei em breve no seu e-mail.'
   },
   footer: {
-    role: 'Engenheiro de Produção | Analista de Processos e Dados',
+    role: 'Engenheiro de Produção | Dados & Automação',
     backToTop: 'Voltar ao topo ↑'
   },
+  // 3 Primary authentic projects
   projectList: [
     {
       id: 'defesa-civil-dashboard',
-      title: 'Central de Informações & Dashboard — Defesa Civil de SC',
-      subtitle: 'Programa Defesa Civil na Escola (PDCE)',
+      title: 'Central de Dados — Programa Defesa Civil na Escola',
+      subtitle: 'Painel Estadual de Acompanhamento & Indicadores Educacionais',
       category: 'analytics',
       categoryLabel: 'Análise de Dados & BI',
       featured: true,
       featuredType: 'dashboard',
-      imageLabel: 'Painel gerencial Defesa Civil (projeto real)',
+      imageLabel: 'Central Oficial PDCE · SC',
       provenance: 'cv_confirmado',
-      provenanceLabel: 'Comprovado em currículo',
-      summary: 'Criação de uma solução para centralização, organização e visualização de informações do Programa Defesa Civil na Escola (PDCE), com ferramenta de acompanhamento e consulta com indicadores e filtros para facilitar a análise de dados.',
-      tags: ['Dashboards', 'Indicadores e KPIs', 'Visualização de Dados', 'Filtros Dinâmicos', 'Gestão da Informação'],
+      provenanceLabel: 'Projeto Real Desenvolvido',
+      summary: 'Desenvolvimento da Central de Dados do Programa Defesa Civil na Escola (PDCE) de Santa Catarina, centralizando as informações de instituições de ensino, controle de adesão e formação de professores nos 295 municípios.',
+      tags: ['Dashboards', 'Indicadores & KPIs', 'Defesa Civil SC', 'Gestão Pública', 'Filtros Dinâmicos'],
       specs: [
-        { label: 'Organização', value: 'Defesa Civil de Santa Catarina' },
-        { label: 'Programa', value: 'Defesa Civil na Escola (PDCE)' },
-        { label: 'Finalidade', value: 'Centralização e Análise de Indicadores' }
+        { label: 'Entidade', value: 'Defesa Civil de Santa Catarina' },
+        { label: 'Apoio Técnico', value: 'Eng. Yuri Furtwaengler' },
+        { label: 'Escopo', value: '295 Municípios do Estado de SC' }
       ],
-      challenge: 'Acompanhar a evolução das iniciativas e participantes do Programa Defesa Civil na Escola de forma centralizada e ágil para subsidiar a tomada de decisão das equipes.',
-      solution: 'Desenvolvimento de uma ferramenta unificada de consulta e acompanhamento de informações, permitindo cruzamento de dados, filtros por região e visualização clara de indicadores estratégicos.',
+      challenge: 'Unificar a base cadastral e de acompanhamento de todas as escolas estaduais e municipais participantes do PDCE em uma interface ágil de consulta para a coordenação estadual, COREDEC e COMPDEC.',
+      solution: 'Estruturação de um painel de acesso centralizado com navegação geográfica, filtros por município, código INEP, situação de cadastro docente e relatórios instantâneos de formação.',
       methodology: [
-        'Levantamento de requisitos junto aos responsáveis pelo programa PDCE',
-        'Estruturação e padronização das fontes de informações coletadas',
-        'Desenvolvimento de painel visual com indicadores e filtros de consulta rápida',
-        'Validação das visualizações para suporte à tomada de decisão'
+        'Levantamento das variáveis prioritárias com a coordenação do programa PDCE',
+        'Padronização e validação das bases de dados municipais e códigos INEP',
+        'Construção da interface visual de acesso com botões setoriais de filtragem rápida (Município, COREDEC, CRE, COMPDEC)',
+        'Integração de canais de suporte e métricas de professores formados para 2026'
       ],
-      techStack: ['Dashboards', 'Indicadores & KPIs', 'Organização de Dados', 'Gestão de Informações']
+      techStack: ['Dashboards Estratégicos', 'KPIs & Indicadores', 'Modelagem de Dados', 'Gestão de Informações']
     },
     {
       id: 'rastrigin-optimization',
-      title: 'Otimização Computacional: Função de Rastrigin',
-      subtitle: 'Algoritmos Heurísticos & Otimização Global',
+      title: 'Otimização Computacional & Benchmarking (Rastrigin)',
+      subtitle: 'Speedup Efetivo (PAR/SEQ) & Algoritmos Heurísticos 3D',
       category: 'otimizacao',
       categoryLabel: 'Otimização Matemática',
       featured: true,
       featuredType: 'rastrigin',
-      imageLabel: 'Superfície matemática multimodal 3D',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Estudo técnico em validação',
-      summary: 'Implementação e estudo comparativo de algoritmos de otimização global (Algoritmos Genéticos, Particle Swarm e Gradiente c/ Momentum) aplicados à função multimodal de Rastrigin, com visualizador 3D interativo.',
-      tags: ['Python', 'NumPy', 'SciPy', 'Algoritmos Genéticos', 'PSO', 'Visualização 3D'],
+      imageLabel: 'Benchmark Speedup PAR/SEQ (2.8x c/ 9 workers)',
+      provenance: 'cv_confirmado',
+      provenanceLabel: 'Implementação Computacional',
+      summary: 'Estudo experimental e benchmark de computação concorrente aplicado à otimização da função multimodal de Rastrigin, demonstrando speedup efetivo de até 2.8x com 9 workers em regime paralelo versus sequencial, além de visualizador 3D interativo.',
+      tags: ['Python', 'Multiprocessing', 'Speedup Benchmark', 'Algoritmos Genéticos', 'Canvas 3D'],
       specs: [
-        { label: 'Domínio', value: 'Espaço bidimensional / n-dimensional' },
-        { label: 'Mínimo Global', value: 'f(0, 0) = 0' },
-        { label: 'Linguagem', value: 'Python / SciPy / NumPy' }
+        { label: 'Speedup Máximo', value: '~2.8x (PAR/SEQ em 60s)' },
+        { label: 'Escala de Workers', value: '2 a 9 Workers Concorrentes' },
+        { label: 'Mínimo Global', value: 'f(0, 0) = 0' }
       ],
-      challenge: 'A função de Rastrigin é altamente não-convexa e possui múltiplos mínimos locais. Métodos de descida puramente locais tendem a convergir prematuramente.',
-      solution: 'Implementação de algoritmos populacionais (PSO e Algoritmos Genéticos) em Python com controle de convergência, analisando a capacidade de escape de ótimos locais.',
+      challenge: 'Avaliar empiricamente os ganhos de aceleração (speedup efetivo) na busca heurística paralela contra a execução sequencial em cenários de alta dimensionalidade multimodal.',
+      solution: 'Implementação de benchmark com pool de workers concorrentes (2 a 9 workers) registrando a curva de speedup real até 2.8x, acoplado ao modelo tridimensional de exploração da superfície de Rastrigin.',
       methodology: [
         'Modelagem analítica da função f(x) = 20 + ∑(xi² - 10·cos(2π·xi))',
-        'Configuração de operadores de mutação e recombinação em algoritmos genéticos',
-        'Ajuste de inércia e parâmetros cognitivos/sociais no Particle Swarm Optimization',
-        'Plotagem e renderização 3D das trajetórias de convergência dos algoritmos'
+        'Execução de testes controlados de 60s comparando tempos PAR versus SEQ',
+        'Coleta de métricas e traçado da curva de speedup efetivo por número de workers',
+        'Renderização 3D da superfície e simulação interativa das trajetórias de convergência'
       ],
-      techStack: ['Python', 'NumPy', 'SciPy Optimize', 'Matplotlib', 'TypeScript / Canvas 3D'],
+      techStack: ['Python', 'Multiprocessing', 'NumPy / SciPy', 'Matplotlib', 'Canvas 3D'],
       codeSnippet: {
         language: 'python',
-        filename: 'rastrigin_optimizer.py',
-        code: `import numpy as np
+        filename: 'poc_rastrigin_tree_bench.py',
+        code: `import time
+from multiprocessing import Pool
+import numpy as np
 
 def rastrigin(x, A=10):
-    """Função de teste multimodal de Rastrigin n-dimensional."""
-    n = len(x)
-    return A * n + np.sum(x**2 - A * np.cos(2 * np.pi * x))
+    return A * len(x) + np.sum(x**2 - A * np.cos(2 * np.pi * x))
 
-def particle_swarm_optimization(cost_func, dim=2, num_particles=30, max_iter=80):
-    """Implementação básica de PSO para otimização contínua."""
-    w, c1, c2 = 0.72, 1.49, 1.49
-    pos = np.random.uniform(-5.12, 5.12, (num_particles, dim))
-    vel = np.random.uniform(-1.0, 1.0, (num_particles, dim))
-    pbest = pos.copy()
-    pbest_scores = np.array([cost_func(p) for p in pos])
-    gbest = pbest[np.argmin(pbest_scores)]
-    gbest_score = np.min(pbest_scores)
-    
-    trajectory = [gbest.copy()]
+def worker_search(args):
+    seed, max_iter, dim = args
+    np.random.seed(seed)
+    best_x = np.random.uniform(-5.12, 5.12, dim)
+    best_val = rastrigin(best_x)
     for _ in range(max_iter):
-        r1, r2 = np.random.rand(num_particles, dim), np.random.rand(num_particles, dim)
-        vel = w * vel + c1 * r1 * (pbest - pos) + c2 * r2 * (gbest - pos)
-        pos = np.clip(pos + vel, -5.12, 5.12)
-        
-        scores = np.array([cost_func(p) for p in pos])
-        better_mask = scores < pbest_scores
-        pbest[better_mask] = pos[better_mask]
-        pbest_scores[better_mask] = scores[better_mask]
-        
-        if np.min(pbest_scores) < gbest_score:
-            gbest = pbest[np.argmin(pbest_scores)]
-            gbest_score = np.min(pbest_scores)
-        trajectory.append(gbest.copy())
-        
-    return gbest, gbest_score, np.array(trajectory)`
+        cand = best_x + np.random.normal(0, 0.25, dim)
+        cand = np.clip(cand, -5.12, 5.12)
+        val = rastrigin(cand)
+        if val < best_val:
+            best_x, best_val = cand, val
+    return best_val
+
+def run_bench(workers=4, runs_per_worker=25, window_sec=60):
+    start = time.time()
+    args = [(i, 2000, 10) for i in range(workers * runs_per_worker)]
+    with Pool(processes=workers) as pool:
+        results = pool.map(worker_search, args)
+    elapsed = time.time() - start
+    return min(results), elapsed`
       }
     },
     {
-      id: 'sap-implementation',
-      title: 'Transição e Implementação do SAP — Intelbras',
-      subtitle: 'Processos Industriais & Mudança de ERP Corporativo',
-      category: 'automacao',
-      categoryLabel: 'Processos & Sistemas',
-      featured: true,
-      featuredType: 'dashboard',
-      imageLabel: 'Mapeamento de processos e transição de sistema',
-      provenance: 'cv_confirmado',
-      provenanceLabel: 'Comprovado em currículo',
-      summary: 'Participação na implementação do SAP na Intelbras S.A. durante a transição do sistema TOTVS para o SAP, integrando necessidades de processos industriais a soluções tecnológicas corporativas.',
-      tags: ['SAP', 'TOTVS', 'Processos Industriais', 'Integração de Sistemas', 'Melhoria Contínua'],
-      specs: [
-        { label: 'Empresa', value: 'Intelbras S.A.' },
-        { label: 'Transição', value: 'TOTVS para SAP' },
-        { label: 'Escopo', value: 'Processos Industriais e Operações' }
-      ],
-      challenge: 'Garantir a continuidade e aderência dos fluxos operacionais industriais durante a migração de um sistema legado TOTVS para a plataforma corporativa SAP.',
-      solution: 'Atuação na análise de aderência de processos, mapeamento de requisitos industriais e suporte à estruturação de fluxos operacionais mais eficientes no novo ambiente.',
-      methodology: [
-        'Mapeamento dos fluxos de trabalho industriais existentes',
-        'Identificação de lacunas de processo e parametrização entre TOTVS e SAP',
-        'Validação de operações e suporte aos usuários-chave na transição',
-        'Acompanhamento de indicadores de estabilidade operacional pós-migração'
-      ],
-      techStack: ['SAP', 'TOTVS', 'Mapeamento de Processos', 'PCP', 'Melhoria Contínua']
-    },
-    {
-      id: 'pcp-production-scheduling',
-      title: 'Simulação & Balanceamento de Linha (PCP)',
-      subtitle: 'Pesquisa Operacional & Engenharia de Produção',
-      category: 'otimizacao',
-      categoryLabel: 'Otimização & PCP',
-      imageLabel: 'Esquema de fluxo de postos e takt time',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Estudo técnico em validação',
-      summary: 'Modelo computacional para análise de tempos de ciclo, identificação de postos de trabalho gargalo e balanceamento de linha em ambiente fabril.',
-      tags: ['Python', 'PCP', 'Teoria das Filas', 'Mapeamento de Processos'],
-      specs: [
-        { label: 'Área', value: 'Planejamento e Controle da Produção' },
-        { label: 'Metodologia', value: 'Simulação de Eventos Discretos' }
-      ],
-      challenge: 'Avaliar o impacto de variações nos tempos de ciclo sobre o acúmulo de material intermediário e capacidade de entrega da linha de produção.',
-      solution: 'Modelagem analítica dos postos de trabalho e buffers para estimar a capacidade real e sugerir alocação balanceada de recursos.',
-      methodology: [
-        'Mapeamento de tempos de ciclo e postos de trabalho',
-        'Cálculo de takt time e balanceamento estocástico',
-        'Simulação de cenários com ajustes de postos'
-      ],
-      techStack: ['Python', 'SimPy', 'PCP', 'Engenharia de Produção']
-    },
-    {
       id: 'n8n-automation-pipeline',
-      title: 'Automação de Pipelines & Integração com n8n',
-      subtitle: 'Webhooks, APIs & Tratamento de Dados',
+      title: 'Automação de Pipelines & Integrações com n8n',
+      subtitle: 'Fluxos Orientados a Eventos, Webhooks & Tratamento de Dados',
       category: 'automacao',
       categoryLabel: 'Automação de Processos',
-      imageLabel: 'Diagrama de fluxo de automação',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Estudo técnico em validação',
-      summary: 'Estruturação de fluxos de integração automatizados conectando entradas via webhooks, tratamento de dados em Python, armazenamento em banco relacional e distribuição de notificações.',
+      featured: true,
+      featuredType: 'n8n',
+      imageLabel: 'Arquitetura de nós n8n',
+      provenance: 'cv_confirmado',
+      provenanceLabel: 'Projeto Desenvolvido',
+      summary: 'Arquitetura de fluxos de integração automatizados conectando gatilhos via webhooks, tratamento de dados em Python, armazenamento em banco relacional (PostgreSQL) e disparo de alertas operacionais sem intervenção manual.',
       tags: ['n8n', 'Webhooks', 'REST APIs', 'PostgreSQL', 'Python'],
       specs: [
-        { label: 'Orquestrador', value: 'n8n em Docker' },
-        { label: 'Camada de Dados', value: 'PostgreSQL' }
+        { label: 'Orquestrador', value: 'n8n Workflow Engine' },
+        { label: 'Camada de Dados', value: 'PostgreSQL Relacional' },
+        { label: 'Tratamento', value: 'Python / JSON Schema' }
       ],
-      challenge: 'Integrar fontes de dados heterogêneas sem depender de rotinas manuais de cópia ou intervenções repetitivas.',
-      solution: 'Criação de pipelines orientados a eventos com validação de schemas JSON, tratamento de exceções e persistência em banco relacional.',
+      challenge: 'Conectar fontes de dados heterogêneas e fluxos de atendimento sem recorrer a processos manuais de importação ou planilhas estáticas suscetíveis a erro humano.',
+      solution: 'Construção de pipelines automáticos orientados a eventos com roteamento condicional de nós, validação de schema JSON, persistência estruturada e notificações instantâneas.',
       methodology: [
-        'Padronização de formatos de payload de entrada',
-        'Configuração de nós condicionais e tratamento de erros',
-        'Persistência estruturada em tabelas analíticas'
+        'Mapeamento dos gatilhos de entrada via Webhooks HTTP',
+        'Criação de nós de sanitização e enriquecimento de dados em Python',
+        'Gravação transacional em banco de dados relacional PostgreSQL',
+        'Configuração de tratamento de exceções e alarmística de falha'
       ],
       techStack: ['n8n', 'Python', 'PostgreSQL', 'Webhooks', 'Docker']
-    },
-    {
-      id: 'logistics-vrp-routing',
-      title: 'Roteamento de Veículos (Vehicle Routing Problem)',
-      subtitle: 'Algoritmos Heurísticos em Grafos',
-      category: 'otimizacao',
-      categoryLabel: 'Otimização Matemática',
-      imageLabel: 'Grafo de roteamento logístico',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Estudo técnico em validação',
-      summary: 'Abordagem algorítmica para o problema de roteamento de entregas com restrições operacionais e sequenciamento de paradas.',
-      tags: ['Python', 'Pesquisa Operacional', 'Heurísticas', 'Grafos'],
-      specs: [
-        { label: 'Problema', value: 'Roteamento de Veículos (VRP)' },
-        { label: 'Abordagem', value: 'Heurísticas Construtivas' }
-      ],
-      challenge: 'Definição de sequências de atendimento minimizando o trajeto total em malha viária com múltiplos destinos.',
-      solution: 'Aplicação de heurísticas combinatórias e refinamento local para ordenação eficiente de itinerários.',
-      methodology: [
-        'Estruturação da matriz de distâncias',
-        'Geração de rotas iniciais por economia de trajeto',
-        'Refinamento por busca local'
-      ],
-      techStack: ['Python', 'NetworkX', 'NumPy', 'Pesquisa Operacional']
     }
   ],
-  skillCategories: [
+  // Demais Trabalhos (Lista compacta e minimizada)
+  otherWorksList: [
     {
-      id: 'processos-melhoria',
-      title: 'Processos & Melhoria Contínua',
-      description: 'Metodologias e práticas para análise, padronização e aumento de eficiência operacional.',
-      skills: [
-        {
-          name: 'Análise e Otimização de Processos',
-          description: 'Diagnóstico de fluxos operacionais, identificação de gargalos e desenvolvimento de soluções práticas para eficiência.',
-          tools: ['Mapeamento de Processos', 'Análise de Fluxos', 'Melhoria Contínua']
-        },
-        {
-          name: 'PCP (Planejamento e Controle da Produção)',
-          description: 'Apoio a atividades de planejamento, controle de capacidade fabril, takt time e acompanhamento de ordens.',
-          tools: ['PCP', 'Balanceamento', 'Capacidade Fabril']
-        },
-        {
-          name: 'Projetos Industriais',
-          description: 'Atuação em projetos industriais voltados à melhoria contínua e eficiência operacional.',
-          tools: ['Projetos Industriais', 'Estruturação Operacional']
-        },
-        {
-          name: 'Metodologias de Qualidade & Organização',
-          description: 'Aplicação de práticas de padronização, organização e melhoria contínua no ambiente industrial.',
-          tools: ['5S', 'Melhoria Contínua', 'Padronização']
-        }
-      ]
+      id: 'trade-controller',
+      title: 'App Trade Controller & Estratégias Algorítmicas (Cripto & Ações)',
+      categoryBadge: 'Cripto & Ações · Binance & MT5',
+      badgeVariant: 'secondary',
+      statusLabel: 'Praticamente Pronto & Alta Eficiência',
+      isTradeHighlight: true,
+      description: 'Plataforma de alta eficiência para modelagem, backtesting e execução de estratégias de trade (Binance e MT5). Conta com parametrização de spread/slippage, estratégia S004 (Desvio + Derivada Confirmada), roteamento automático do melhor caminho de taxas de rede entre exchanges (CCXT) e alarmística em tempo real no Telegram.',
+      tags: ['Python', 'CCXT', 'Binance & MT5', 'Algoritmos Quant', 'Telegram Bot'],
+      imageSrc: '/assets/aistudio/image_2ac28b9b.png',
+      imageCaption: 'Interface de Operação App Trade Controller v1.0 (Estratégia S004, Win Rate, Profit Factor e Drawdown)',
+      secondaryImageSrc: '/assets/aistudio/image_ee79f82c.png',
+      secondaryImageCaption: 'Backend Python CCXT: Otimização de taxas de rede entre Binance/Kucoin/Kraken e alertas Telegram',
+      metrics: [
+        { label: 'Mercados', value: 'Binance (Cripto) & MT5 (Ações)' },
+        { label: 'Roteamento CCXT', value: '10 Exchanges (Menor Taxa)' },
+        { label: 'Alarmística', value: 'Bot Telegram em Tempo Real' }
+      ],
+      codeSnippet: {
+        language: 'python',
+        filename: 'trade_network_router.py',
+        code: `import os
+import datetime
+from dotenv import load_dotenv
+import ccxt
+
+# Encontra o melhor caminho de transferência rede entre exchanges
+def encontrar_melhor_rede_para_transferencia(moeda, ex1, ex2):
+    try:
+        ex1.load_markets()
+        ex2.load_markets()
+        net1 = ex1.currencies[moeda].get("networks", {})
+        net2 = ex2.currencies[moeda].get("networks", {})
+
+        comuns = set(net1.keys()) & set(net2.keys())
+        melhores = []
+        for rede in comuns:
+            fee1 = net1[rede].get("withdrawFee", float('inf'))
+            fee2 = net2[rede].get("withdrawFee", float('inf'))
+            if not net1[rede].get("withdrawEnabled") or not net2[rede].get("depositEnabled"):
+                continue
+            total_fee = fee1 + fee2
+            melhores.append((rede, total_fee))
+        melhores.sort(key=lambda x: x[1])
+        return melhores[0] if melhores else None
+    except Exception as e:
+        print(f"[Erro] encontrar_melhor_rede_para_transferencia: {e}")
+        return None
+
+def enviar_mensagem_telegram(mensagem):
+    import requests
+    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    requests.post(url, json={"chat_id": chat_id, "text": mensagem})`
+      }
     },
     {
-      id: 'dados-visualizacao',
-      title: 'Análise & Visualização de Dados',
-      description: 'Transformação de dados operacionais em painéis e relatórios para apoio à tomada de decisão.',
-      skills: [
-        {
-          name: 'Análise e Visualização de Dados',
-          description: 'Construção de ferramentas de acompanhamento, relatórios e consolidação de informações.',
-          tools: ['Dashboards', 'Visualização de Dados', 'Relatórios']
-        },
-        {
-          name: 'Indicadores e KPIs',
-          description: 'Estruturação de métricas de desempenho operacional, acompanhamento de metas e identificação de variações.',
-          tools: ['KPIs Operacionais', 'Métricas de Processo']
-        },
-        {
-          name: 'Power BI & Looker Studio',
-          description: 'Criação de painéis analíticos interativos com filtros e visões gerenciais para consulta ágil.',
-          tools: ['Power BI', 'Looker Studio']
-        },
-        {
-          name: 'SQL & Excel Avançado',
-          description: 'Consultas a bancos relacionais e elaboração de planilhas dinâmicas para análise e suporte diário.',
-          tools: ['SQL', 'Excel']
-        }
-      ]
+      id: 'conversor-imagens-pdf',
+      title: 'Conversor de Imagens & Unificador de PDFs (Desktop GUI)',
+      categoryBadge: 'Desktop GUI · Utilitário Python',
+      badgeVariant: 'primary',
+      statusLabel: 'Utilitário Desktop',
+      description: 'Ferramenta desktop desenvolvida para conversão em lote de imagens (JPEG, WEBP, PNG com ajuste fino de compressão e qualidade) e módulo integrado para unificação ágil de múltiplos arquivos PDF em documento único.',
+      tags: ['Python', 'CustomTkinter', 'Pillow', 'PyPDF', 'Desktop GUI'],
+      imageSrc: '/assets/aistudio/image_6457b4b7.png',
+      imageCaption: 'Interface ConversorImagens v1.0 (Abas de Conversão em Lote e Juntador de PDFs)',
+      metrics: [
+        { label: 'Formatos Suportados', value: 'JPEG, WEBP, PNG' },
+        { label: 'Controle de Saída', value: 'Compressão & Qualidade (0-100%)' },
+        { label: 'Módulo PDF', value: 'Mesclagem Instantânea' }
+      ],
+      codeSnippet: {
+        language: 'python',
+        filename: 'conversor_imagens_gui.py',
+        code: `import os
+from PIL import Image
+
+def batch_convert(source_folder, output_format="WEBP", quality=90):
+    for root, _, files in os.walk(source_folder):
+        for f in files:
+            if f.lower().endswith(('.png', '.jpg', '.jpeg')):
+                in_path = os.path.join(root, f)
+                out_path = os.path.join(root, f"{os.path.splitext(f)[0]}.{output_format.lower()}")
+                with Image.open(in_path) as img:
+                    img.save(out_path, output_format, quality=quality, optimize=True)`
+      }
     },
     {
-      id: 'tecnologia-automacao',
-      title: 'Tecnologia & Automação',
-      description: 'Aplicação de programação e sistemas corporativos na resolução de problemas industriais.',
-      skills: [
-        {
-          name: 'Automação e Tecnologia',
-          description: 'Integração entre necessidades dos processos industriais e soluções tecnológicas para operações mais eficientes.',
-          tools: ['Automação', 'Integração de Sistemas']
-        },
-        {
-          name: 'Python',
-          description: 'Desenvolvimento de scripts para tratamento de dados, automações de tarefas e modelagem de algoritmos.',
-          tools: ['Python', 'Tratamento de Dados', 'Scripts']
-        },
-        {
-          name: 'Implantação de Sistemas (SAP / TOTVS)',
-          description: 'Experiência em projetos de implantação e transição de ERP corporativo no contexto operacional.',
-          tools: ['SAP', 'TOTVS', 'Transição de Sistemas']
-        },
-        {
-          name: 'Formação Técnica em Informática',
-          description: 'Base sólida em lógica de programação, arquitetura de sistemas e suporte técnico pelo SENAI.',
-          tools: ['SENAI', 'Lógica de Programação', 'Sistemas']
-        }
-      ]
-    },
-    {
-      id: 'gestao-metodos',
-      title: 'Gestão de Projetos & Metodologias Ágeis',
-      description: 'Organização de entregas, comunicação com equipes e condução de iniciativas de mudança.',
-      skills: [
-        {
-          name: 'Gestão de Projetos',
-          description: 'Condução de iniciativas com acompanhamento de cronogramas, partes interessadas e entregáveis.',
-          tools: ['Gestão de Projetos', 'Planejamento']
-        },
-        {
-          name: 'Scrum & Kanban',
-          description: 'Utilização de métodos ágeis e quadros visuais para priorização de demandas e controle de fluxo.',
-          tools: ['Scrum', 'Kanban']
-        },
-        {
-          name: 'Gestão de Suporte & Operações',
-          description: 'Experiência prévia em atendimento e processos de pós-venda, incluindo relacionamento direto.',
-          tools: ['Suporte', 'Pós-Venda', 'Atendimento']
-        }
-      ]
+      id: 'gov-compras-pipeline',
+      title: 'Ingestão & Auditoria de Dados Públicos (compras.gov.br)',
+      categoryBadge: 'Pipeline ETL · API Rest & Pandas',
+      badgeVariant: 'neutral',
+      statusLabel: 'Pipeline de Dados',
+      description: 'Script em Python com Requests e Pandas consumindo a API oficial de Compras do Governo Federal (dadosabertos.compras.gov.br), convertendo payloads em DataFrames para estruturação tabular e auditoria de itens materiais.',
+      tags: ['Python', 'Pandas', 'Requests', 'REST API', 'Dados Abertos'],
+      imageSrc: '/assets/aistudio/image_46ca9823.png',
+      imageCaption: 'Script Python gov.py consultando módulo de materiais da API Compras do Governo Federal',
+      metrics: [
+        { label: 'Fonte Oficial', value: 'dadosabertos.compras.gov.br' },
+        { label: 'Estruturação', value: 'Pandas DataFrames' },
+        { label: 'Aplicação', value: 'Auditoria de Materiais e Preços' }
+      ],
+      codeSnippet: {
+        language: 'python',
+        filename: 'gov.py',
+        code: `import requests
+import pandas as pd
+
+url = "https://dadosabertos.compras.gov.br/modulo-material/4_consultarItemMaterial"
+
+response = requests.get(url)
+dados = response.json()
+
+df = pd.DataFrame(dados['resultado'])
+print(df.info())
+print(df.head())
+print(dados.keys())`
+      }
     }
   ],
+  get snippetList() {
+    return this.otherWorksList;
+  },
+  skillCategories: [],
   education: [
     {
-      course: 'Engenharia de Produção',
-      institution: 'Anhanguera',
-      period: '02/2016 – 12/2021',
-      location: 'São José, Santa Catarina'
+      course: 'Engenharia de Produção (Bacharelado)',
+      institution: 'Anhanguera Educacional',
+      description: 'Pesquisa operacional, gestão de processos e modelagem quantitativa.'
     },
     {
-      course: 'Técnico em Informática',
+      course: 'Técnico em Informática & Processos',
       institution: 'SENAI',
-      period: '09/2015 – 07/2017',
-      location: 'São José, Santa Catarina'
+      description: 'Lógica computacional, arquitetura de sistemas e automação.'
     }
   ]
 };
@@ -553,32 +610,72 @@ export const translationsEn: Translations = {
   },
   hero: {
     headline: 'Data that drives solutions.',
-    subheadline: 'Production Engineer with experience in industrial processes, engineering projects, data analysis, and continuous improvement. Focused on integrating process design, technology, and analytics to build practical solutions and support decision-making.',
-    ctaProjects: 'View projects'
+    subheadline: 'Production Engineer specializing in data modeling, mathematical optimization, and process automation. Crafting practical tools that streamline operations and empower confident decision-making.',
+    ctaProjects: 'View featured projects',
+    ctaContact: 'Get in touch'
   },
   projects: {
-    sectionTitle: 'Projects',
-    sectionSubtitle: 'Case studies in mathematical optimization, automated workflows, and data modeling.',
-    filterAll: 'All',
-    filterOptimization: 'Optimization & Production',
-    filterAutomation: 'Automation & Processes',
+    sectionTitle: 'Featured Projects',
+    sectionSubtitle: 'Practical solutions developed across data visualization, computational optimization, and workflow automation.',
+    flagshipBadge: 'Flagship Project · Government Data Hub',
+    flagshipTitle: 'Civil Defense in Schools — Data & Intelligence Hub',
+    flagshipSubtitle: 'Statewide School Monitoring & Indicator Dashboard (SC, Brazil)',
+    flagshipDescription: 'Centralized analytics solution for tracking, cross-referencing, and querying school data across all 295 municipalities of Santa Catarina state. Features dynamic regional drill-downs by Municipality, COREDEC, CRE, and COMPDEC, monitoring enrollment status, teacher certifications, and educational safety metrics.',
+    flagshipDeveloper: 'Project developed with technical support from Eng. Yuri Furtwaengler',
+    flagshipStats: [
+      { label: 'Geographic Coverage', value: '295 SC Municipalities' },
+      { label: 'Regional Filters', value: 'COREDEC / CRE / COMPDEC' },
+      { label: 'Monitored Entities', value: 'INEP Codes, Teachers & Students' }
+    ],
+    flagshipExploreBtn: 'Explore Full Case Study',
+    filterAll: 'All (3)',
+    filterOptimization: 'Mathematical Optimization',
+    filterAutomation: 'n8n Automation',
     filterAnalytics: 'Data Analytics & BI',
-    viewProject: 'View project',
+    viewProject: 'View details',
     technicalStudy: 'Technical study',
-    confirmedDeliverable: 'Deliverable',
+    confirmedDeliverable: 'Authentic project',
     specDetailsAvailable: 'Technical specifications available',
     modalTitle: 'Technical Case Study',
     overview: 'Overview',
     challenge: 'Context & Challenge',
     solution: 'Implemented Solution',
-    methodology: 'Methodology & Steps',
+    methodology: 'Methodology & Key Steps',
     techStack: 'Technologies & Frameworks',
     close: 'Close',
-    copyCode: 'Copy',
-    codeCopied: 'Copied',
-    interactive3DTitle: 'Interactive 3D Simulation (Click and drag to rotate)',
-    interactive3DSubtitle: 'Explore algorithm convergence and surface exploration in real-time',
-    interactive3DActive: 'Controls active'
+    copyCode: 'Copy code',
+    codeCopied: 'Copied to clipboard',
+    interactive3DTitle: 'Interactive 3D Simulation (Click & drag to rotate)',
+    interactive3DSubtitle: 'Explore algorithm convergence and 3D surface exploration in real-time',
+    interactive3DActive: 'Visualizer active',
+    benchmarkGraphTitle: 'Empirical Speedup Benchmark: Parallel vs Sequential (PAR/SEQ)',
+    benchmarkGraphSubtitle: 'Experimental acceleration curve over 60s scaling from 2 up to 9 workers'
+  },
+  snippets: {
+    sectionTitle: 'Other Works',
+    sectionSubtitle: 'Automations, practical utility tools, and hands-on routines built to solve targeted operational and analytical challenges.',
+    emptyPhotoNotice: 'Visual preview coming soon',
+    viewCode: 'View code',
+    copyCode: 'Copy code',
+    copied: 'Copied!',
+    languageLabel: 'Language',
+    viewDetails: 'View details & code',
+    hideDetails: 'Collapse',
+    statusReady: 'Production-Ready & High-Efficiency',
+    previewModalTitle: 'Visual Record & Source Code',
+    close: 'Close'
+  },
+  otherWorks: {
+    sectionTitle: 'Other Works',
+    sectionSubtitle: 'Automations, practical utility tools, and hands-on routines built to solve targeted operational and analytical challenges.',
+    viewDetails: 'View details & code',
+    hideDetails: 'Collapse',
+    viewCode: 'View code',
+    copyCode: 'Copy code',
+    copied: 'Copied!',
+    statusReady: 'Production-Ready & High-Efficiency',
+    previewModalTitle: 'Visual Record & Source Code',
+    close: 'Close'
   },
   rastrigin: {
     badge: 'Rastrigin Benchmark Function',
@@ -601,34 +698,62 @@ export const translationsEn: Translations = {
     convergenceView: 'Convergence',
     minReached: 'Minimum reached'
   },
-  skills: {
-    sectionTitle: 'Core Competencies',
-    sectionSubtitle: 'Technologies and methodologies grouped by practical application.',
-    filterAll: 'All'
-  },
   about: {
-    sectionTitle: 'About Me',
-    sectionSubtitle: 'Background in Production Engineering and IT, working at the intersection of industrial processes, data, and technology.',
-    p1: 'I am a Production Engineer with practical experience in industrial operations, engineering projects, data analysis, and continuous improvement.',
-    p2: 'My work focuses on connecting process design, technological tools, and analytical models to deliver pragmatic solutions, improve operational efficiency, and support strategic decision-making.',
-    p3: 'I have hands-on experience in enterprise systems transition and deployment (such as participating in the SAP rollout at Intelbras during the TOTVS migration), shop-floor process modeling, and building custom tools for data consolidation and tracking.',
-    educationTitle: 'Education & Credentials',
+    sectionTitle: 'About Me & Core Competencies',
+    sectionSubtitle: 'Production Engineer uniting industrial systems thinking, analytical data modeling, and practical automation.',
+    p1: 'I am a Production Engineer working at the intersection of industrial operations, data intelligence, and applied software technology. My approach pairs systemic engineering rigor with the hands-on capability to build functioning computational tools.',
+    p2: 'I have practical experience developing real deliverables: from engineering strategic executive dashboards for public management (such as the Santa Catarina Civil Defense statewide portal) to implementing heuristic algorithms for multimodal optimization and event-driven automation pipelines.',
+    p3: 'My goal is always to eliminate operational friction, turn unstructured data into actionable clarity, and craft software solutions that support dependable, evidence-based decisions.',
+    educationTitle: 'Education & Technical Foundation',
+    educationSummary: 'A solid foundation pairing the strategic and quantitative mindset of Production Engineering with applied technical training in systems and computation.',
+    educationItems: [
+      {
+        course: 'Production Engineering (B.S.)',
+        institution: 'Anhanguera Educacional',
+        focus: 'Operations research, industrial process design, quantitative modeling, and continuous improvement.'
+      },
+      {
+        course: 'Technical Degree in Computer Science & Processes',
+        institution: 'SENAI',
+        focus: 'Programming logic, systems architecture, relational data, and applied industrial automation.'
+      }
+    ],
+    skillsTitle: 'Core Capabilities',
+    skillsSubtitle: 'Key technical competencies consolidated through real-world projects and computational modeling.',
+    competencyDomains: [
+      {
+        title: 'Data Analytics & BI',
+        description: 'Building centralized data hubs, executive dashboards, KPI modeling, and data cleansing for operational intelligence.',
+        items: ['Interactive Dashboards', 'KPIs & Operational Metrics', 'SQL Queries', 'Data Wrangling', 'Power BI & Looker Studio']
+      },
+      {
+        title: 'Optimization & Operations Research',
+        description: 'Metaheuristic and computational algorithms for navigating complex nonlinear landscapes, line balancing, and decision models.',
+        items: ['Genetic Algorithms (GA)', 'Particle Swarm (PSO)', 'NumPy / SciPy', 'Multimodal Functions', 'Python Modeling']
+      },
+      {
+        title: 'Automation & Workflow Integration',
+        description: 'Orchestrating event-driven data pipelines, webhook connectors, API integrations, and eliminating repetitive manual workflows.',
+        items: ['n8n Workflow Automation', 'Webhooks & REST APIs', 'PostgreSQL', 'Python Scripts', 'Systems Integration']
+      }
+    ],
+    stackLabel: 'Core Stack & Technologies',
     specialtyLabel: 'Specialty',
     specialtyValue: 'Production Engineering & Data Analytics',
     locationLabel: 'Location',
     languagesLabel: 'Languages',
-    nativeLevel: 'Native',
-    intermediateLevel: 'Intermediate',
-    status: 'Available for projects and opportunities'
+    nativeLevel: 'Portuguese (Native)',
+    intermediateLevel: 'English (Intermediate)',
+    status: 'Available for technical projects and new opportunities'
   },
   contact: {
     sectionTitle: 'Contact',
-    sectionSubtitle: 'Direct channels for inquiries, technical collaborations, or professional opportunities.',
+    sectionSubtitle: 'Direct channels for inquiries, technical collaboration, or opportunities.',
     emailLabel: 'Email',
     phoneLabel: 'Phone',
     locationLabel: 'Location',
     copyEmail: 'Copy email',
-    emailCopied: 'Email copied',
+    emailCopied: 'Email copied!',
     socialLabel: 'Professional Profiles',
     formTitle: 'Send a Message',
     nameField: 'Name',
@@ -636,329 +761,270 @@ export const translationsEn: Translations = {
     emailField: 'Email',
     emailPlaceholder: 'your.email@example.com',
     messageField: 'Message',
-    messagePlaceholder: 'Tell me about your project or inquiry...',
+    messagePlaceholder: 'Describe your project or inquiry...',
     sendButton: 'Send message',
     sendingButton: 'Sending...',
     successTitle: 'Message sent successfully.',
-    successMessage: 'Thank you for reaching out! I will get back to you shortly via email.'
+    successMessage: 'Thank you for getting in touch! I will reply shortly to your email.'
   },
   footer: {
-    role: 'Production Engineer | Process & Data Analyst',
+    role: 'Production Engineer | Data & Automation',
     backToTop: 'Back to top ↑'
   },
   projectList: [
     {
       id: 'defesa-civil-dashboard',
-      title: 'Information Hub & Dashboard — Santa Catarina Civil Defense',
-      subtitle: 'Civil Defense in Schools Program (PDCE)',
+      title: 'Civil Defense in Schools — Data & Intelligence Hub',
+      subtitle: 'Statewide School Monitoring & Indicator Dashboard',
       category: 'analytics',
       categoryLabel: 'Data Analytics & BI',
       featured: true,
       featuredType: 'dashboard',
-      imageLabel: 'Civil Defense management dashboard',
+      imageLabel: 'Official PDCE Portal · SC',
       provenance: 'cv_confirmado',
-      provenanceLabel: 'Confirmed in resume',
-      summary: 'Development of a centralized solution for organizing, querying, and visualizing data from the Civil Defense in Schools Program (PDCE), providing tracking tools, indicators, and regional filters for data-informed decisions.',
-      tags: ['Dashboards', 'Indicators & KPIs', 'Data Visualization', 'Dynamic Filters', 'Information Management'],
+      provenanceLabel: 'Authentic Project',
+      summary: 'Development of the Civil Defense in Schools Program (PDCE) Data Hub for Santa Catarina, centralizing institution records, program adoption, and teacher certification metrics across 295 municipalities.',
+      tags: ['Dashboards', 'KPIs & Metrics', 'SC Civil Defense', 'Public Governance', 'Dynamic Filters'],
       specs: [
-        { label: 'Organization', value: 'Civil Defense of Santa Catarina' },
-        { label: 'Program', value: 'Civil Defense in Schools (PDCE)' },
-        { label: 'Objective', value: 'Data Centralization & Indicators' }
+        { label: 'Entity', value: 'Civil Defense of Santa Catarina' },
+        { label: 'Technical Support', value: 'Eng. Yuri Furtwaengler' },
+        { label: 'Scope', value: '295 Municipalities across SC' }
       ],
-      challenge: 'Centralizing initiative records and participant tracking across schools throughout the state in an agile, accessible visual format for leadership teams.',
-      solution: 'Created a unified consultation and tracking tool with regional drill-downs, cross-filtering, and clear strategic indicators to support program governance.',
+      challenge: 'Centralizing school records, program onboarding, and teacher training metrics into a high-responsiveness query tool for statewide coordinators and regional agencies (COREDEC / COMPDEC).',
+      solution: 'Engineered a unified operational dashboard with geographic drill-downs, municipality filtering, INEP code lookups, teacher certification tracking, and direct support integration.',
       methodology: [
-        'Requirements gathering with PDCE program stakeholders',
-        'Standardization and cleansing of collected data sources',
-        'Dashboard layout design featuring fast-filter criteria',
-        'Validation of views to support ongoing program decisions'
+        'Defining core variables and indicators with PDCE state program leaders',
+        'Validating municipal data records, school listings, and INEP codes',
+        'Designing an ergonomic query interface with dedicated regional filter buttons (Municipality, COREDEC, CRE, COMPDEC)',
+        'Connecting support channels and tracking teacher progress indicators for 2026'
       ],
-      techStack: ['Dashboards', 'Indicators & KPIs', 'Data Structuring', 'Management Information Systems']
+      techStack: ['Executive Dashboards', 'KPIs & Metrics', 'Data Modeling', 'Information Management']
     },
     {
       id: 'rastrigin-optimization',
-      title: 'Computational Optimization: Rastrigin Function',
-      subtitle: 'Heuristic Algorithms & Global Optimization',
+      title: 'Computational Optimization & Benchmarking (Rastrigin)',
+      subtitle: 'Effective Speedup (PAR/SEQ) & 3D Heuristic Algorithms',
       category: 'otimizacao',
       categoryLabel: 'Mathematical Optimization',
       featured: true,
       featuredType: 'rastrigin',
-      imageLabel: '3D multimodal mathematical surface',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Technical study in validation',
-      summary: 'Implementation and benchmark study of global optimization algorithms (Genetic Algorithms, Particle Swarm Optimization, and Momentum Gradient Descent) applied to the multimodal Rastrigin function, featuring an interactive 3D visualizer.',
-      tags: ['Python', 'NumPy', 'SciPy', 'Genetic Algorithms', 'PSO', '3D Visualization'],
+      imageLabel: 'Benchmark Speedup PAR/SEQ (2.8x w/ 9 workers)',
+      provenance: 'cv_confirmado',
+      provenanceLabel: 'Computational Implementation',
+      summary: 'Empirical benchmark and concurrent computing study applied to multimodal Rastrigin optimization, demonstrating effective speedup of up to 2.8x with 9 workers in parallel versus sequential mode, along with an interactive 3D visualizer.',
+      tags: ['Python', 'Multiprocessing', 'Speedup Benchmark', 'Genetic Algorithms', 'Canvas 3D'],
       specs: [
-        { label: 'Domain', value: '2D / n-dimensional space' },
-        { label: 'Global Minimum', value: 'f(0, 0) = 0' },
-        { label: 'Language', value: 'Python / SciPy / NumPy' }
+        { label: 'Max Speedup', value: '~2.8x (PAR/SEQ in 60s)' },
+        { label: 'Worker Scaling', value: '2 to 9 Concurrent Workers' },
+        { label: 'Global Minimum', value: 'f(0, 0) = 0' }
       ],
-      challenge: 'The Rastrigin test function is highly non-convex with numerous local minima. Local gradient methods tend to get trapped prematurely before discovering the global basin.',
-      solution: 'Built population-based stochastic algorithms (PSO and Genetic Algorithms) in Python with convergence tracking to evaluate their ability to escape local optima.',
+      challenge: 'Empirically evaluating acceleration gains (effective speedup) in parallel heuristic search versus single-thread sequential runs across multimodal landscapes.',
+      solution: 'Constructed an empirical benchmark using a multiprocessing worker pool (2 to 9 workers) plotting the real speedup curve up to 2.8x, paired with a 3D Rastrigin trajectory visualizer.',
       methodology: [
-        'Analytical modeling of the function f(x) = 20 + ∑(xi² - 10·cos(2π·xi))',
-        'Configuration of mutation and crossover genetic operators',
-        'Inertia weight and cognitive/social parameter tuning in PSO',
-        '3D surface projection and convergence trajectory rendering'
+        'Analytical definition of f(x) = 20 + ∑(xi² - 10·cos(2π·xi))',
+        'Executing controlled 60s benchmarks comparing parallel vs sequential runtimes',
+        'Measuring worker scalability and plotting empirical PAR/SEQ speedup curves',
+        'Interactive 3D surface projection and convergence trajectory exploration'
       ],
-      techStack: ['Python', 'NumPy', 'SciPy Optimize', 'Matplotlib', 'TypeScript / Canvas 3D'],
+      techStack: ['Python', 'Multiprocessing', 'NumPy / SciPy', 'Matplotlib', 'Canvas 3D'],
       codeSnippet: {
         language: 'python',
-        filename: 'rastrigin_optimizer.py',
-        code: `import numpy as np
+        filename: 'poc_rastrigin_tree_bench.py',
+        code: `import time
+from multiprocessing import Pool
+import numpy as np
 
 def rastrigin(x, A=10):
-    """Multimodal n-dimensional Rastrigin benchmark function."""
-    n = len(x)
-    return A * n + np.sum(x**2 - A * np.cos(2 * np.pi * x))
+    return A * len(x) + np.sum(x**2 - A * np.cos(2 * np.pi * x))
 
-def particle_swarm_optimization(cost_func, dim=2, num_particles=30, max_iter=80):
-    """Basic PSO implementation for continuous numerical optimization."""
-    w, c1, c2 = 0.72, 1.49, 1.49
-    pos = np.random.uniform(-5.12, 5.12, (num_particles, dim))
-    vel = np.random.uniform(-1.0, 1.0, (num_particles, dim))
-    pbest = pos.copy()
-    pbest_scores = np.array([cost_func(p) for p in pos])
-    gbest = pbest[np.argmin(pbest_scores)]
-    gbest_score = np.min(pbest_scores)
-    
-    trajectory = [gbest.copy()]
+def worker_search(args):
+    seed, max_iter, dim = args
+    np.random.seed(seed)
+    best_x = np.random.uniform(-5.12, 5.12, dim)
+    best_val = rastrigin(best_x)
     for _ in range(max_iter):
-        r1, r2 = np.random.rand(num_particles, dim), np.random.rand(num_particles, dim)
-        vel = w * vel + c1 * r1 * (pbest - pos) + c2 * r2 * (gbest - pos)
-        pos = np.clip(pos + vel, -5.12, 5.12)
-        
-        scores = np.array([cost_func(p) for p in pos])
-        better_mask = scores < pbest_scores
-        pbest[better_mask] = pos[better_mask]
-        pbest_scores[better_mask] = scores[better_mask]
-        
-        if np.min(pbest_scores) < gbest_score:
-            gbest = pbest[np.argmin(pbest_scores)]
-            gbest_score = np.min(pbest_scores)
-        trajectory.append(gbest.copy())
-        
-    return gbest, gbest_score, np.array(trajectory)`
+        cand = best_x + np.random.normal(0, 0.25, dim)
+        cand = np.clip(cand, -5.12, 5.12)
+        val = rastrigin(cand)
+        if val < best_val:
+            best_x, best_val = cand, val
+    return best_val
+
+def run_bench(workers=4, runs_per_worker=25, window_sec=60):
+    start = time.time()
+    args = [(i, 2000, 10) for i in range(workers * runs_per_worker)]
+    with Pool(processes=workers) as pool:
+        results = pool.map(worker_search, args)
+    elapsed = time.time() - start
+    return min(results), elapsed`
       }
     },
     {
-      id: 'sap-implementation',
-      title: 'SAP Rollout & Transition — Intelbras',
-      subtitle: 'Industrial Processes & Corporate ERP Migration',
-      category: 'automacao',
-      categoryLabel: 'Processes & Systems',
-      featured: true,
-      featuredType: 'dashboard',
-      imageLabel: 'Process mapping and ERP transition',
-      provenance: 'cv_confirmado',
-      provenanceLabel: 'Confirmed in resume',
-      summary: 'Participated in the SAP ERP rollout at Intelbras S.A. during the enterprise transition from legacy TOTVS to SAP, bridging shop-floor industrial needs with enterprise software workflows.',
-      tags: ['SAP', 'TOTVS', 'Industrial Processes', 'Systems Integration', 'Continuous Improvement'],
-      specs: [
-        { label: 'Company', value: 'Intelbras S.A.' },
-        { label: 'Transition', value: 'TOTVS to SAP' },
-        { label: 'Scope', value: 'Industrial Operations & Processes' }
-      ],
-      challenge: 'Ensuring manufacturing process continuity and operational compliance while migrating critical manufacturing flows from TOTVS to SAP.',
-      solution: 'Analyzed process adherence, mapped shop-floor requirements, and supported users during rollout to build structured, efficient operational routines.',
-      methodology: [
-        'Mapping existing manufacturing workflows',
-        'Identifying functional gaps between TOTVS and SAP configurations',
-        'Validating floor operations and training key stakeholders',
-        'Monitoring operational stability KPIs post-go-live'
-      ],
-      techStack: ['SAP', 'TOTVS', 'Process Mapping', 'Production Control', 'Continuous Improvement']
-    },
-    {
-      id: 'pcp-production-scheduling',
-      title: 'Line Balancing & Production Simulation (PCP)',
-      subtitle: 'Operations Research & Production Engineering',
-      category: 'otimizacao',
-      categoryLabel: 'Optimization & Production',
-      imageLabel: 'Workstation flow and takt time balance',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Technical study in validation',
-      summary: 'Computational model for cycle time analysis, bottleneck identification, and line balancing in a manufacturing line setting.',
-      tags: ['Python', 'Production Control', 'Queueing Theory', 'Process Mapping'],
-      specs: [
-        { label: 'Domain', value: 'Production Planning & Control' },
-        { label: 'Methodology', value: 'Discrete Event Simulation' }
-      ],
-      challenge: 'Assessing how cycle time variability influences work-in-progress (WIP) accumulation and delivery schedule reliability.',
-      solution: 'Constructed an analytical simulation of workstation buffers and throughput to identify bottleneck stations and suggest balanced configurations.',
-      methodology: [
-        'Measuring workstation cycle times and operational flow',
-        'Takt time calculation and stochastic balance estimation',
-        'Scenario testing with simulated workstation rearrangements'
-      ],
-      techStack: ['Python', 'SimPy', 'PCP', 'Industrial Engineering']
-    },
-    {
       id: 'n8n-automation-pipeline',
-      title: 'Automated Pipeline & Integration with n8n',
-      subtitle: 'Webhooks, APIs & Data Processing',
+      title: 'Automated Pipelines & Integration with n8n',
+      subtitle: 'Event-Driven Workflows, Webhooks & Data Cleansing',
       category: 'automacao',
       categoryLabel: 'Process Automation',
-      imageLabel: 'Automation workflow node diagram',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Technical study in validation',
-      summary: 'Architecture of automated integration flows linking incoming webhook triggers, Python data cleansing, relational database commits, and alert dispatchers.',
+      featured: true,
+      featuredType: 'n8n',
+      imageLabel: 'n8n node architecture',
+      provenance: 'cv_confirmado',
+      provenanceLabel: 'Developed Project',
+      summary: 'Architecture of automated integration flows connecting webhook entrypoints, Python data normalization, relational storage (PostgreSQL), and automated operational alerts with zero manual handoffs.',
       tags: ['n8n', 'Webhooks', 'REST APIs', 'PostgreSQL', 'Python'],
       specs: [
-        { label: 'Engine', value: 'n8n on Docker' },
-        { label: 'Database', value: 'PostgreSQL' }
+        { label: 'Orchestrator', value: 'n8n Workflow Engine' },
+        { label: 'Data Store', value: 'Relational PostgreSQL' },
+        { label: 'Transformation', value: 'Python / JSON Schema' }
       ],
-      challenge: 'Eliminating manual data handoffs between disconnected platforms without relying on repetitive spreadsheet copy-paste.',
-      solution: 'Engineered event-driven pipelines with JSON schema verification, automated retries, and structured relational persistence.',
+      challenge: 'Connecting disparate data sources and service flows without relying on error-prone manual spreadsheets or fragile copy-pasting.',
+      solution: 'Engineered event-driven pipelines with JSON schema verification, conditional node routing, transactional relational database commits, and automated alert dispatchers.',
       methodology: [
-        'Payload format standardization',
-        'Conditional routing node setup with error traps',
-        'Structured database table upserts and logging'
+        'Mapping inbound triggers via HTTP Webhooks',
+        'Configuring Python data transformation and cleaning nodes',
+        'Structured database transactions in PostgreSQL',
+        'Implementing exception routing and retry mechanisms'
       ],
       techStack: ['n8n', 'Python', 'PostgreSQL', 'Webhooks', 'Docker']
-    },
-    {
-      id: 'logistics-vrp-routing',
-      title: 'Vehicle Routing Problem (VRP)',
-      subtitle: 'Heuristic Graph Algorithms',
-      category: 'otimizacao',
-      categoryLabel: 'Mathematical Optimization',
-      imageLabel: 'Logistics network routing graph',
-      provenance: 'estudo_em_validacao',
-      provenanceLabel: 'Technical study in validation',
-      summary: 'Algorithmic approach to multi-stop delivery route optimization subject to capacity constraints and sequential visitation rules.',
-      tags: ['Python', 'Operations Research', 'Heuristics', 'Graphs'],
-      specs: [
-        { label: 'Problem', value: 'Vehicle Routing Problem (VRP)' },
-        { label: 'Approach', value: 'Constructive Heuristics' }
-      ],
-      challenge: 'Determining optimal stop sequences to minimize total travel distance across a multi-destination road network.',
-      solution: 'Applied combinatorial savings heuristics paired with local search improvements to produce cost-effective delivery paths.',
-      methodology: [
-        'Distance matrix generation across nodes',
-        'Initial route generation via savings heuristics',
-        'Iterative 2-opt local search refinement'
-      ],
-      techStack: ['Python', 'NetworkX', 'NumPy', 'Operations Research']
     }
   ],
-  skillCategories: [
+  // Other Works (Compact, minimized list)
+  otherWorksList: [
     {
-      id: 'processos-melhoria',
-      title: 'Processes & Continuous Improvement',
-      description: 'Frameworks and methodologies for operational analysis, standardization, and productivity gains.',
-      skills: [
-        {
-          name: 'Process Analysis & Optimization',
-          description: 'Evaluating workflow bottlenecks, diagnosing root causes, and designing pragmatic shop-floor improvements.',
-          tools: ['Process Mapping', 'Flow Analysis', 'Continuous Improvement']
-        },
-        {
-          name: 'Production Planning & Control (PCP)',
-          description: 'Capacity calculation, workstation takt time balancing, and manufacturing order tracking.',
-          tools: ['Production Control', 'Line Balancing', 'Factory Capacity']
-        },
-        {
-          name: 'Industrial Projects',
-          description: 'Execution of industrial engineering initiatives aimed at sustained efficiency and operational safety.',
-          tools: ['Industrial Projects', 'Operational Design']
-        },
-        {
-          name: 'Quality & Workplace Organization',
-          description: 'Implementation of standard operating procedures, 5S culture, and continuous improvement methods.',
-          tools: ['5S', 'Standardization', 'Continuous Improvement']
-        }
-      ]
+      id: 'trade-controller',
+      title: 'App Trade Controller & Algorithmic Strategies (Crypto & Equities)',
+      categoryBadge: 'Crypto & Equities · Binance & MT5',
+      badgeVariant: 'secondary',
+      statusLabel: 'Production-Ready & High-Efficiency',
+      isTradeHighlight: true,
+      description: 'High-efficiency platform for strategy modeling, backtesting, and automated execution (Binance & MT5). Features spread/slippage parameter tuning, S004 strategy (Deviation + Confirmed Derivative), dynamic least-cost transfer fee network routing across 10+ exchanges (CCXT), and instant Telegram alerting.',
+      tags: ['Python', 'CCXT', 'Binance & MT5', 'Quant Algorithms', 'Telegram Bot'],
+      imageSrc: '/assets/aistudio/image_2ac28b9b.png',
+      imageCaption: 'Operation Interface: App Trade Controller v1.0 (S004 Strategy, Win Rate, Profit Factor, Drawdown)',
+      secondaryImageSrc: '/assets/aistudio/image_ee79f82c.png',
+      secondaryImageCaption: 'Python CCXT Backend: Inter-exchange network fee routing and Telegram alerting engine',
+      metrics: [
+        { label: 'Markets', value: 'Binance (Crypto) & MT5 (Equities)' },
+        { label: 'CCXT Routing', value: '10 Exchanges (Lowest Fee)' },
+        { label: 'Alerting', value: 'Real-Time Telegram Bot' }
+      ],
+      codeSnippet: {
+        language: 'python',
+        filename: 'trade_network_router.py',
+        code: `import os
+import datetime
+from dotenv import load_dotenv
+import ccxt
+
+# Finds optimal network transfer path between exchanges
+def encontrar_melhor_rede_para_transferencia(moeda, ex1, ex2):
+    try:
+        ex1.load_markets()
+        ex2.load_markets()
+        net1 = ex1.currencies[moeda].get("networks", {})
+        net2 = ex2.currencies[moeda].get("networks", {})
+
+        comuns = set(net1.keys()) & set(net2.keys())
+        melhores = []
+        for rede in comuns:
+            fee1 = net1[rede].get("withdrawFee", float('inf'))
+            fee2 = net2[rede].get("withdrawFee", float('inf'))
+            if not net1[rede].get("withdrawEnabled") or not net2[rede].get("depositEnabled"):
+                continue
+            total_fee = fee1 + fee2
+            melhores.append((rede, total_fee))
+        melhores.sort(key=lambda x: x[1])
+        return melhores[0] if melhores else None
+    except Exception as e:
+        print(f"[Erro] encontrar_melhor_rede_para_transferencia: {e}")
+        return None
+
+def enviar_mensagem_telegram(mensagem):
+    import requests
+    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    requests.post(url, json={"chat_id": chat_id, "text": mensagem})`
+      }
     },
     {
-      id: 'dados-visualizacao',
-      title: 'Data Analytics & Visualization',
-      description: 'Transforming operational data into actionable dashboards and management reports.',
-      skills: [
-        {
-          name: 'Data Analysis & Visual Analytics',
-          description: 'Building consolidated operational tracking reports and data exploration interfaces.',
-          tools: ['Dashboards', 'Data Visualization', 'Reporting']
-        },
-        {
-          name: 'Indicators & KPIs',
-          description: 'Structuring performance metrics, monitoring variance against targets, and identifying trends.',
-          tools: ['Operational KPIs', 'Process Metrics']
-        },
-        {
-          name: 'Power BI & Looker Studio',
-          description: 'Developing interactive analytical reports with dynamic filters and intuitive drill-down views.',
-          tools: ['Power BI', 'Looker Studio']
-        },
-        {
-          name: 'SQL & Advanced Excel',
-          description: 'Writing relational database queries and building dynamic spreadsheets for day-to-day decisions.',
-          tools: ['SQL', 'Excel']
-        }
-      ]
+      id: 'conversor-imagens-pdf',
+      title: 'Batch Image Converter & PDF Merger (Desktop GUI)',
+      categoryBadge: 'Desktop GUI · Python Utility',
+      badgeVariant: 'primary',
+      statusLabel: 'Desktop Utility',
+      description: 'Desktop application built with CustomTkinter for high-speed batch image processing (JPEG, WEBP, PNG with fine compression & quality tuning) and integrated utility for sequential multi-PDF merging into a unified file.',
+      tags: ['Python', 'CustomTkinter', 'Pillow', 'PyPDF', 'Desktop GUI'],
+      imageSrc: '/assets/aistudio/image_6457b4b7.png',
+      imageCaption: 'ConversorImagens v1.0 UI (Batch Image Conversion Tabs and PDF Merger)',
+      metrics: [
+        { label: 'Supported Formats', value: 'JPEG, WEBP, PNG' },
+        { label: 'Output Control', value: 'Compression & Quality (0-100%)' },
+        { label: 'PDF Module', value: 'Instant Multi-Document Merge' }
+      ],
+      codeSnippet: {
+        language: 'python',
+        filename: 'conversor_imagens_gui.py',
+        code: `import os
+from PIL import Image
+
+def batch_convert(source_folder, output_format="WEBP", quality=90):
+    for root, _, files in os.walk(source_folder):
+        for f in files:
+            if f.lower().endswith(('.png', '.jpg', '.jpeg')):
+                in_path = os.path.join(root, f)
+                out_path = os.path.join(root, f"{os.path.splitext(f)[0]}.{output_format.lower()}")
+                with Image.open(in_path) as img:
+                    img.save(out_path, output_format, quality=quality, optimize=True)`
+      }
     },
     {
-      id: 'tecnologia-automacao',
-      title: 'Technology & Automation',
-      description: 'Applying programming and enterprise software to solve tangible operational challenges.',
-      skills: [
-        {
-          name: 'Automation & Technology',
-          description: 'Bridging industrial process requirements with software solutions for structured workflows.',
-          tools: ['Automation', 'Systems Integration']
-        },
-        {
-          name: 'Python',
-          description: 'Writing scripts for data cleaning, repetitive task automation, and algorithm prototyping.',
-          tools: ['Python', 'Data Wrangling', 'Automation Scripts']
-        },
-        {
-          name: 'Enterprise Systems Deployment (SAP / TOTVS)',
-          description: 'Experience in corporate ERP rollout and migration within manufacturing environments.',
-          tools: ['SAP', 'TOTVS', 'ERP Migration']
-        },
-        {
-          name: 'IT Technical Background',
-          description: 'Solid foundation in systems architecture, programming logic, and technical support from SENAI.',
-          tools: ['SENAI', 'Programming Logic', 'Systems']
-        }
-      ]
-    },
-    {
-      id: 'gestao-metodos',
-      title: 'Project Management & Agile Methods',
-      description: 'Coordinating deliverables, facilitating cross-functional communication, and managing change.',
-      skills: [
-        {
-          name: 'Project Management',
-          description: 'Leading initiatives with structured milestones, stakeholder updates, and delivery timelines.',
-          tools: ['Project Management', 'Planning']
-        },
-        {
-          name: 'Scrum & Kanban',
-          description: 'Employing visual task boards and agile cadences to prioritize operational work and control flow.',
-          tools: ['Scrum', 'Kanban']
-        },
-        {
-          name: 'Operations & Support Management',
-          description: 'Prior experience managing post-sales workflows, client communication, and resolution tracking.',
-          tools: ['Operations Support', 'Client Communication']
-        }
-      ]
+      id: 'gov-compras-pipeline',
+      title: 'Public Procurement Data Ingestion (compras.gov.br)',
+      categoryBadge: 'ETL Pipeline · REST API & Pandas',
+      badgeVariant: 'neutral',
+      statusLabel: 'Data Pipeline',
+      description: 'Python script utilizing Requests and Pandas querying the Brazilian Federal Government Open Procurement API (dadosabertos.compras.gov.br), structuring JSON payloads into analytical DataFrames for material item auditing.',
+      tags: ['Python', 'Pandas', 'Requests', 'REST API', 'Open Data'],
+      imageSrc: '/assets/aistudio/image_46ca9823.png',
+      imageCaption: 'Python gov.py script querying Federal Procurement API materials endpoint',
+      metrics: [
+        { label: 'Official Source', value: 'dadosabertos.compras.gov.br' },
+        { label: 'Structure', value: 'Pandas DataFrames' },
+        { label: 'Application', value: 'Material Item & Pricing Audit' }
+      ],
+      codeSnippet: {
+        language: 'python',
+        filename: 'gov.py',
+        code: `import requests
+import pandas as pd
+
+url = "https://dadosabertos.compras.gov.br/modulo-material/4_consultarItemMaterial"
+
+response = requests.get(url)
+dados = response.json()
+
+df = pd.DataFrame(dados['resultado'])
+print(df.info())
+print(df.head())
+print(dados.keys())`
+      }
     }
   ],
+  get snippetList() {
+    return this.otherWorksList;
+  },
+  skillCategories: [],
   education: [
     {
       course: 'Production Engineering (B.S.)',
-      institution: 'Anhanguera',
-      period: '02/2016 – 12/2021',
-      location: 'São José, Santa Catarina, Brazil'
+      institution: 'Anhanguera Educacional',
+      description: 'Operations research, process design, and quantitative modeling.'
     },
     {
-      course: 'IT Technician',
+      course: 'Technical Degree in Computer Science & Processes',
       institution: 'SENAI',
-      period: '09/2015 – 07/2017',
-      location: 'São José, Santa Catarina, Brazil'
+      description: 'Programming logic, systems architecture, and automation.'
     }
   ]
 };

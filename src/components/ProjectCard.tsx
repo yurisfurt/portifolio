@@ -12,55 +12,16 @@ interface ProjectCardProps {
 const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
   if (project.id === 'defesa-civil-dashboard') {
     return (
-      <div className="w-full h-44 sm:h-48 bg-[#F5F3EF] dark:bg-[#202C34] border-b border-[#DCE4E1] dark:border-[#344A52] flex items-center justify-center relative overflow-hidden group-hover:opacity-95 transition-opacity">
-        <svg viewBox="0 0 400 180" className="w-full h-full p-5 opacity-90" preserveAspectRatio="xMidYMid meet">
-          {/* Header Bar */}
-          <rect x="30" y="20" width="340" height="22" rx="4" fill="#FFFFFF" stroke="#DCE4E1" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#344A52]" />
-          <line x1="45" y1="31" x2="140" y2="31" stroke="#243746" className="dark:stroke-[#E7E9E6]" strokeWidth="2" strokeLinecap="round" />
-          <line x1="320" y1="31" x2="350" y2="31" stroke="#668B91" className="dark:stroke-[#89ABB0]" strokeWidth="2" strokeLinecap="round" />
-
-          {/* Metric cards */}
-          <rect x="30" y="52" width="105" height="44" rx="4" fill="#FFFFFF" stroke="#DCE4E1" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#344A52]" />
-          <line x1="42" y1="68" x2="85" y2="68" stroke="#668B91" className="dark:stroke-[#89ABB0]" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="42" y1="80" x2="115" y2="80" stroke="#DCE4E1" className="dark:stroke-[#344A52]" strokeWidth="1.5" strokeLinecap="round" />
-
-          <rect x="145" y="52" width="110" height="44" rx="4" fill="#FFFFFF" stroke="#DCE4E1" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#344A52]" />
-          <line x1="157" y1="68" x2="200" y2="68" stroke="#668B91" className="dark:stroke-[#89ABB0]" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="157" y1="80" x2="230" y2="80" stroke="#DCE4E1" className="dark:stroke-[#344A52]" strokeWidth="1.5" strokeLinecap="round" />
-
-          <rect x="265" y="52" width="105" height="44" rx="4" fill="#FFFFFF" stroke="#DCE4E1" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#344A52]" />
-          <line x1="277" y1="68" x2="320" y2="68" stroke="#668B91" className="dark:stroke-[#89ABB0]" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="277" y1="80" x2="350" y2="80" stroke="#DCE4E1" className="dark:stroke-[#344A52]" strokeWidth="1.5" strokeLinecap="round" />
-
-          {/* Table list */}
-          <rect x="30" y="106" width="340" height="52" rx="4" fill="#FFFFFF" stroke="#DCE4E1" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#344A52]" />
-          <line x1="45" y1="122" x2="355" y2="122" stroke="#DCE4E1" className="dark:stroke-[#344A52]" strokeWidth="1" />
-          <line x1="45" y1="138" x2="355" y2="138" stroke="#DCE4E1" className="dark:stroke-[#344A52]" strokeWidth="1" />
-        </svg>
-
-        <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#243746] dark:text-[#E7E9E6] bg-[#FFFFFF]/90 dark:bg-[#202C34]/90 px-2 py-0.5 rounded border border-[#DCE4E1] dark:border-[#344A52]">
-          {project.imageLabel || 'Painel de Indicadores PDCE'}
-        </span>
-      </div>
-    );
-  }
-
-  if (project.id === 'sap-implementation') {
-    return (
-      <div className="w-full h-44 sm:h-48 bg-[#F5F3EF] dark:bg-[#202C34] border-b border-[#DCE4E1] dark:border-[#344A52] flex items-center justify-center relative overflow-hidden group-hover:opacity-95 transition-opacity">
-        <svg viewBox="0 0 400 180" className="w-full h-full p-6 opacity-90" preserveAspectRatio="xMidYMid meet">
-          <rect x="50" y="60" width="100" height="60" rx="6" fill="#FFFFFF" stroke="#DCE4E1" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#344A52]" />
-          <text x="100" y="95" textAnchor="middle" fill="#668B91" className="dark:fill-[#89ABB0]" fontSize="12" fontFamily="monospace" fontWeight="bold">TOTVS</text>
-
-          <path d="M 170 90 L 230 90" stroke="#243746" className="dark:stroke-[#E7E9E6]" strokeWidth="2" strokeDasharray="4 4" />
-          <circle cx="200" cy="90" r="3.5" fill="#668B91" className="dark:fill-[#89ABB0]" />
-
-          <rect x="250" y="60" width="100" height="60" rx="6" fill="#FFFFFF" stroke="#243746" strokeWidth="1.5" className="dark:fill-[#2D3B44] dark:stroke-[#89ABB0]" />
-          <text x="300" y="95" textAnchor="middle" fill="#243746" className="dark:fill-[#E7E9E6]" fontSize="13" fontFamily="monospace" fontWeight="bold">SAP</text>
-        </svg>
-
-        <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#243746] dark:text-[#E7E9E6] bg-[#FFFFFF]/90 dark:bg-[#202C34]/90 px-2 py-0.5 rounded border border-[#DCE4E1] dark:border-[#344A52]">
-          {project.imageLabel || 'ERP Rollout'}
+      <div className="w-full h-44 sm:h-48 bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity">
+        <img
+          src="/assets/aistudio/image_89f17629.png"
+          alt={project.title}
+          className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1B2933]/50 via-transparent to-transparent pointer-events-none" />
+        <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59] backdrop-blur-xs">
+          {project.imageLabel || 'Central Oficial PDCE'}
         </span>
       </div>
     );
@@ -68,45 +29,46 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
 
   if (project.id === 'rastrigin-optimization') {
     return (
-      <div className="w-full h-44 sm:h-48 bg-[#F5F3EF] dark:bg-[#202C34] border-b border-[#DCE4E1] dark:border-[#344A52] flex items-center justify-center relative overflow-hidden group-hover:opacity-95 transition-opacity">
-        <svg viewBox="0 0 400 180" className="w-full h-full p-4 opacity-90" preserveAspectRatio="xMidYMid meet">
-          <ellipse cx="200" cy="90" rx="140" ry="55" fill="none" stroke="#DCE4E1" className="dark:stroke-[#344A52]" strokeWidth="0.8" strokeDasharray="3 3" />
-          <ellipse cx="200" cy="90" rx="100" ry="38" fill="none" stroke="#668B91" className="dark:stroke-[#89ABB0]" strokeWidth="0.8" opacity="0.6" />
-          <ellipse cx="200" cy="90" rx="65" ry="24" fill="none" stroke="#668B91" className="dark:stroke-[#89ABB0]" strokeWidth="1" opacity="0.8" />
-          <ellipse cx="200" cy="90" rx="30" ry="12" fill="none" stroke="#243746" className="dark:stroke-[#E7E9E6]" strokeWidth="1.5" />
-
-          {/* Trajectory */}
-          <path
-            d="M 85 45 Q 120 110 160 80 T 200 90"
-            fill="none"
-            stroke="#243746"
-            className="dark:stroke-[#E7E9E6]"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-          />
-          <circle cx="85" cy="45" r="3.5" fill="#668B91" className="dark:fill-[#89ABB0]" />
-          <circle cx="135" cy="90" r="2.5" fill="#668B91" className="dark:fill-[#89ABB0]" />
-          <circle cx="200" cy="90" r="4.5" fill="#243746" className="dark:fill-[#E7E9E6]" />
-        </svg>
-
-        <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#243746] dark:text-[#E7E9E6] bg-[#FFFFFF]/90 dark:bg-[#202C34]/90 px-2 py-0.5 rounded border border-[#DCE4E1] dark:border-[#344A52]">
-          {project.imageLabel || 'Superfície 3D'}
+      <div className="w-full h-44 sm:h-48 bg-[#FFFFFF] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity flex items-center justify-center p-2">
+        <img
+          src="/assets/aistudio/poc_rastrigin_tree_bench_speedup_efetivo_60s_vs_workers_f13b9833.png"
+          alt={project.title}
+          className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1B2933]/40 via-transparent to-transparent pointer-events-none" />
+        <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59] backdrop-blur-xs">
+          {project.imageLabel || 'Benchmark Speedup (2.8x)'}
         </span>
       </div>
     );
   }
 
-  // Default schematic preview for others
+  // Default schematic (n8n pipeline)
   return (
-    <div className="w-full h-44 sm:h-48 bg-[#F5F3EF] dark:bg-[#202C34] border-b border-[#DCE4E1] dark:border-[#344A52] flex items-center justify-center relative overflow-hidden group-hover:opacity-95 transition-opacity">
-      <svg viewBox="0 0 320 140" className="w-full h-full p-4 opacity-80" preserveAspectRatio="xMidYMid meet">
-        <line x1="30" y1="70" x2="290" y2="70" stroke="#DCE4E1" className="dark:stroke-[#344A52]" strokeWidth="1" strokeDasharray="3 3" />
-        <rect x="40" y="50" width="45" height="40" rx="5" fill="#FFFFFF" stroke="#668B91" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#89ABB0]" />
-        <rect x="135" y="50" width="45" height="40" rx="5" fill="#FFFFFF" stroke="#668B91" strokeWidth="1" className="dark:fill-[#2D3B44] dark:stroke-[#89ABB0]" />
-        <rect x="230" y="50" width="45" height="40" rx="5" fill="#FFFFFF" stroke="#243746" strokeWidth="1.2" className="dark:fill-[#2D3B44] dark:stroke-[#E7E9E6]" />
+    <div className="w-full h-44 sm:h-48 bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] flex items-center justify-center relative overflow-hidden group-hover:opacity-95 transition-opacity">
+      <svg viewBox="0 0 360 160" className="w-full h-full p-4 opacity-90" preserveAspectRatio="xMidYMid meet">
+        {/* Webhook trigger */}
+        <rect x="25" y="60" width="70" height="40" rx="6" fill="#FFFFFF" stroke="#E67E67" strokeWidth="1" className="dark:fill-[#283B47] dark:stroke-[#F08F79]" />
+        <text x="60" y="84" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="10" fontFamily="monospace" fontWeight="600">Webhook</text>
+
+        <line x1="95" y1="80" x2="145" y2="80" stroke="#E67E67" className="dark:stroke-[#F08F79]" strokeWidth="1.5" strokeDasharray="3 3" />
+        <polygon points="145,80 137,76 137,84" fill="#E67E67" className="dark:fill-[#F08F79]" />
+
+        {/* n8n Router & Python processing */}
+        <rect x="145" y="45" width="85" height="70" rx="6" fill="#FFFFFF" stroke="#223747" strokeWidth="1.5" className="dark:fill-[#283B47] dark:stroke-[#F5F2EC]" />
+        <text x="187" y="75" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="12" fontFamily="monospace" fontWeight="bold">n8n</text>
+        <text x="187" y="93" textAnchor="middle" fill="#E67E67" className="dark:fill-[#F08F79]" fontSize="9" fontFamily="monospace">Pipeline</text>
+
+        <line x1="230" y1="80" x2="275" y2="80" stroke="#E67E67" className="dark:stroke-[#F08F79]" strokeWidth="1.5" strokeDasharray="3 3" />
+        <polygon points="275,80 267,76 267,84" fill="#E67E67" className="dark:fill-[#F08F79]" />
+
+        {/* Postgres DB destination */}
+        <rect x="275" y="60" width="65" height="40" rx="6" fill="#FFFFFF" stroke="#E5A94C" strokeWidth="1" className="dark:fill-[#283B47] dark:stroke-[#E8B665]" />
+        <text x="307" y="84" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="10" fontFamily="monospace" fontWeight="600">PostgreSQL</text>
       </svg>
-      <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#243746] dark:text-[#E7E9E6] bg-[#FFFFFF]/90 dark:bg-[#202C34]/90 px-2 py-0.5 rounded border border-[#DCE4E1] dark:border-[#344A52]">
-        {project.imageLabel || 'Diagrama técnico'}
+      <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59]">
+        {project.imageLabel || 'Arquitetura n8n'}
       </span>
     </div>
   );
@@ -118,33 +80,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
   return (
     <article
       onClick={() => onSelect(project)}
-      className="group cursor-pointer rounded-xl bg-[#FFFFFF] dark:bg-[#2D3B44] border border-[#DCE4E1] dark:border-[#344A52] overflow-hidden flex flex-col justify-between transition-all hover:border-[#668B91] dark:hover:border-[#89ABB0] hover:shadow-xs"
+      className="group cursor-pointer rounded-xl bg-[#FFFFFF] dark:bg-[#283B47] border border-[#E3DED7] dark:border-[#364C59] overflow-hidden flex flex-col justify-between transition-all hover:border-[#E67E67] dark:hover:border-[#F08F79] hover:shadow-md"
     >
       <div>
         <ProjectVisualPreview project={project} />
 
         <div className="p-5">
           {/* Category & Provenance */}
-          <div className="flex items-center justify-between text-xs font-mono text-[#668B91] dark:text-[#89ABB0]">
+          <div className="flex items-center justify-between text-xs font-mono text-[#5B7382] dark:text-[#9EB3BF]">
             <span>{project.categoryLabel}</span>
-            {project.provenance === 'cv_confirmado' ? (
-              <span className="text-[10px] text-[#243746] dark:text-[#E7E9E6] font-semibold bg-[#DCE4E1]/50 dark:bg-[#344A52] px-1.5 py-0.5 rounded">
-                {t.projects.confirmedDeliverable}
-              </span>
-            ) : (
-              <span className="text-[10px] text-[#668B91] dark:text-[#89ABB0]">
-                {t.projects.technicalStudy}
-              </span>
-            )}
+            <span className="text-[10px] text-[#223747] dark:text-[#F5F2EC] font-semibold bg-[#F7F5F1] dark:bg-[#1B2933] border border-[#E3DED7] dark:border-[#364C59] px-1.5 py-0.5 rounded">
+              {project.provenanceLabel || t.projects.confirmedDeliverable}
+            </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-base font-bold text-[#243746] dark:text-[#E7E9E6] group-hover:text-[#668B91] dark:group-hover:text-[#89ABB0] transition-colors mt-1.5">
+          <h3 className="text-base font-bold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] transition-colors mt-1.5 leading-snug">
             {project.title}
           </h3>
 
           {/* Summary */}
-          <p className="text-xs sm:text-sm text-[#243746]/80 dark:text-[#E7E9E6]/80 mt-2 line-clamp-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#223747]/80 dark:text-[#F5F2EC]/80 mt-2 line-clamp-3 leading-relaxed">
             {project.summary}
           </p>
 
@@ -153,7 +109,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
             {project.tags.slice(0, 3).map((tag, idx) => (
               <span
                 key={idx}
-                className="text-[11px] font-mono text-[#668B91] dark:text-[#89ABB0]"
+                className="text-[11px] font-mono text-[#5B7382] dark:text-[#9EB3BF]"
               >
                 {tag}{idx < Math.min(2, project.tags.length - 1) ? ' ·' : ''}
               </span>
@@ -163,12 +119,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
       </div>
 
       {/* Footer Action */}
-      <div className="px-5 pb-5 pt-3 border-t border-[#DCE4E1] dark:border-[#344A52] flex items-center justify-between text-xs">
-        <span className="text-[#668B91] dark:text-[#89ABB0] font-mono text-[11px] truncate max-w-[65%]">
+      <div className="px-5 pb-5 pt-3 border-t border-[#E3DED7] dark:border-[#364C59] flex items-center justify-between text-xs">
+        <span className="text-[#5B7382] dark:text-[#9EB3BF] font-mono text-[11px] truncate max-w-[65%]">
           {project.specs?.[0]?.value || t.projects.specDetailsAvailable}
         </span>
 
-        <span className="inline-flex items-center gap-1 font-semibold text-[#243746] dark:text-[#E7E9E6] group-hover:text-[#668B91] dark:group-hover:text-[#89ABB0] transition-colors shrink-0">
+        <span className="inline-flex items-center gap-1 font-semibold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] transition-colors shrink-0">
           <span>{t.projects.viewProject}</span>
           <ArrowUpRight className="w-3.5 h-3.5" />
         </span>

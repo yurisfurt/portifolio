@@ -55,6 +55,30 @@ export interface ExperienceItem {
 export interface EducationItem {
   course: string;
   institution: string;
-  period: string;
-  location: string;
+  period?: string;
+  location?: string;
+  description?: string;
 }
+
+export interface OtherWorkItem {
+  id: string;
+  title: string;
+  categoryBadge: string;
+  badgeVariant?: 'primary' | 'secondary' | 'neutral';
+  description: string;
+  tags: string[];
+  imageSrc?: string;
+  secondaryImageSrc?: string;
+  imageCaption?: string;
+  secondaryImageCaption?: string;
+  isTradeHighlight?: boolean;
+  codeSnippet?: {
+    language: string;
+    filename: string;
+    code: string;
+  };
+  metrics?: { label: string; value: string }[];
+  statusLabel?: string;
+}
+
+export type CodeSnippetItem = OtherWorkItem;

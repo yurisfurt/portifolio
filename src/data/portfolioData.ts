@@ -6,10 +6,9 @@ export const PERSONAL_INFO = {
   role: 'Engenheiro de Produção | Analista de Processos e Dados | Melhoria Contínua',
   shortRole: 'Processos, Dados & Automação',
   email: 'yurifurtp@gmail.com',
-  phone: '(48) 99102-0040',
   location: 'São José, Santa Catarina',
-  github: 'https://github.com/yurifurtp',
-  linkedin: 'https://linkedin.com/in/yurifurtwaengler',
+  github: 'https://github.com/yurisfurt',
+  linkedin: 'https://www.linkedin.com/in/yuri-siqueira-furtwaengler-8a1667134',
   headline: 'Dados que geram soluções.',
   subheadline: 'Engenheiro de Produção com experiência em processos industriais, projetos, análise de dados e melhoria contínua. Atuação na integração entre processos, tecnologia e análise para desenvolver soluções práticas e apoiar a tomada de decisão.',
   shortBio: 'Engenheiro de Produção com experiência em processos industriais, projetos, análise de dados e melhoria contínua. Atuação na integração entre processos, tecnologia e análise para desenvolver soluções práticas, melhorar a eficiência operacional e apoiar a tomada de decisão. Experiência em projetos de implantação de sistemas, desenvolvimento de soluções para operações industriais e construção de ferramentas de análise e acompanhamento de informações.',
@@ -132,32 +131,31 @@ def particle_swarm_optimization(cost_func, dim=2, num_particles=30, max_iter=80)
     }
   },
   {
-    id: 'sap-implementation',
-    title: 'Transição e Implementação do SAP — Intelbras',
-    subtitle: 'Processos Industriais & Mudança de ERP Corporativo',
+    id: 'n8n-automation-pipeline',
+    title: 'Automação de Pipelines & Integração com n8n',
+    subtitle: 'Webhooks, APIs & Tratamento de Dados',
     category: 'automacao',
-    categoryLabel: 'Processos & Sistemas',
+    categoryLabel: 'Automação de Processos',
     featured: true,
-    featuredType: 'dashboard',
-    imageLabel: 'Mapeamento de processos e transição de sistema',
+    featuredType: 'n8n',
+    imageLabel: 'Diagrama de fluxo de automação',
     provenance: 'cv_confirmado',
-    provenanceLabel: 'Comprovado em currículo',
-    summary: 'Participação na implementação do SAP na Intelbras S.A. durante a transição do sistema TOTVS para o SAP, integrando necessidades de processos industriais a soluções tecnológicas corporativas.',
-    tags: ['SAP', 'TOTVS', 'Processos Industriais', 'Integração de Sistemas', 'Melhoria Contínua'],
+    provenanceLabel: 'Projeto Desenvolvido',
+    summary: 'Estruturação de fluxos de integração automatizados conectando entradas via webhooks, tratamento de dados em Python, armazenamento em banco relacional (PostgreSQL) e distribuição de notificações.',
+    tags: ['n8n', 'Webhooks', 'REST APIs', 'PostgreSQL', 'Python'],
     specs: [
-      { label: 'Empresa', value: 'Intelbras S.A.' },
-      { label: 'Transição', value: 'TOTVS para SAP' },
-      { label: 'Escopo', value: 'Processos Industriais e Operações' }
+      { label: 'Orquestrador', value: 'n8n em Docker' },
+      { label: 'Camada de Dados', value: 'PostgreSQL Relacional' },
+      { label: 'Tratamento', value: 'Python / JSON Schema' }
     ],
-    challenge: 'Garantir a continuidade e aderência dos fluxos operacionais industriais durante a migração de um sistema legado TOTVS para a plataforma corporativa SAP.',
-    solution: 'Atuação na análise de aderência de processos, mapeamento de requisitos industriais e suporte à estruturação de fluxos operacionais mais eficientes no novo ambiente.',
+    challenge: 'Integrar fontes de dados heterogêneas sem depender de rotinas manuais de cópia ou intervenções repetitivas.',
+    solution: 'Criação de pipelines orientados a eventos com validação de schemas JSON, tratamento de exceções e persistência em banco relacional.',
     methodology: [
-      'Mapeamento dos fluxos de trabalho industriais existentes',
-      'Identificação de lacunas de processo e parametrização entre TOTVS e SAP',
-      'Validação de operações e suporte aos usuários-chave na transição',
-      'Acompanhamento de indicadores de estabilidade operacional pós-migração'
+      'Padronização de formatos de payload de entrada',
+      'Configuração de nós condicionais e tratamento de erros',
+      'Persistência estruturada em tabelas analíticas'
     ],
-    techStack: ['SAP', 'TOTVS', 'Mapeamento de Processos', 'PCP', 'Melhoria Contínua']
+    techStack: ['n8n', 'Python', 'PostgreSQL', 'Webhooks', 'Docker']
   }
 ];
 

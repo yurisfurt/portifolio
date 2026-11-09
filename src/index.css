@@ -6,25 +6,32 @@
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
     
-    --canvas: #F5F3EF;
+    /* Paleta Azul petróleo + Coral (Tema Claro) */
+    --canvas: #F7F5F1;
     --surface: #FFFFFF;
-    --petrol: #243746;
-    --petrol-soft: #668B91;
-    --neutral-border: #DCE4E1;
+    --text-primary: #223747;
+    --text-muted: #5B7382;
+    --accent-primary: #E67E67;
+    --accent-secondary: #E5A94C;
+    --neutral-border: #E3DED7;
   }
 
   .dark {
-    --canvas: #202C34;
-    --surface: #2D3B44;
-    --petrol: #E7E9E6;
-    --petrol-soft: #89ABB0;
-    --neutral-border: #344A52;
+    /* Paleta Azul petróleo + Coral (Tema Escuro) */
+    --canvas: #1B2933;
+    --surface: #283B47;
+    --text-primary: #F5F2EC;
+    --text-muted: #9EB3BF;
+    --accent-primary: #F08F79;
+    --accent-secondary: #E8B665;
+    --neutral-border: #364C59;
   }
 
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
     background-color: var(--canvas);
+    color: var(--text-primary);
   }
 
   code, pre, .font-mono {
