@@ -184,13 +184,13 @@ export const translationsPt: Translations = {
     sectionSubtitle: 'Soluções desenvolvidas com foco em visualização analítica, otimização computacional e integração de fluxos.',
     flagshipBadge: 'Projeto Principal · Central de Dados Governamental',
     flagshipTitle: 'Central de Dados — Programa Defesa Civil na Escola',
-    flagshipSubtitle: 'Painel Estadual de Acompanhamento Escolar & Indicadores (SC)',
-    flagshipDescription: 'Solução centralizada para consolidação, cruzamento e consulta das informações das escolas participantes do programa nos municípios catarinenses. Permite filtragem dinâmica por Município, COREDEC, CRE e COMPDEC, monitorando status de adesão, capacitação de novos professores e métricas de impacto educacional.',
+    flagshipSubtitle: 'Painel Estadual de Consulta Escolar e Docente (SC)',
+    flagshipDescription: 'Dashboard desenvolvido com a Defesa Civil de SC para auxiliar os professores de todas as escolas do estado na consulta do cadastro da escola e dos docentes no programa, integrando a planilha oficial ao ecossistema Google com foco em praticidade e zero custo adicional ao órgão público.',
     flagshipDeveloper: 'Projeto desenvolvido com apoio técnico de Eng. Yuri Furtwaengler',
     flagshipStats: [
-      { label: 'Abrangência Territorial', value: '295 Municípios de SC' },
-      { label: 'Estrutura de Filtragem', value: 'COREDEC / CRE / COMPDEC' },
-      { label: 'Monitoramento', value: 'INEP, Professores & Alunos' }
+      { label: 'Público-alvo', value: 'Escolas e Professores de SC' },
+      { label: 'Integração', value: 'Planilha Oficial + Google' },
+      { label: 'Sustentabilidade', value: 'Ferramenta Gratuita · Custo Zero' }
     ],
     flagshipExploreBtn: 'Ver Estudo de Caso Completo',
     filterAll: 'Todos (3)',
@@ -210,11 +210,11 @@ export const translationsPt: Translations = {
     close: 'Fechar',
     copyCode: 'Copiar código',
     codeCopied: 'Copiado para a área de transferência',
-    interactive3DTitle: 'Simulação Interativa 3D (Clique e arraste para rotacionar)',
-    interactive3DSubtitle: 'Explore a rotação e convergência dos algoritmos diretamente na tela',
-    interactive3DActive: 'Visualizador ativo',
-    benchmarkGraphTitle: 'Benchmark Real de Speedup: Paralelo vs Sequencial (PAR/SEQ)',
-    benchmarkGraphSubtitle: 'Curva experimental de aceleração em janela de 60s escalando de 2 até 9 workers'
+    interactive3DTitle: 'Visualizador 3D Simplificado · Resultados Reais (runs.csv)',
+    interactive3DSubtitle: 'Compare o ganho (×) de cada estratégia e clique nas colunas para ver os 5 desafios',
+    interactive3DActive: '35/35 runs validadas',
+    benchmarkGraphTitle: 'Smart Heuristic · Dividir o trabalho. Medir o resultado.',
+    benchmarkGraphSubtitle: 'Busca sequencial (7,99 s) vs Busca distribuída TREE (3,21 s) · Mediana de 5 desafios por configuração'
   },
   snippets: {
     sectionTitle: 'Demais Trabalhos',
@@ -341,7 +341,7 @@ export const translationsPt: Translations = {
     {
       id: 'defesa-civil-dashboard',
       title: 'Central de Dados — Programa Defesa Civil na Escola',
-      subtitle: 'Painel Estadual de Acompanhamento & Indicadores Educacionais',
+      subtitle: 'Consulta Escolar e Docente · Integração Planilha & Ecossistema Google',
       category: 'analytics',
       categoryLabel: 'Análise de Dados & BI',
       featured: true,
@@ -349,81 +349,50 @@ export const translationsPt: Translations = {
       imageLabel: 'Central Oficial PDCE · SC',
       provenance: 'cv_confirmado',
       provenanceLabel: 'Projeto Real Desenvolvido',
-      summary: 'Desenvolvimento da Central de Dados do Programa Defesa Civil na Escola (PDCE) de Santa Catarina, centralizando as informações de instituições de ensino, controle de adesão e formação de professores nos 295 municípios.',
-      tags: ['Dashboards', 'Indicadores & KPIs', 'Defesa Civil SC', 'Gestão Pública', 'Filtros Dinâmicos'],
+      summary: 'Dashboard desenvolvido em parceria com a Defesa Civil de SC para auxiliar os professores de todas as escolas do estado na consulta do cadastro da escola e dos docentes no programa, integrando a planilha oficial ao ecossistema Google por meio de ferramenta gratuita já disponível ao órgão público.',
+      tags: ['Ecossistema Google', 'Google Sheets', 'Dashboards', 'Defesa Civil SC', 'Filtros Dinâmicos'],
       specs: [
         { label: 'Entidade', value: 'Defesa Civil de Santa Catarina' },
-        { label: 'Apoio Técnico', value: 'Eng. Yuri Furtwaengler' },
-        { label: 'Escopo', value: '295 Municípios do Estado de SC' }
+        { label: 'Integração', value: 'Planilha Oficial + Ecossistema Google' },
+        { label: 'Viabilidade', value: 'Ferramenta Gratuita · Escolas de SC' }
       ],
-      challenge: 'Unificar a base cadastral e de acompanhamento de todas as escolas estaduais e municipais participantes do PDCE em uma interface ágil de consulta para a coordenação estadual, COREDEC e COMPDEC.',
-      solution: 'Estruturação de um painel de acesso centralizado com navegação geográfica, filtros por município, código INEP, situação de cadastro docente e relatórios instantâneos de formação.',
+      challenge: 'Possibilitar a busca rápida de informações por professores de todas as escolas de Santa Catarina sobre o cadastro escolar e docente no programa, evitando a necessidade de desenvolver e manter um sistema tradicional de alto custo.',
+      solution: 'Integração prática da planilha de controle da Defesa Civil com recursos gratuitos do ecossistema Google já disponíveis para o órgão público, entregando um dashboard funcional de baixo esforço operacional e fácil manutenção.',
       methodology: [
-        'Levantamento das variáveis prioritárias com a coordenação do programa PDCE',
-        'Padronização e validação das bases de dados municipais e códigos INEP',
-        'Construção da interface visual de acesso com botões setoriais de filtragem rápida (Município, COREDEC, CRE, COMPDEC)',
-        'Integração de canais de suporte e métricas de professores formados para 2026'
+        'Mapeamento das informações prioritárias buscadas pelos professores de todo o estado (código INEP, situação da escola e cadastro docente)',
+        'Integração direta entre a planilha oficial da Defesa Civil e o ecossistema Google sem contratação de licenças pagas',
+        'Estruturação da consulta com filtros ágeis por Município, Escola, COREDEC, CRE e COMPDEC',
+        'Implementação focada nos recursos já disponíveis ao órgão público, garantindo uso imediato, prático e sustentável'
       ],
-      techStack: ['Dashboards Estratégicos', 'KPIs & Indicadores', 'Modelagem de Dados', 'Gestão de Informações']
+      techStack: ['Ecossistema Google', 'Google Sheets', 'Dashboards Interativos', 'Integração de Dados', 'Solução Custo Zero']
     },
     {
       id: 'rastrigin-optimization',
-      title: 'Otimização Computacional & Benchmarking (Rastrigin)',
-      subtitle: 'Speedup Efetivo (PAR/SEQ) & Algoritmos Heurísticos 3D',
+      title: 'Otimização Computacional & Busca Distribuída (TREE)',
+      subtitle: 'Smart Heuristic · Speedup 2,49× e Análise Paramétrica 3D',
       category: 'otimizacao',
       categoryLabel: 'Otimização Matemática',
       featured: true,
       featuredType: 'rastrigin',
-      imageLabel: 'Benchmark Speedup PAR/SEQ (2.8x c/ 9 workers)',
+      imageLabel: 'Smart Heuristic · 2,49× Ganho',
       provenance: 'cv_confirmado',
-      provenanceLabel: 'Implementação Computacional',
-      summary: 'Estudo experimental e benchmark de computação concorrente aplicado à otimização da função multimodal de Rastrigin, demonstrando speedup efetivo de até 2.8x com 9 workers em regime paralelo versus sequencial, além de visualizador 3D interativo.',
-      tags: ['Python', 'Multiprocessing', 'Speedup Benchmark', 'Algoritmos Genéticos', 'Canvas 3D'],
+      provenanceLabel: 'Demonstração de Engenharia',
+      summary: 'Benchmark de busca computacional distribuída sobre 35 execuções reais (7 configurações × 5 desafios). A estratégia TREE com 4 processos e bloco 16.384 reduziu a mediana de 7,99 s (sequencial) para 3,21 s — ganho de 2,49× (59,8% menos tempo) contra 1,04× da divisão fixa.',
+      tags: ['Python', 'Multiprocessing', 'TREE Partitioning', 'Benchmark 3D', 'SHA-256 Search'],
       specs: [
-        { label: 'Speedup Máximo', value: '~2.8x (PAR/SEQ em 60s)' },
-        { label: 'Escala de Workers', value: '2 a 9 Workers Concorrentes' },
-        { label: 'Mínimo Global', value: 'f(0, 0) = 0' }
+        { label: 'Ganho Medido', value: '2,49× (59,8% menos tempo)' },
+        { label: 'Mediana Seq vs TREE', value: '7,99 s vs 3,21 s (~982k aval/s)' },
+        { label: 'Validação (runs.csv)', value: '35/35 buscas validadas' }
       ],
-      challenge: 'Avaliar empiricamente os ganhos de aceleração (speedup efetivo) na busca heurística paralela contra a execução sequencial em cenários de alta dimensionalidade multimodal.',
-      solution: 'Implementação de benchmark com pool de workers concorrentes (2 a 9 workers) registrando a curva de speedup real até 2.8x, acoplado ao modelo tridimensional de exploração da superfície de Rastrigin.',
+      challenge: 'Na divisão estática por faixas (static), workers terminam em tempos diferentes ou avaliam não-determinismos mais distantes (~6,93 s / 1,15× com 2 proc e 7,68 s / 1,04× com 4 proc), desperdiçando paralelismo.',
+      solution: 'Particionamento dinâmico TREE sob demanda com blocos de 16.384 e 131.072: mantém os processos ocupados até encontrar o menor nonce válido, alcançando 1,77× (2 proc) e 2,49× (4 proc) com bloco 16.384.',
       methodology: [
-        'Modelagem analítica da função f(x) = 20 + ∑(xi² - 10·cos(2π·xi))',
-        'Execução de testes controlados de 60s comparando tempos PAR versus SEQ',
-        'Coleta de métricas e traçado da curva de speedup efetivo por número de workers',
-        'Renderização 3D da superfície e simulação interativa das trajetórias de convergência'
+        '35 execuções pareadas (5 desafios × 7 configurações: sequential, static 2/4p e tree 2/4p × 16k/131k) registradas em runs.csv',
+        'Comparação por mediana de tempo total (elapsed_s): Sequencial 7,99 s · Fixa 2p 6,93 s (1,15×) · Fixa 4p 7,68 s (1,04×)',
+        'Resultados TREE: 2p/131k = 4,76 s (1,68×) · 2p/16k = 4,52 s (1,77×) · 4p/131k = 3,43 s (2,33×) · 4p/16k = 3,21 s (2,49×)',
+        'Taxa agregada superior a 982 mil a 1,16 milhão de avaliações/s com 100% de digests validados (35/35)'
       ],
-      techStack: ['Python', 'Multiprocessing', 'NumPy / SciPy', 'Matplotlib', 'Canvas 3D'],
-      codeSnippet: {
-        language: 'python',
-        filename: 'poc_rastrigin_tree_bench.py',
-        code: `import time
-from multiprocessing import Pool
-import numpy as np
-
-def rastrigin(x, A=10):
-    return A * len(x) + np.sum(x**2 - A * np.cos(2 * np.pi * x))
-
-def worker_search(args):
-    seed, max_iter, dim = args
-    np.random.seed(seed)
-    best_x = np.random.uniform(-5.12, 5.12, dim)
-    best_val = rastrigin(best_x)
-    for _ in range(max_iter):
-        cand = best_x + np.random.normal(0, 0.25, dim)
-        cand = np.clip(cand, -5.12, 5.12)
-        val = rastrigin(cand)
-        if val < best_val:
-            best_x, best_val = cand, val
-    return best_val
-
-def run_bench(workers=4, runs_per_worker=25, window_sec=60):
-    start = time.time()
-    args = [(i, 2000, 10) for i in range(workers * runs_per_worker)]
-    with Pool(processes=workers) as pool:
-        results = pool.map(worker_search, args)
-    elapsed = time.time() - start
-    return min(results), elapsed`
-      }
+      techStack: ['Python', 'Multiprocessing', 'TREE Scheduling', 'CSV Telemetry', 'Canvas 3D']
     },
     {
       id: 'n8n-automation-pipeline',
@@ -619,13 +588,13 @@ export const translationsEn: Translations = {
     sectionSubtitle: 'Practical solutions developed across data visualization, computational optimization, and workflow automation.',
     flagshipBadge: 'Flagship Project · Government Data Hub',
     flagshipTitle: 'Civil Defense in Schools — Data & Intelligence Hub',
-    flagshipSubtitle: 'Statewide School Monitoring & Indicator Dashboard (SC, Brazil)',
-    flagshipDescription: 'Centralized analytics solution for tracking, cross-referencing, and querying school data across all 295 municipalities of Santa Catarina state. Features dynamic regional drill-downs by Municipality, COREDEC, CRE, and COMPDEC, monitoring enrollment status, teacher certifications, and educational safety metrics.',
+    flagshipSubtitle: 'Statewide School & Teacher Lookup Dashboard (SC, Brazil)',
+    flagshipDescription: 'Dashboard developed with Santa Catarina Civil Defense to help teachers from every school across the state look up their school and faculty registration status in the program, integrating the agency spreadsheet with the Google ecosystem using free tooling already available to the public sector.',
     flagshipDeveloper: 'Project developed with technical support from Eng. Yuri Furtwaengler',
     flagshipStats: [
-      { label: 'Geographic Coverage', value: '295 SC Municipalities' },
-      { label: 'Regional Filters', value: 'COREDEC / CRE / COMPDEC' },
-      { label: 'Monitored Entities', value: 'INEP Codes, Teachers & Students' }
+      { label: 'Target Users', value: 'All SC Schools & Teachers' },
+      { label: 'Integration', value: 'Official Sheet + Google' },
+      { label: 'Sustainability', value: 'Zero-Cost Public Tooling' }
     ],
     flagshipExploreBtn: 'Explore Full Case Study',
     filterAll: 'All (3)',
@@ -645,11 +614,11 @@ export const translationsEn: Translations = {
     close: 'Close',
     copyCode: 'Copy code',
     codeCopied: 'Copied to clipboard',
-    interactive3DTitle: 'Interactive 3D Simulation (Click & drag to rotate)',
-    interactive3DSubtitle: 'Explore algorithm convergence and 3D surface exploration in real-time',
-    interactive3DActive: 'Visualizer active',
-    benchmarkGraphTitle: 'Empirical Speedup Benchmark: Parallel vs Sequential (PAR/SEQ)',
-    benchmarkGraphSubtitle: 'Experimental acceleration curve over 60s scaling from 2 up to 9 workers'
+    interactive3DTitle: 'Simplified 3D Explorer · Measured CSV Results (runs.csv)',
+    interactive3DSubtitle: 'Compare strategy gains (×) and click any 3D pillar to inspect the 5 challenges',
+    interactive3DActive: '35/35 valid runs',
+    benchmarkGraphTitle: 'Smart Heuristic · Split the work. Measure the result.',
+    benchmarkGraphSubtitle: 'Sequential search (7.99 s) vs Distributed TREE search (3.21 s) · Median of 5 challenges per config'
   },
   snippets: {
     sectionTitle: 'Other Works',
@@ -774,8 +743,8 @@ export const translationsEn: Translations = {
   projectList: [
     {
       id: 'defesa-civil-dashboard',
-      title: 'Civil Defense in Schools — Data & Intelligence Hub',
-      subtitle: 'Statewide School Monitoring & Indicator Dashboard',
+      title: 'Civil Defense in Schools — Data Hub',
+      subtitle: 'School & Teacher Lookup · Spreadsheet & Google Ecosystem Integration',
       category: 'analytics',
       categoryLabel: 'Data Analytics & BI',
       featured: true,
@@ -783,81 +752,50 @@ export const translationsEn: Translations = {
       imageLabel: 'Official PDCE Portal · SC',
       provenance: 'cv_confirmado',
       provenanceLabel: 'Authentic Project',
-      summary: 'Development of the Civil Defense in Schools Program (PDCE) Data Hub for Santa Catarina, centralizing institution records, program adoption, and teacher certification metrics across 295 municipalities.',
-      tags: ['Dashboards', 'KPIs & Metrics', 'SC Civil Defense', 'Public Governance', 'Dynamic Filters'],
+      summary: 'Dashboard built with Santa Catarina Civil Defense to help teachers across all state schools quickly check school and teacher registration status in the program, integrating the official spreadsheet with the Google ecosystem using free tooling already available to the public agency.',
+      tags: ['Google Ecosystem', 'Google Sheets', 'Dashboards', 'SC Civil Defense', 'Dynamic Filters'],
       specs: [
         { label: 'Entity', value: 'Civil Defense of Santa Catarina' },
-        { label: 'Technical Support', value: 'Eng. Yuri Furtwaengler' },
-        { label: 'Scope', value: '295 Municipalities across SC' }
+        { label: 'Integration', value: 'Official Sheet + Google Ecosystem' },
+        { label: 'Approach', value: 'Zero-Cost Tooling · SC Schools' }
       ],
-      challenge: 'Centralizing school records, program onboarding, and teacher training metrics into a high-responsiveness query tool for statewide coordinators and regional agencies (COREDEC / COMPDEC).',
-      solution: 'Engineered a unified operational dashboard with geographic drill-downs, municipality filtering, INEP code lookups, teacher certification tracking, and direct support integration.',
+      challenge: 'Enabling teachers across all schools in Santa Catarina to easily search school and faculty registration data in the program without relying on a costly custom software build and ongoing maintenance.',
+      solution: 'Direct integration between Civil Defense’s official spreadsheet and free Google ecosystem tools already available to the public agency, delivering a practical, low-overhead, and immediately usable lookup dashboard.',
       methodology: [
-        'Defining core variables and indicators with PDCE state program leaders',
-        'Validating municipal data records, school listings, and INEP codes',
-        'Designing an ergonomic query interface with dedicated regional filter buttons (Municipality, COREDEC, CRE, COMPDEC)',
-        'Connecting support channels and tracking teacher progress indicators for 2026'
+        'Identifying key lookup fields needed by teachers statewide (INEP code, school enrollment status, and teacher records)',
+        'Integrating the official Civil Defense spreadsheet directly with the Google ecosystem at zero software licensing cost',
+        'Designing fast regional filtering by Municipality, School, COREDEC, CRE, and COMPDEC',
+        'Focusing on existing public-sector resources for practical deployment and effortless ongoing updates'
       ],
-      techStack: ['Executive Dashboards', 'KPIs & Metrics', 'Data Modeling', 'Information Management']
+      techStack: ['Google Ecosystem', 'Google Sheets', 'Interactive Dashboards', 'Data Integration', 'Zero-Cost Solution']
     },
     {
       id: 'rastrigin-optimization',
-      title: 'Computational Optimization & Benchmarking (Rastrigin)',
-      subtitle: 'Effective Speedup (PAR/SEQ) & 3D Heuristic Algorithms',
+      title: 'Computational Optimization & Distributed Search (TREE)',
+      subtitle: 'Smart Heuristic · 2.49× Speedup & 3D Parameter Analysis',
       category: 'otimizacao',
       categoryLabel: 'Mathematical Optimization',
       featured: true,
       featuredType: 'rastrigin',
-      imageLabel: 'Benchmark Speedup PAR/SEQ (2.8x w/ 9 workers)',
+      imageLabel: 'Smart Heuristic · 2.49× Gain',
       provenance: 'cv_confirmado',
-      provenanceLabel: 'Computational Implementation',
-      summary: 'Empirical benchmark and concurrent computing study applied to multimodal Rastrigin optimization, demonstrating effective speedup of up to 2.8x with 9 workers in parallel versus sequential mode, along with an interactive 3D visualizer.',
-      tags: ['Python', 'Multiprocessing', 'Speedup Benchmark', 'Genetic Algorithms', 'Canvas 3D'],
+      provenanceLabel: 'Engineering Demonstration',
+      summary: 'Distributed search benchmark across 35 real runs (7 configs × 5 trials). Dynamic TREE scheduling with 4 processes and 16,384 block size reduced median runtime from 7.99 s (sequential) to 3.21 s — a 2.49× speedup (59.8% less time) vs 1.04× for fixed splitting.',
+      tags: ['Python', 'Multiprocessing', 'TREE Partitioning', '3D Benchmark', 'SHA-256 Search'],
       specs: [
-        { label: 'Max Speedup', value: '~2.8x (PAR/SEQ in 60s)' },
-        { label: 'Worker Scaling', value: '2 to 9 Concurrent Workers' },
-        { label: 'Global Minimum', value: 'f(0, 0) = 0' }
+        { label: 'Measured Gain', value: '2.49× (59.8% less time)' },
+        { label: 'Median Seq vs TREE', value: '7.99 s vs 3.21 s (~982k eval/s)' },
+        { label: 'Validation (runs.csv)', value: '35/35 validated searches' }
       ],
-      challenge: 'Empirically evaluating acceleration gains (effective speedup) in parallel heuristic search versus single-thread sequential runs across multimodal landscapes.',
-      solution: 'Constructed an empirical benchmark using a multiprocessing worker pool (2 to 9 workers) plotting the real speedup curve up to 2.8x, paired with a 3D Rastrigin trajectory visualizer.',
+      challenge: 'Under static range splitting, worker threads hit uneven search paths and distant nonces (6.93 s / 1.15× with 2 proc and 7.68 s / 1.04× with 4 proc), leaving CPU parallelism underutilized.',
+      solution: 'Dynamic TREE block partitioning on demand (16,384 and 131,072 chunk sizes) keeps workers balanced until the earliest valid nonce is found, reaching 1.77× (2 proc) and 2.49× (4 proc) at 16,384.',
       methodology: [
-        'Analytical definition of f(x) = 20 + ∑(xi² - 10·cos(2π·xi))',
-        'Executing controlled 60s benchmarks comparing parallel vs sequential runtimes',
-        'Measuring worker scalability and plotting empirical PAR/SEQ speedup curves',
-        'Interactive 3D surface projection and convergence trajectory exploration'
+        '35 paired runs (5 trials × 7 configs: sequential, static 2/4p, and tree 2/4p × 16k/131k) logged in runs.csv',
+        'Median total elapsed time comparison: Sequential 7.99 s · Fixed 2p 6.93 s (1.15×) · Fixed 4p 7.68 s (1.04×)',
+        'TREE medians: 2p/131k = 4.76 s (1.68×) · 2p/16k = 4.52 s (1.77×) · 4p/131k = 3.43 s (2.33×) · 4p/16k = 3.21 s (2.49×)',
+        'Aggregate throughput from 982k to 1.16M eval/s with 100% validated digests (35/35)'
       ],
-      techStack: ['Python', 'Multiprocessing', 'NumPy / SciPy', 'Matplotlib', 'Canvas 3D'],
-      codeSnippet: {
-        language: 'python',
-        filename: 'poc_rastrigin_tree_bench.py',
-        code: `import time
-from multiprocessing import Pool
-import numpy as np
-
-def rastrigin(x, A=10):
-    return A * len(x) + np.sum(x**2 - A * np.cos(2 * np.pi * x))
-
-def worker_search(args):
-    seed, max_iter, dim = args
-    np.random.seed(seed)
-    best_x = np.random.uniform(-5.12, 5.12, dim)
-    best_val = rastrigin(best_x)
-    for _ in range(max_iter):
-        cand = best_x + np.random.normal(0, 0.25, dim)
-        cand = np.clip(cand, -5.12, 5.12)
-        val = rastrigin(cand)
-        if val < best_val:
-            best_x, best_val = cand, val
-    return best_val
-
-def run_bench(workers=4, runs_per_worker=25, window_sec=60):
-    start = time.time()
-    args = [(i, 2000, 10) for i in range(workers * runs_per_worker)]
-    with Pool(processes=workers) as pool:
-        results = pool.map(worker_search, args)
-    elapsed = time.time() - start
-    return min(results), elapsed`
-      }
+      techStack: ['Python', 'Multiprocessing', 'TREE Scheduling', 'CSV Telemetry', 'Canvas 3D']
     },
     {
       id: 'n8n-automation-pipeline',

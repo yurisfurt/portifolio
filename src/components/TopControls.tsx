@@ -22,7 +22,7 @@ export const TopControls: React.FC<TopControlsProps> = ({ isDark, onToggleTheme 
           onClick={() => setLanguage('pt')}
           className={`px-2 py-1 rounded text-[11px] font-bold transition-colors ${
             language === 'pt'
-              ? 'bg-[#E67E67] text-white dark:bg-[#F08F79] dark:text-[#1B2933] shadow-2xs'
+              ? 'bg-[#D96B27] text-white dark:bg-[#F28C38] dark:text-[#1B2933] shadow-2xs'
               : 'text-[#5B7382] hover:text-[#223747] dark:text-[#9EB3BF] dark:hover:text-[#F5F2EC]'
           }`}
           title="Português (Brasil)"
@@ -35,7 +35,7 @@ export const TopControls: React.FC<TopControlsProps> = ({ isDark, onToggleTheme 
           onClick={() => setLanguage('en')}
           className={`px-2 py-1 rounded text-[11px] font-bold transition-colors ${
             language === 'en'
-              ? 'bg-[#E67E67] text-white dark:bg-[#F08F79] dark:text-[#1B2933] shadow-2xs'
+              ? 'bg-[#D96B27] text-white dark:bg-[#F28C38] dark:text-[#1B2933] shadow-2xs'
               : 'text-[#5B7382] hover:text-[#223747] dark:text-[#9EB3BF] dark:hover:text-[#F5F2EC]'
           }`}
           title="English"

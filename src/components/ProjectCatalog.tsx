@@ -21,7 +21,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
       <div>
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#223747] dark:text-[#F5F2EC] flex items-center gap-3">
-            <Layers className="w-6 h-6 sm:w-7 sm:h-7 text-[#E67E67] dark:text-[#F08F79] shrink-0" />
+            <Layers className="w-6 h-6 sm:w-7 sm:h-7 text-[#D96B27] dark:text-[#F28C38] shrink-0" />
             <span>{t.projects.sectionTitle}</span>
           </h2>
           <p className="text-xs sm:text-sm text-[#5B7382] dark:text-[#9EB3BF] mt-1.5">

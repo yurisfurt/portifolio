@@ -42,7 +42,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <div className="flex items-center gap-2 text-xs text-[#5B7382] dark:text-[#9EB3BF] font-mono">
               <span>{project.categoryLabel}</span>
               <span>·</span>
-              <span className="flex items-center gap-1 text-[#E67E67] dark:text-[#F08F79] font-semibold">
+              <span className="flex items-center gap-1 text-[#D96B27] dark:text-[#F28C38] font-semibold">
                 <FileCheck className="w-3.5 h-3.5" />
                 <span>{project.provenanceLabel || t.projects.confirmedDeliverable}</span>
               </span>
@@ -101,28 +101,54 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
           )}
 
-          {/* Real Speedup Benchmark Graph & Interactive 3D for Rastrigin */}
+          {/* Overview, Parameters & Interactive 3D for Computational Optimization */}
           {project.id === 'rastrigin-optimization' && (
             <div className="space-y-4">
-              {/* Benchmark Plot Card */}
-              <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#FFFFFF] dark:bg-[#1B2933]">
+              {/* Overview Benchmark Card */}
+              <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#0E1A2A]">
                 <div className="p-3 bg-[#F7F5F1] dark:bg-[#283B47] border-b border-[#E3DED7] dark:border-[#364C59] flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                   <span className="font-mono font-medium text-[#223747] dark:text-[#F5F2EC]">
                     {t.projects.benchmarkGraphTitle}
                   </span>
-                  <span className="font-mono text-[#E5A94C] dark:text-[#E8B665] text-[11px] font-bold">
-                    2.8x Speedup @ 9 Workers
+                  <span className="font-mono text-[#0F766E] dark:text-[#2DD4BF] text-[11px] font-bold">
+                    2,49× · 59,8% {language === 'pt' ? 'menos tempo' : 'faster'} (4 proc)
                   </span>
                 </div>
-                <div className="p-3 sm:p-5 flex justify-center bg-white dark:bg-[#1B2933]">
+                <div className="p-2 sm:p-4 flex justify-center bg-[#0E1A2A]">
                   <img
-                    src="/assets/aistudio/poc_rastrigin_tree_bench_speedup_efetivo_60s_vs_workers_f13b9833.png"
-                    alt="BENCH: Speedup efetivo (PAR/SEQ) vs Workers (60s)"
-                    className="max-h-[360px] w-auto object-contain rounded-lg border border-[#E3DED7] dark:border-[#364C59]"
+                    src="/assets/aistudio/overview_337417fc.png"
+                    alt="Smart Heuristic — Dividir o trabalho. Medir o resultado."
+                    className="w-full h-auto max-h-[400px] object-contain rounded-lg border border-[#283B47]"
                   />
                 </div>
                 <div className="px-4 py-2.5 bg-[#F7F5F1] dark:bg-[#283B47] border-t border-[#E3DED7] dark:border-[#364C59] text-xs font-mono text-[#5B7382] dark:text-[#9EB3BF]">
                   {t.projects.benchmarkGraphSubtitle}
+                </div>
+              </div>
+
+              {/* Parameters & 3D Measured Configs Photo Card */}
+              <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#0E1A2A]">
+                <div className="p-3 bg-[#F7F5F1] dark:bg-[#283B47] border-b border-[#E3DED7] dark:border-[#364C59] flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
+                  <span className="font-mono font-medium text-[#223747] dark:text-[#F5F2EC]">
+                    {language === 'pt'
+                      ? 'Parâmetros: Efeito do Número de Processos & TREE (Configurações Medidas)'
+                      : 'Parameters: Process Count Effect & TREE (Measured Configurations)'}
+                  </span>
+                  <span className="font-mono text-[#D96B27] dark:text-[#F28C38] text-[11px] font-bold">
+                    {language === 'pt' ? 'Blocos 16.384 vs 131.072 · 35/35 Validadas' : 'Blocks 16,384 vs 131,072 · 35/35 Validated'}
+                  </span>
+                </div>
+                <div className="p-2 sm:p-4 flex justify-center bg-[#0E1A2A]">
+                  <img
+                    src="/assets/aistudio/parameters_6dd0d8cb.png"
+                    alt="Efeito do número de processos e TREE configurações medidas em 3D"
+                    className="w-full h-auto max-h-[380px] object-contain rounded-lg border border-[#283B47]"
+                  />
+                </div>
+                <div className="px-4 py-2.5 bg-[#F7F5F1] dark:bg-[#283B47] border-t border-[#E3DED7] dark:border-[#364C59] text-xs font-mono text-[#5B7382] dark:text-[#9EB3BF]">
+                  {language === 'pt'
+                    ? 'Ganho = mediana sequencial / mediana da configuração. Comparação entre Divisão fixa e TREE (blocos 16.384 e 131.072).'
+                    : 'Gain = sequential median / configuration median. Comparison between Fixed split and TREE (blocks 16,384 and 131,072).'}
                 </div>
               </div>
 
@@ -132,7 +158,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   <span className="font-mono font-medium text-[#223747] dark:text-[#F5F2EC]">
                     {t.projects.interactive3DTitle}
                   </span>
-                  <span className="font-mono text-[#E67E67] dark:text-[#F08F79] text-[11px] font-semibold">
+                  <span className="font-mono text-[#D96B27] dark:text-[#F28C38] text-[11px] font-semibold">
                     {t.projects.interactive3DActive}
                   </span>
                 </div>
@@ -145,7 +171,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Overview */}
           <div>
-            <h3 className="text-xs font-mono uppercase tracking-wider text-[#E67E67] dark:text-[#F08F79] mb-2 font-semibold">
+            <h3 className="text-xs font-mono uppercase tracking-wider text-[#D96B27] dark:text-[#F28C38] mb-2 font-semibold">
               {t.projects.overview}
             </h3>
             <p className="text-xs sm:text-sm text-[#223747]/90 dark:text-[#F5F2EC]/90 leading-relaxed">
@@ -176,13 +202,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Methodology */}
           <div>
-            <h3 className="text-xs font-mono uppercase tracking-wider text-[#E67E67] dark:text-[#F08F79] mb-3 font-semibold">
+            <h3 className="text-xs font-mono uppercase tracking-wider text-[#D96B27] dark:text-[#F28C38] mb-3 font-semibold">
               {t.projects.methodology}
             </h3>
             <ul className="space-y-2">
               {project.methodology.map((step, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#223747]/90 dark:text-[#F5F2EC]/90">
-                  <span className="text-[#E67E67] dark:text-[#F08F79] font-mono text-xs mt-0.5">•</span>
+                  <span className="text-[#D96B27] dark:text-[#F28C38] font-mono text-xs mt-0.5">•</span>
                   <span>{step}</span>
                 </li>
               ))}
@@ -213,7 +239,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Tech Stack */}
           <div>
-            <h3 className="text-xs font-mono uppercase tracking-wider text-[#E67E67] dark:text-[#F08F79] mb-2 font-semibold">
+            <h3 className="text-xs font-mono uppercase tracking-wider text-[#D96B27] dark:text-[#F28C38] mb-2 font-semibold">
               {t.projects.techStack}
             </h3>
             <div className="flex flex-wrap items-center gap-2">

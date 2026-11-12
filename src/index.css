@@ -6,23 +6,23 @@
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
     
-    /* Paleta Azul petróleo + Coral (Tema Claro) */
+    /* Paleta Azul petróleo + Laranja Quente (Tema Claro) */
     --canvas: #F7F5F1;
     --surface: #FFFFFF;
     --text-primary: #223747;
     --text-muted: #5B7382;
-    --accent-primary: #E67E67;
+    --accent-primary: #D96B27;
     --accent-secondary: #E5A94C;
     --neutral-border: #E3DED7;
   }
 
   .dark {
-    /* Paleta Azul petróleo + Coral (Tema Escuro) */
+    /* Paleta Azul petróleo + Laranja Quente (Tema Escuro) */
     --canvas: #1B2933;
     --surface: #283B47;
     --text-primary: #F5F2EC;
     --text-muted: #9EB3BF;
-    --accent-primary: #F08F79;
+    --accent-primary: #F28C38;
     --accent-secondary: #E8B665;
     --neutral-border: #364C59;
   }

@@ -30,10 +30,10 @@ function PortfolioContent() {
     localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
     if (isDark) {
       document.documentElement.classList.add('dark');
-      document.body.className = 'bg-[#1B2933] text-[#F5F2EC] antialiased selection:bg-[#F08F79]/20 selection:text-[#F5F2EC]';
+      document.body.className = 'bg-[#1B2933] text-[#F5F2EC] antialiased selection:bg-[#F28C38]/20 selection:text-[#F5F2EC]';
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.className = 'bg-[#F7F5F1] text-[#223747] antialiased selection:bg-[#E67E67]/20 selection:text-[#223747]';
+      document.body.className = 'bg-[#F7F5F1] text-[#223747] antialiased selection:bg-[#D96B27]/20 selection:text-[#223747]';
     }
   }, [isDark]);
 
@@ -141,7 +141,7 @@ function PortfolioContent() {
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#E67E67] dark:text-[#F08F79] font-semibold">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#D96B27] dark:text-[#F28C38] font-semibold">
                     Portfólio Profissional
                   </span>
                   <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#223747] dark:text-[#F5F2EC]">
@@ -170,7 +170,7 @@ function PortfolioContent() {
                 <div className="pt-2">
                   <button
                     onClick={() => handleNavigate('projetos')}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#E67E67] hover:bg-[#d66b54] dark:bg-[#F08F79] dark:hover:bg-[#fc9f8a] text-white dark:text-[#1B2933] text-xs font-bold rounded-lg transition-colors shadow-xs"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D96B27] hover:bg-[#C25A1A] dark:bg-[#F28C38] dark:hover:bg-[#FF9D4D] text-white dark:text-[#1B2933] text-xs font-bold rounded-lg transition-colors shadow-xs"
                   >
                     <span>{t.hero.ctaProjects}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -197,7 +197,7 @@ function PortfolioContent() {
               {PERSONAL_INFO.shortName} · {t.footer.role}
             </div>
             <div>
-              <a href="#inicio" className="hover:text-[#E67E67] dark:hover:text-[#F08F79] transition-colors">
+              <a href="#inicio" className="hover:text-[#D96B27] dark:hover:text-[#F28C38] transition-colors">
                 {t.footer.backToTop}
               </a>
             </div>

@@ -30,8 +30,8 @@ export const ContactSection: React.FC = () => {
           <div className="space-y-4">
             <div>
               <div className="flex items-center gap-2 mb-1.5">
-                <Mail className="w-4 h-4 text-[#E67E67] dark:text-[#F08F79]" />
-                <span className="text-[11px] font-mono text-[#E67E67] dark:text-[#F08F79] uppercase font-bold tracking-wider">
+                <Mail className="w-4 h-4 text-[#D96B27] dark:text-[#F28C38]" />
+                <span className="text-[11px] font-mono text-[#D96B27] dark:text-[#F28C38] uppercase font-bold tracking-wider">
                   {t.contact.emailLabel}
                 </span>
               </div>
@@ -64,7 +64,7 @@ export const ContactSection: React.FC = () => {
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 text-[#5B7382] dark:text-[#9EB3BF] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] transition-colors" />
+                <Copy className="w-4 h-4 text-[#5B7382] dark:text-[#9EB3BF] group-hover:text-[#D96B27] dark:group-hover:text-[#F28C38] transition-colors" />
                 <span>{t.contact.copyEmail}</span>
               </>
             )}
@@ -74,7 +74,7 @@ export const ContactSection: React.FC = () => {
         {/* Card 2: Professional Networks (LinkedIn & GitHub) */}
         <div className="p-6 rounded-2xl bg-[#FFFFFF] dark:bg-[#283B47] border border-[#E3DED7] dark:border-[#364C59] space-y-4 shadow-xs flex flex-col justify-between">
           <div>
-            <span className="text-[11px] font-mono text-[#E67E67] dark:text-[#F08F79] uppercase font-bold tracking-wider block mb-3">
+            <span className="text-[11px] font-mono text-[#D96B27] dark:text-[#F28C38] uppercase font-bold tracking-wider block mb-3">
               {t.contact.socialLabel}
             </span>
 
@@ -84,14 +84,14 @@ export const ContactSection: React.FC = () => {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between p-3.5 rounded-xl bg-[#F7F5F1]/60 dark:bg-[#1B2933]/60 hover:bg-[#F7F5F1] dark:hover:bg-[#1B2933] border border-[#E3DED7] dark:border-[#364C59] transition-all hover:border-[#E67E67] dark:hover:border-[#F08F79]"
+                className="group flex items-center justify-between p-3.5 rounded-xl bg-[#F7F5F1]/60 dark:bg-[#1B2933]/60 hover:bg-[#F7F5F1] dark:hover:bg-[#1B2933] border border-[#E3DED7] dark:border-[#364C59] transition-all hover:border-[#D96B27] dark:hover:border-[#F28C38]"
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="w-9 h-9 rounded-lg bg-[#FFFFFF] dark:bg-[#283B47] border border-[#E3DED7] dark:border-[#364C59] flex items-center justify-center shrink-0">
-                    <Linkedin className="w-4 h-4 text-[#5B7382] group-hover:text-[#E67E67] dark:text-[#9EB3BF] dark:group-hover:text-[#F08F79] transition-colors" />
+                    <Linkedin className="w-4 h-4 text-[#5B7382] group-hover:text-[#D96B27] dark:text-[#9EB3BF] dark:group-hover:text-[#F28C38] transition-colors" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-xs font-bold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] transition-colors">
+                    <span className="block text-xs font-bold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#D96B27] dark:group-hover:text-[#F28C38] transition-colors">
                       LinkedIn
                     </span>
                     <span className="block text-[11px] text-[#5B7382] dark:text-[#9EB3BF] font-mono truncate">
@@ -99,7 +99,7 @@ export const ContactSection: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-[#5B7382] dark:text-[#9EB3BF] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] shrink-0 ml-2 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-[#5B7382] dark:text-[#9EB3BF] group-hover:text-[#D96B27] dark:group-hover:text-[#F28C38] shrink-0 ml-2 transition-colors" />
               </a>
 
               {/* GitHub Link Card */}
@@ -107,14 +107,14 @@ export const ContactSection: React.FC = () => {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between p-3.5 rounded-xl bg-[#F7F5F1]/60 dark:bg-[#1B2933]/60 hover:bg-[#F7F5F1] dark:hover:bg-[#1B2933] border border-[#E3DED7] dark:border-[#364C59] transition-all hover:border-[#E67E67] dark:hover:border-[#F08F79]"
+                className="group flex items-center justify-between p-3.5 rounded-xl bg-[#F7F5F1]/60 dark:bg-[#1B2933]/60 hover:bg-[#F7F5F1] dark:hover:bg-[#1B2933] border border-[#E3DED7] dark:border-[#364C59] transition-all hover:border-[#D96B27] dark:hover:border-[#F28C38]"
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="w-9 h-9 rounded-lg bg-[#FFFFFF] dark:bg-[#283B47] border border-[#E3DED7] dark:border-[#364C59] flex items-center justify-center shrink-0">
-                    <Github className="w-4 h-4 text-[#5B7382] group-hover:text-[#E67E67] dark:text-[#9EB3BF] dark:group-hover:text-[#F08F79] transition-colors" />
+                    <Github className="w-4 h-4 text-[#5B7382] group-hover:text-[#D96B27] dark:text-[#9EB3BF] dark:group-hover:text-[#F28C38] transition-colors" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-xs font-bold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] transition-colors">
+                    <span className="block text-xs font-bold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#D96B27] dark:group-hover:text-[#F28C38] transition-colors">
                       GitHub
                     </span>
                     <span className="block text-[11px] text-[#5B7382] dark:text-[#9EB3BF] font-mono truncate">
@@ -122,7 +122,7 @@ export const ContactSection: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-[#5B7382] dark:text-[#9EB3BF] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] shrink-0 ml-2 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-[#5B7382] dark:text-[#9EB3BF] group-hover:text-[#D96B27] dark:group-hover:text-[#F28C38] shrink-0 ml-2 transition-colors" />
               </a>
             </div>
           </div>

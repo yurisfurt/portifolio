@@ -29,16 +29,16 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
 
   if (project.id === 'rastrigin-optimization') {
     return (
-      <div className="w-full h-44 sm:h-48 bg-[#FFFFFF] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity flex items-center justify-center p-2">
+      <div className="w-full h-44 sm:h-48 bg-[#0E1A2A] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity flex items-center justify-center p-1">
         <img
-          src="/assets/aistudio/poc_rastrigin_tree_bench_speedup_efetivo_60s_vs_workers_f13b9833.png"
+          src="/assets/aistudio/overview_337417fc.png"
           alt={project.title}
-          className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1B2933]/40 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A2A]/60 via-transparent to-transparent pointer-events-none" />
         <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59] backdrop-blur-xs">
-          {project.imageLabel || 'Benchmark Speedup (2.8x)'}
+          {project.imageLabel || 'Smart Heuristic · 2,49× Ganho'}
         </span>
       </div>
     );
@@ -49,19 +49,19 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
     <div className="w-full h-44 sm:h-48 bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] flex items-center justify-center relative overflow-hidden group-hover:opacity-95 transition-opacity">
       <svg viewBox="0 0 360 160" className="w-full h-full p-4 opacity-90" preserveAspectRatio="xMidYMid meet">
         {/* Webhook trigger */}
-        <rect x="25" y="60" width="70" height="40" rx="6" fill="#FFFFFF" stroke="#E67E67" strokeWidth="1" className="dark:fill-[#283B47] dark:stroke-[#F08F79]" />
+        <rect x="25" y="60" width="70" height="40" rx="6" fill="#FFFFFF" stroke="#D96B27" strokeWidth="1" className="dark:fill-[#283B47] dark:stroke-[#F28C38]" />
         <text x="60" y="84" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="10" fontFamily="monospace" fontWeight="600">Webhook</text>
 
-        <line x1="95" y1="80" x2="145" y2="80" stroke="#E67E67" className="dark:stroke-[#F08F79]" strokeWidth="1.5" strokeDasharray="3 3" />
-        <polygon points="145,80 137,76 137,84" fill="#E67E67" className="dark:fill-[#F08F79]" />
+        <line x1="95" y1="80" x2="145" y2="80" stroke="#D96B27" className="dark:stroke-[#F28C38]" strokeWidth="1.5" strokeDasharray="3 3" />
+        <polygon points="145,80 137,76 137,84" fill="#D96B27" className="dark:fill-[#F28C38]" />
 
         {/* n8n Router & Python processing */}
         <rect x="145" y="45" width="85" height="70" rx="6" fill="#FFFFFF" stroke="#223747" strokeWidth="1.5" className="dark:fill-[#283B47] dark:stroke-[#F5F2EC]" />
         <text x="187" y="75" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="12" fontFamily="monospace" fontWeight="bold">n8n</text>
-        <text x="187" y="93" textAnchor="middle" fill="#E67E67" className="dark:fill-[#F08F79]" fontSize="9" fontFamily="monospace">Pipeline</text>
+        <text x="187" y="93" textAnchor="middle" fill="#D96B27" className="dark:fill-[#F28C38]" fontSize="9" fontFamily="monospace">Pipeline</text>
 
-        <line x1="230" y1="80" x2="275" y2="80" stroke="#E67E67" className="dark:stroke-[#F08F79]" strokeWidth="1.5" strokeDasharray="3 3" />
-        <polygon points="275,80 267,76 267,84" fill="#E67E67" className="dark:fill-[#F08F79]" />
+        <line x1="230" y1="80" x2="275" y2="80" stroke="#D96B27" className="dark:stroke-[#F28C38]" strokeWidth="1.5" strokeDasharray="3 3" />
+        <polygon points="275,80 267,76 267,84" fill="#D96B27" className="dark:fill-[#F28C38]" />
 
         {/* Postgres DB destination */}
         <rect x="275" y="60" width="65" height="40" rx="6" fill="#FFFFFF" stroke="#E5A94C" strokeWidth="1" className="dark:fill-[#283B47] dark:stroke-[#E8B665]" />
@@ -80,7 +80,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
   return (
     <article
       onClick={() => onSelect(project)}
-      className="group cursor-pointer rounded-xl bg-[#FFFFFF] dark:bg-[#283B47] border border-[#E3DED7] dark:border-[#364C59] overflow-hidden flex flex-col justify-between transition-all hover:border-[#E67E67] dark:hover:border-[#F08F79] hover:shadow-md"
+      className="group cursor-pointer rounded-xl bg-[#FFFFFF] dark:bg-[#283B47] border border-[#E3DED7] dark:border-[#364C59] overflow-hidden flex flex-col justify-between transition-all hover:border-[#D96B27] dark:hover:border-[#F28C38] hover:shadow-md"
     >
       <div>
         <ProjectVisualPreview project={project} />
@@ -95,7 +95,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
           </div>
 
           {/* Title */}
-          <h3 className="text-base font-bold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] transition-colors mt-1.5 leading-snug">
+          <h3 className="text-base font-bold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#D96B27] dark:group-hover:text-[#F28C38] transition-colors mt-1.5 leading-snug">
             {project.title}
           </h3>
 
@@ -124,7 +124,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
           {project.specs?.[0]?.value || t.projects.specDetailsAvailable}
         </span>
 
-        <span className="inline-flex items-center gap-1 font-semibold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#E67E67] dark:group-hover:text-[#F08F79] transition-colors shrink-0">
+        <span className="inline-flex items-center gap-1 font-semibold text-[#223747] dark:text-[#F5F2EC] group-hover:text-[#D96B27] dark:group-hover:text-[#F28C38] transition-colors shrink-0">
           <span>{t.projects.viewProject}</span>
           <ArrowUpRight className="w-3.5 h-3.5" />
         </span>

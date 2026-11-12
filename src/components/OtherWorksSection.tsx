@@ -44,7 +44,7 @@ export const OtherWorksSection: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
         <div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#E67E67] dark:bg-[#F08F79]" />
+            <span className="w-2 h-2 rounded-full bg-[#D96B27] dark:bg-[#F28C38]" />
             <h4 className="text-lg font-bold tracking-tight text-[#223747] dark:text-[#F5F2EC]">
               {t.otherWorks.sectionTitle}
             </h4>
@@ -71,7 +71,7 @@ export const OtherWorksSection: React.FC = () => {
               className={`rounded-xl transition-all border ${
                 isTrade
                   ? 'bg-[#FFFFFF] dark:bg-[#283B47] border-[#E5A94C]/60 dark:border-[#E8B665]/60 shadow-xs'
-                  : 'bg-[#FFFFFF] dark:bg-[#283B47] border-[#E3DED7] dark:border-[#364C59] hover:border-[#E67E67]/40 dark:hover:border-[#F08F79]/40'
+                  : 'bg-[#FFFFFF] dark:bg-[#283B47] border-[#E3DED7] dark:border-[#364C59] hover:border-[#D96B27]/40 dark:hover:border-[#F28C38]/40'
               }`}
             >
               {/* Row Summary */}
@@ -159,7 +159,7 @@ export const OtherWorksSection: React.FC = () => {
                         caption: item.imageCaption || item.title
                       })
                     }
-                    className="px-3 py-1.5 rounded-lg text-xs font-semibold font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#F7F5F1] dark:bg-[#1B2933] hover:bg-[#E67E67] hover:text-white dark:hover:bg-[#F08F79] dark:hover:text-[#1B2933] border border-[#E3DED7] dark:border-[#364C59] transition-colors"
+                    className="px-3 py-1.5 rounded-lg text-xs font-semibold font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#F7F5F1] dark:bg-[#1B2933] hover:bg-[#D96B27] hover:text-white dark:hover:bg-[#F28C38] dark:hover:text-[#1B2933] border border-[#E3DED7] dark:border-[#364C59] transition-colors"
                   >
                     <span>{t.otherWorks.viewDetails}</span>
                   </button>
@@ -247,7 +247,7 @@ export const OtherWorksSection: React.FC = () => {
                             caption: item.imageCaption || item.title
                           })
                         }
-                        className="inline-flex items-center gap-1.5 text-xs font-mono text-[#E67E67] dark:text-[#F08F79] hover:underline"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono text-[#D96B27] dark:text-[#F28C38] hover:underline"
                       >
                         <Layers className="w-3.5 h-3.5" />
                         <span>Ver captura: {item.imageCaption || 'Principal'}</span>
@@ -323,7 +323,7 @@ export const OtherWorksSection: React.FC = () => {
                     }
                     className={`px-3 py-1 rounded-md text-xs font-mono font-semibold transition-colors ${
                       inspectItem.activeImage === inspectItem.item.imageSrc
-                        ? 'bg-[#E67E67] text-white dark:bg-[#F08F79] dark:text-[#1B2933]'
+                        ? 'bg-[#D96B27] text-white dark:bg-[#F28C38] dark:text-[#1B2933]'
                         : 'bg-[#F7F5F1] dark:bg-[#1B2933] text-[#5B7382] dark:text-[#9EB3BF]'
                     }`}
                   >
@@ -340,7 +340,7 @@ export const OtherWorksSection: React.FC = () => {
                     }
                     className={`px-3 py-1 rounded-md text-xs font-mono font-semibold transition-colors ${
                       inspectItem.activeImage === inspectItem.item.secondaryImageSrc
-                        ? 'bg-[#E67E67] text-white dark:bg-[#F08F79] dark:text-[#1B2933]'
+                        ? 'bg-[#D96B27] text-white dark:bg-[#F28C38] dark:text-[#1B2933]'
                         : 'bg-[#F7F5F1] dark:bg-[#1B2933] text-[#5B7382] dark:text-[#9EB3BF]'
                     }`}
                   >

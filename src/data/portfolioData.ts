@@ -38,31 +38,31 @@ export const LANGUAGES = [
 export const FEATURED_PROJECTS: Project[] = [
   {
     id: 'defesa-civil-dashboard',
-    title: 'Central de Informações & Dashboard — Defesa Civil de SC',
-    subtitle: 'Programa Defesa Civil na Escola (PDCE)',
+    title: 'Central de Dados — Programa Defesa Civil na Escola',
+    subtitle: 'Consulta Escolar e Docente · Integração Planilha & Ecossistema Google',
     category: 'analytics',
     categoryLabel: 'Análise de Dados & BI',
     featured: true,
     featuredType: 'dashboard',
-    imageLabel: 'Painel gerencial Defesa Civil (projeto real)',
+    imageLabel: 'Central Oficial PDCE · SC',
     provenance: 'cv_confirmado',
-    provenanceLabel: 'Comprovado em currículo',
-    summary: 'Criação de uma solução para centralização, organização e visualização de informações do Programa Defesa Civil na Escola (PDCE), com ferramenta de acompanhamento e consulta com indicadores e filtros para facilitar a análise de dados.',
-    tags: ['Dashboards', 'Indicadores e KPIs', 'Visualização de Dados', 'Filtros Dinâmicos', 'Gestão da Informação'],
+    provenanceLabel: 'Projeto Real Desenvolvido',
+    summary: 'Dashboard desenvolvido com a Defesa Civil de SC para auxiliar os professores de todas as escolas do estado na consulta do cadastro da escola e dos docentes no programa, integrando a planilha oficial ao ecossistema Google com ferramenta gratuita já disponível ao órgão público.',
+    tags: ['Ecossistema Google', 'Google Sheets', 'Dashboards', 'Defesa Civil SC', 'Filtros Dinâmicos'],
     specs: [
-      { label: 'Organização', value: 'Defesa Civil de Santa Catarina' },
-      { label: 'Programa', value: 'Defesa Civil na Escola (PDCE)' },
-      { label: 'Finalidade', value: 'Centralização e Análise de Indicadores' }
+      { label: 'Entidade', value: 'Defesa Civil de Santa Catarina' },
+      { label: 'Integração', value: 'Planilha Oficial + Ecossistema Google' },
+      { label: 'Viabilidade', value: 'Ferramenta Gratuita · Escolas de SC' }
     ],
-    challenge: 'Acompanhar a evolução das iniciativas e participantes do Programa Defesa Civil na Escola de forma centralizada e ágil para subsidiar a tomada de decisão das equipes.',
-    solution: 'Desenvolvimento de uma ferramenta unificada de consulta e acompanhamento de informações, permitindo cruzamento de dados, filtros por região e visualização clara de indicadores estratégicos.',
+    challenge: 'Permitir a busca de informações por professores de todas as escolas de SC sobre o cadastro escolar e docente no programa sem depender de sistemas de alto custo de desenvolvimento e manutenção.',
+    solution: 'Integração direta da planilha oficial da Defesa Civil ao ecossistema Google utilizando ferramenta gratuita já disponível para o órgão público, com foco em praticidade de desenvolvimento e aplicação.',
     methodology: [
-      'Levantamento de requisitos junto aos responsáveis pelo programa PDCE',
-      'Estruturação e padronização das fontes de informações coletadas',
-      'Desenvolvimento de painel visual com indicadores e filtros de consulta rápida',
-      'Validação das visualizações para suporte à tomada de decisão'
+      'Mapeamento dos dados essenciais buscados pelos professores de todo o estado',
+      'Integração estruturada entre a planilha da Defesa Civil e o ecossistema Google',
+      'Construção de painel com filtros rápidos por Município, Escola, COREDEC, CRE e COMPDEC',
+      'Aplicação prática aproveitando integralmente os recursos já disponíveis ao órgão público'
     ],
-    techStack: ['Dashboards', 'Indicadores & KPIs', 'Organização de Dados', 'Gestão de Informações']
+    techStack: ['Ecossistema Google', 'Google Sheets', 'Dashboards', 'Gestão de Informações']
   },
   {
     id: 'rastrigin-optimization',
@@ -90,45 +90,7 @@ export const FEATURED_PROJECTS: Project[] = [
       'Ajuste de inércia e parâmetros cognitivos/sociais no Particle Swarm Optimization',
       'Plotagem e renderização 3D das trajetórias de convergência dos algoritmos'
     ],
-    techStack: ['Python', 'NumPy', 'SciPy Optimize', 'Matplotlib', 'TypeScript / Canvas 3D'],
-    codeSnippet: {
-      language: 'python',
-      filename: 'rastrigin_optimizer.py',
-      code: `import numpy as np
-
-def rastrigin(x, A=10):
-    """Função de teste multimodal de Rastrigin n-dimensional."""
-    n = len(x)
-    return A * n + np.sum(x**2 - A * np.cos(2 * np.pi * x))
-
-def particle_swarm_optimization(cost_func, dim=2, num_particles=30, max_iter=80):
-    """Implementação básica de PSO para otimização contínua."""
-    w, c1, c2 = 0.72, 1.49, 1.49
-    pos = np.random.uniform(-5.12, 5.12, (num_particles, dim))
-    vel = np.random.uniform(-1.0, 1.0, (num_particles, dim))
-    pbest = pos.copy()
-    pbest_scores = np.array([cost_func(p) for p in pos])
-    gbest = pbest[np.argmin(pbest_scores)]
-    gbest_score = np.min(pbest_scores)
-    
-    trajectory = [gbest.copy()]
-    for _ in range(max_iter):
-        r1, r2 = np.random.rand(num_particles, dim), np.random.rand(num_particles, dim)
-        vel = w * vel + c1 * r1 * (pbest - pos) + c2 * r2 * (gbest - pos)
-        pos = np.clip(pos + vel, -5.12, 5.12)
-        
-        scores = np.array([cost_func(p) for p in pos])
-        better_mask = scores < pbest_scores
-        pbest[better_mask] = pos[better_mask]
-        pbest_scores[better_mask] = scores[better_mask]
-        
-        if np.min(pbest_scores) < gbest_score:
-            gbest = pbest[np.argmin(pbest_scores)]
-            gbest_score = np.min(pbest_scores)
-        trajectory.append(gbest.copy())
-        
-    return gbest, gbest_score, np.array(trajectory)`
-    }
+    techStack: ['Python', 'NumPy', 'SciPy Optimize', 'Matplotlib', 'TypeScript / Canvas 3D']
   },
   {
     id: 'n8n-automation-pipeline',
