@@ -14,7 +14,7 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
     return (
       <div className="w-full h-44 sm:h-48 bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity">
         <img
-          src="/assets/aistudio/image_89f17629.png"
+          src="./assets/aistudio/image_89f17629.png"
           alt={project.title}
           className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
@@ -31,7 +31,7 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
     return (
       <div className="w-full h-44 sm:h-48 bg-[#0E1A2A] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity flex items-center justify-center p-1">
         <img
-          src="/assets/aistudio/overview_337417fc.png"
+          src="./assets/aistudio/overview_337417fc.png"
           alt={project.title}
           className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           loading="lazy"

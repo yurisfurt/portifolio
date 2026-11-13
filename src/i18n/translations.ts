@@ -265,9 +265,9 @@ export const translationsPt: Translations = {
   },
   about: {
     sectionTitle: 'Sobre Mim & Competências',
-    sectionSubtitle: 'Engenheiro de Produção conectando rigor industrial, modelagem analítica e automação computacional.',
-    p1: 'Sou Engenheiro de Produção com atuação centrada na interseção entre processos industriais, inteligência de dados e tecnologia aplicada. Minha abordagem une a visão sistêmica da engenharia à capacidade técnica de desenvolver ferramentas práticas de software.',
-    p2: 'Tenho experiência no desenho e na entrega de soluções reais: desde a concepção de centrais de visualização estratégica para a gestão pública (como o painel estadual da Defesa Civil de SC) até o desenvolvimento de algoritmos heurísticos para otimização matemática e pipelines automatizados de dados com orquestração ágil.',
+    sectionSubtitle: 'Foco em modelagem analítica, otimização computacional e automação de processos.',
+    p1: '',
+    p2: 'Atuação prática na entrega de painéis integrados ao ecossistema Google, estudos de computação paralela e distribuição de carga em Python, além de fluxos automatizados orientados a eventos.',
     p3: 'Busco sempre eliminar atritos operacionais, estruturar dados dispersos em visões claras e construir ferramentas que realmente auxiliem as equipes na tomada de decisões seguras e embasadas.',
     educationTitle: 'Formação & Fundamentos Técnicos',
     educationSummary: 'Sólida base combinando a visão gerencial e quantitativa da Engenharia de Produção com o conhecimento prático em computação e arquitetura de sistemas.',
@@ -427,31 +427,103 @@ export const translationsPt: Translations = {
   otherWorksList: [
     {
       id: 'trade-controller',
-      title: 'App Trade Controller & Estratégias Algorítmicas (Cripto & Ações)',
-      categoryBadge: 'Cripto & Ações · Binance & MT5',
+      title: 'App Trade Controller — Controlador de Estratégias',
+      categoryBadge: 'Controlador Quant · Crypto (Binance) & MT5',
       badgeVariant: 'secondary',
-      statusLabel: 'Praticamente Pronto & Alta Eficiência',
+      statusLabel: '5 Telas · Laboratório Quant',
       isTradeHighlight: true,
-      description: 'Plataforma de alta eficiência para modelagem, backtesting e execução de estratégias de trade (Binance e MT5). Conta com parametrização de spread/slippage, estratégia S004 (Desvio + Derivada Confirmada), roteamento automático do melhor caminho de taxas de rede entre exchanges (CCXT) e alarmística em tempo real no Telegram.',
-      tags: ['Python', 'CCXT', 'Binance & MT5', 'Algoritmos Quant', 'Telegram Bot'],
-      imageSrc: '/assets/aistudio/image_2ac28b9b.png',
-      imageCaption: 'Interface de Operação App Trade Controller v1.0 (Estratégia S004, Win Rate, Profit Factor e Drawdown)',
-      secondaryImageSrc: '/assets/aistudio/image_ee79f82c.png',
-      secondaryImageCaption: 'Backend Python CCXT: Otimização de taxas de rede entre Binance/Kucoin/Kraken e alertas Telegram',
+      description: 'Aplicação desktop para parametrização, simulação e controle de estratégias de trade em Cripto (Binance) e Ações (MT5). Reúne catálogo modular de estratégias (da S001 à S021), simulação realista de spread/slippage/latência, histórico de trades, gráficos de Win Rate por estratégia e Scanner Semanal com backtest sem look-ahead.',
+      tags: ['Python', 'Binance & MT5', '21 Estratégias (S001–S021)', 'Backtest & Scanner', 'Desktop GUI'],
+      imageSrc: './assets/aistudio/image_2ac28b9b.png',
+      imageCaption: 'Aba Operação — Seleção Binance/MT5, simulação de spread/slippage/latência e métricas em tempo real',
+      gallery: [
+        {
+          src: './assets/aistudio/image_2ac28b9b.png',
+          label: '1. Operação',
+          caption: 'Aba Operação — Seleção de bot (Binance/MT5), estratégia S004, parâmetros de simulação e painel de métricas'
+        },
+        {
+          src: './assets/aistudio/image_2a28bf6b.png',
+          label: '2. Estratégias',
+          caption: 'Laboratório de Estratégias — Catálogo modular (Price Action, Stop, Trailing, Lucro) com seleção direta para o motor'
+        },
+        {
+          src: './assets/aistudio/image_820967a1.png',
+          label: '3. Histórico',
+          caption: 'Histórico de Execuções — Registro consolidado de 1.045 trades com ativo, estratégia, preços, lucro líquido e capital'
+        },
+        {
+          src: './assets/aistudio/image_503110e6.png',
+          label: '4. Relatórios',
+          caption: 'Relatórios de Assertividade — Comparativo tabular e gráfico de Win Rate (%) por estratégia (S004, S012.1, S014, S021)'
+        },
+        {
+          src: './assets/aistudio/image_4e2c4bc1.png',
+          label: '5. Scanner Semanal',
+          caption: 'Scanner Semanal — Ranking de ativos por score, validação sem look-ahead (backtest) e envio automático no Telegram'
+        }
+      ],
       metrics: [
-        { label: 'Mercados', value: 'Binance (Cripto) & MT5 (Ações)' },
-        { label: 'Roteamento CCXT', value: '10 Exchanges (Menor Taxa)' },
-        { label: 'Alarmística', value: 'Bot Telegram em Tempo Real' }
+        { label: 'Mercados & Simulação', value: 'Binance & MT5 · Spread, Slippage e Latência' },
+        { label: 'Módulos Integrados', value: 'Operação, Catálogo, Histórico, Relatórios & Scanner' },
+        { label: 'Base Registrada', value: '1.045 trades e 21 famílias de estratégias' }
+      ],
+      strategySummary: {
+        title: 'Resumo das Estratégias Desenvolvidas (S001–S021)',
+        subtitle: 'Evolução incremental das regras de entrada e saída para controle de risco, taxas e assertividade:',
+        groups: [
+          {
+            name: 'Base & Reversão',
+            range: 'S001 – S003',
+            summary: 'Desvio padrão simples (1 e 1.1), derivada direta (2) e primeiro filtro híbrido de desvio + derivada (3) usados como controle.'
+          },
+          {
+            name: 'Híbridas Benchmark',
+            range: 'S004 – S005',
+            summary: 'S004 (Desvio + Derivada Confirmada) é a linha de base principal; 4.1 e 5 ajustam seletividade por desvio extremo e força mínima.'
+          },
+          {
+            name: 'Proteção & Lucro Real',
+            range: 'S006 – S009.1',
+            summary: 'Evolução de Stop Loss clássico para saídas baseadas no lucro líquido real após taxas, com destaque para 8.1 e 9.1.'
+          },
+          {
+            name: 'Trailing Profit',
+            range: 'S010 – S012.1',
+            summary: 'Captura de movimentos estendidos protegendo o lucro mínimo garantido ao recuo (ex.: S012.1 Trailing Stop Smart Min Buy).'
+          },
+          {
+            name: 'Roadmap Quant & Score',
+            range: 'S013 – S021',
+            summary: 'Filtros planejados e em teste com ATR/volatilidade, confirmação por candles, score multicritério (S020) e ajuste via backtest (S021).'
+          }
+        ]
+      }
+    },
+    {
+      id: 'arbitragem-ciclo-exchanges',
+      title: 'Simulador de Arbitragem em Ciclo entre Exchanges',
+      categoryBadge: 'Script Python · CCXT Multi-Exchanges',
+      badgeVariant: 'neutral',
+      statusLabel: 'Código Utilitário',
+      isTradeHighlight: false,
+      description: 'Script em Python (CCXT) que consulta diversas corretoras e redes de transferência para simular em ciclo o resultado de comprar em uma loja, transferir para outra pela rede mais barata e vender na seguinte, enviando alertas via Telegram.',
+      tags: ['Python', 'CCXT', 'Arbitragem em Ciclo', 'Taxas de Rede', 'Telegram'],
+      imageSrc: './assets/aistudio/image_ee79f82c.png',
+      imageCaption: 'Script Python CCXT: consulta de redes entre corretoras e simulação de ciclo com alertas no Telegram',
+      metrics: [
+        { label: 'Dinâmica', value: 'Compra → Transferência → Venda em Ciclo' },
+        { label: 'Exchanges Consultadas', value: 'Binance, KuCoin, Kraken, Bybit, Gate.io...' },
+        { label: 'Critério de Rede', value: 'Menor Taxa de Saque/Depósito + Telegram' }
       ],
       codeSnippet: {
         language: 'python',
-        filename: 'trade_network_router.py',
+        filename: 'arbitragem_ciclo_ccxt.py',
         code: `import os
-import datetime
 from dotenv import load_dotenv
 import ccxt
 
-# Encontra o melhor caminho de transferência rede entre exchanges
+# Confere redes comuns e estima o menor custo de transferência entre exchanges
 def encontrar_melhor_rede_para_transferencia(moeda, ex1, ex2):
     try:
         ex1.load_markets()
@@ -466,20 +538,12 @@ def encontrar_melhor_rede_para_transferencia(moeda, ex1, ex2):
             fee2 = net2[rede].get("withdrawFee", float('inf'))
             if not net1[rede].get("withdrawEnabled") or not net2[rede].get("depositEnabled"):
                 continue
-            total_fee = fee1 + fee2
-            melhores.append((rede, total_fee))
+            melhores.append((rede, fee1 + fee2))
         melhores.sort(key=lambda x: x[1])
         return melhores[0] if melhores else None
     except Exception as e:
         print(f"[Erro] encontrar_melhor_rede_para_transferencia: {e}")
-        return None
-
-def enviar_mensagem_telegram(mensagem):
-    import requests
-    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
-    chat_id = os.getenv("TELEGRAM_CHAT_ID")
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    requests.post(url, json={"chat_id": chat_id, "text": mensagem})`
+        return None`
       }
     },
     {
@@ -490,7 +554,7 @@ def enviar_mensagem_telegram(mensagem):
       statusLabel: 'Utilitário Desktop',
       description: 'Ferramenta desktop desenvolvida para conversão em lote de imagens (JPEG, WEBP, PNG com ajuste fino de compressão e qualidade) e módulo integrado para unificação ágil de múltiplos arquivos PDF em documento único.',
       tags: ['Python', 'CustomTkinter', 'Pillow', 'PyPDF', 'Desktop GUI'],
-      imageSrc: '/assets/aistudio/image_6457b4b7.png',
+      imageSrc: './assets/aistudio/image_6457b4b7.png',
       imageCaption: 'Interface ConversorImagens v1.0 (Abas de Conversão em Lote e Juntador de PDFs)',
       metrics: [
         { label: 'Formatos Suportados', value: 'JPEG, WEBP, PNG' },
@@ -521,7 +585,7 @@ def batch_convert(source_folder, output_format="WEBP", quality=90):
       statusLabel: 'Pipeline de Dados',
       description: 'Script em Python com Requests e Pandas consumindo a API oficial de Compras do Governo Federal (dadosabertos.compras.gov.br), convertendo payloads em DataFrames para estruturação tabular e auditoria de itens materiais.',
       tags: ['Python', 'Pandas', 'Requests', 'REST API', 'Dados Abertos'],
-      imageSrc: '/assets/aistudio/image_46ca9823.png',
+      imageSrc: './assets/aistudio/image_46ca9823.png',
       imageCaption: 'Script Python gov.py consultando módulo de materiais da API Compras do Governo Federal',
       metrics: [
         { label: 'Fonte Oficial', value: 'dadosabertos.compras.gov.br' },
@@ -668,10 +732,10 @@ export const translationsEn: Translations = {
     minReached: 'Minimum reached'
   },
   about: {
-    sectionTitle: 'About Me & Core Competencies',
-    sectionSubtitle: 'Production Engineer uniting industrial systems thinking, analytical data modeling, and practical automation.',
-    p1: 'I am a Production Engineer working at the intersection of industrial operations, data intelligence, and applied software technology. My approach pairs systemic engineering rigor with the hands-on capability to build functioning computational tools.',
-    p2: 'I have practical experience developing real deliverables: from engineering strategic executive dashboards for public management (such as the Santa Catarina Civil Defense statewide portal) to implementing heuristic algorithms for multimodal optimization and event-driven automation pipelines.',
+    sectionTitle: 'About & Core Competencies',
+    sectionSubtitle: 'Focused on analytical modeling, computational optimization, and process automation.',
+    p1: '',
+    p2: 'Hands-on delivery across Google ecosystem dashboards, Python parallel computing and workload distribution benchmarks, and event-driven automation pipelines.',
     p3: 'My goal is always to eliminate operational friction, turn unstructured data into actionable clarity, and craft software solutions that support dependable, evidence-based decisions.',
     educationTitle: 'Education & Technical Foundation',
     educationSummary: 'A solid foundation pairing the strategic and quantitative mindset of Production Engineering with applied technical training in systems and computation.',
@@ -830,31 +894,103 @@ export const translationsEn: Translations = {
   otherWorksList: [
     {
       id: 'trade-controller',
-      title: 'App Trade Controller & Algorithmic Strategies (Crypto & Equities)',
-      categoryBadge: 'Crypto & Equities · Binance & MT5',
+      title: 'App Trade Controller — Strategy Controller',
+      categoryBadge: 'Strategy Controller · Crypto (Binance) & MT5',
       badgeVariant: 'secondary',
-      statusLabel: 'Production-Ready & High-Efficiency',
+      statusLabel: '5 Screens · Quant Lab',
       isTradeHighlight: true,
-      description: 'High-efficiency platform for strategy modeling, backtesting, and automated execution (Binance & MT5). Features spread/slippage parameter tuning, S004 strategy (Deviation + Confirmed Derivative), dynamic least-cost transfer fee network routing across 10+ exchanges (CCXT), and instant Telegram alerting.',
-      tags: ['Python', 'CCXT', 'Binance & MT5', 'Quant Algorithms', 'Telegram Bot'],
-      imageSrc: '/assets/aistudio/image_2ac28b9b.png',
-      imageCaption: 'Operation Interface: App Trade Controller v1.0 (S004 Strategy, Win Rate, Profit Factor, Drawdown)',
-      secondaryImageSrc: '/assets/aistudio/image_ee79f82c.png',
-      secondaryImageCaption: 'Python CCXT Backend: Inter-exchange network fee routing and Telegram alerting engine',
+      description: 'Desktop application for configuring, simulating, and controlling trading strategies across Crypto (Binance) and Equities (MT5). Combines a modular strategy catalog (S001 to S021), realistic spread/slippage/latency simulation, trade history, strategy Win Rate charts, and a Weekly Scanner with look-ahead-free backtesting.',
+      tags: ['Python', 'Binance & MT5', '21 Strategies (S001–S021)', 'Backtest & Scanner', 'Desktop GUI'],
+      imageSrc: './assets/aistudio/image_2ac28b9b.png',
+      imageCaption: 'Operation Tab — Binance/MT5 selection, spread/slippage/latency simulation, and live metrics',
+      gallery: [
+        {
+          src: './assets/aistudio/image_2ac28b9b.png',
+          label: '1. Operation',
+          caption: 'Operation Tab — Bot selector (Binance/MT5), S004 strategy, simulation parameters, and live metrics panel'
+        },
+        {
+          src: './assets/aistudio/image_2a28bf6b.png',
+          label: '2. Strategies',
+          caption: 'Strategy Lab — Modular catalog (Price Action, Stop, Trailing, Profit) with direct engine activation'
+        },
+        {
+          src: './assets/aistudio/image_820967a1.png',
+          label: '3. History',
+          caption: 'Execution History — Consolidated log of 1,045 trades with symbol, strategy, timestamps, net profit, and equity'
+        },
+        {
+          src: './assets/aistudio/image_503110e6.png',
+          label: '4. Reports',
+          caption: 'Accuracy Reports — Tabular breakdown and Win Rate (%) bar chart across strategies (S004, S012.1, S014, S021)'
+        },
+        {
+          src: './assets/aistudio/image_4e2c4bc1.png',
+          label: '5. Weekly Scanner',
+          caption: 'Weekly Scanner — Asset ranking by score, look-ahead-free backtest validation, and automatic Telegram alerts'
+        }
+      ],
       metrics: [
-        { label: 'Markets', value: 'Binance (Crypto) & MT5 (Equities)' },
-        { label: 'CCXT Routing', value: '10 Exchanges (Lowest Fee)' },
-        { label: 'Alerting', value: 'Real-Time Telegram Bot' }
+        { label: 'Markets & Simulation', value: 'Binance & MT5 · Spread, Slippage & Latency' },
+        { label: 'Integrated Modules', value: 'Operation, Catalog, History, Reports & Scanner' },
+        { label: 'Tracked Dataset', value: '1,045 trades across 21 strategy families' }
+      ],
+      strategySummary: {
+        title: 'Strategy Overview (S001–S021)',
+        subtitle: 'Incremental evolution of entry and exit rules balancing fee awareness, risk control, and win rate:',
+        groups: [
+          {
+            name: 'Baseline & Reversion',
+            range: 'S001 – S003',
+            summary: 'Simple standard deviation (1 & 1.1), raw derivative (2), and initial hybrid deviation + derivative filter (3) kept as baselines.'
+          },
+          {
+            name: 'Hybrid Benchmarks',
+            range: 'S004 – S005',
+            summary: 'S004 (Deviation + Confirmed Derivative) serves as the primary benchmark; 4.1 and 5 refine entry selectivity.'
+          },
+          {
+            name: 'Protection & Net Profit',
+            range: 'S006 – S009.1',
+            summary: 'Shift from classic Stop Loss toward fee-aware exits anchored on real net position profit (highlighting 8.1 and 9.1).'
+          },
+          {
+            name: 'Trailing Profit',
+            range: 'S010 – S012.1',
+            summary: 'Captures extended upside while locking a guaranteed minimum profit on pullbacks (e.g., S012.1 Trailing Stop Smart Min Buy).'
+          },
+          {
+            name: 'Quant Roadmap & Score',
+            range: 'S013 – S021',
+            summary: 'Volatility/ATR filters, multi-candle confirmation, multi-factor scoring (S020), and backtest-driven tuning (S021).'
+          }
+        ]
+      }
+    },
+    {
+      id: 'arbitragem-ciclo-exchanges',
+      title: 'Cross-Exchange Cycle Arbitrage Simulator',
+      categoryBadge: 'Python Script · CCXT Multi-Exchange',
+      badgeVariant: 'neutral',
+      statusLabel: 'Utility Script',
+      isTradeHighlight: false,
+      description: 'Python (CCXT) script that checks prices and transfer networks across multiple exchanges to simulate buying on one platform, transferring via the lowest-fee network to another, and selling on the next in a cycle, with Telegram alerts.',
+      tags: ['Python', 'CCXT', 'Cycle Arbitrage', 'Network Fees', 'Telegram'],
+      imageSrc: './assets/aistudio/image_ee79f82c.png',
+      imageCaption: 'CCXT Python Script: multi-exchange network lookup and cycle simulation with Telegram notifications',
+      metrics: [
+        { label: 'Cycle Flow', value: 'Buy → Transfer → Sell Cycle' },
+        { label: 'Exchanges Checked', value: 'Binance, KuCoin, Kraken, Bybit, Gate.io...' },
+        { label: 'Routing Criterion', value: 'Lowest Transfer Fee + Telegram' }
       ],
       codeSnippet: {
         language: 'python',
-        filename: 'trade_network_router.py',
+        filename: 'arbitragem_ciclo_ccxt.py',
         code: `import os
-import datetime
 from dotenv import load_dotenv
 import ccxt
 
-# Finds optimal network transfer path between exchanges
+# Finds common networks and estimates lowest transfer cost between exchanges
 def encontrar_melhor_rede_para_transferencia(moeda, ex1, ex2):
     try:
         ex1.load_markets()
@@ -869,20 +1005,12 @@ def encontrar_melhor_rede_para_transferencia(moeda, ex1, ex2):
             fee2 = net2[rede].get("withdrawFee", float('inf'))
             if not net1[rede].get("withdrawEnabled") or not net2[rede].get("depositEnabled"):
                 continue
-            total_fee = fee1 + fee2
-            melhores.append((rede, total_fee))
+            melhores.append((rede, fee1 + fee2))
         melhores.sort(key=lambda x: x[1])
         return melhores[0] if melhores else None
     except Exception as e:
         print(f"[Erro] encontrar_melhor_rede_para_transferencia: {e}")
-        return None
-
-def enviar_mensagem_telegram(mensagem):
-    import requests
-    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
-    chat_id = os.getenv("TELEGRAM_CHAT_ID")
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    requests.post(url, json={"chat_id": chat_id, "text": mensagem})`
+        return None`
       }
     },
     {
@@ -893,7 +1021,7 @@ def enviar_mensagem_telegram(mensagem):
       statusLabel: 'Desktop Utility',
       description: 'Desktop application built with CustomTkinter for high-speed batch image processing (JPEG, WEBP, PNG with fine compression & quality tuning) and integrated utility for sequential multi-PDF merging into a unified file.',
       tags: ['Python', 'CustomTkinter', 'Pillow', 'PyPDF', 'Desktop GUI'],
-      imageSrc: '/assets/aistudio/image_6457b4b7.png',
+      imageSrc: './assets/aistudio/image_6457b4b7.png',
       imageCaption: 'ConversorImagens v1.0 UI (Batch Image Conversion Tabs and PDF Merger)',
       metrics: [
         { label: 'Supported Formats', value: 'JPEG, WEBP, PNG' },
@@ -924,7 +1052,7 @@ def batch_convert(source_folder, output_format="WEBP", quality=90):
       statusLabel: 'Data Pipeline',
       description: 'Python script utilizing Requests and Pandas querying the Brazilian Federal Government Open Procurement API (dadosabertos.compras.gov.br), structuring JSON payloads into analytical DataFrames for material item auditing.',
       tags: ['Python', 'Pandas', 'Requests', 'REST API', 'Open Data'],
-      imageSrc: '/assets/aistudio/image_46ca9823.png',
+      imageSrc: './assets/aistudio/image_46ca9823.png',
       imageCaption: 'Python gov.py script querying Federal Procurement API materials endpoint',
       metrics: [
         { label: 'Official Source', value: 'dadosabertos.compras.gov.br' },

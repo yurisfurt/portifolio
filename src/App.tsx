@@ -101,7 +101,7 @@ function PortfolioContent() {
           <div className="md:hidden flex items-center justify-between pb-4 mb-6 border-b border-[#E3DED7] dark:border-[#364C59]">
             <div className="flex items-center gap-3">
               <img
-                src="/assets/aistudio/foto_linda_d96a6bf9.jpg"
+                src="./assets/aistudio/foto_linda_d96a6bf9.jpg"
                 alt="Yuri Furtwaengler"
                 className="w-9 h-9 rounded-full object-cover border border-[#E3DED7] dark:border-[#364C59]"
               />
@@ -130,7 +130,7 @@ function PortfolioContent() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-4 sm:p-5 rounded-2xl bg-[#FFFFFF] dark:bg-[#283B47] border border-[#E3DED7] dark:border-[#364C59] shadow-2xs">
                 <div className="relative shrink-0">
                   <img
-                    src="/assets/aistudio/foto_linda_d96a6bf9.jpg"
+                    src="./assets/aistudio/foto_linda_d96a6bf9.jpg"
                     alt={PERSONAL_INFO.name}
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-2 border-[#E3DED7] dark:border-[#364C59] shadow-xs"
                   />

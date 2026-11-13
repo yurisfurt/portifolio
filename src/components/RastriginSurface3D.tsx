@@ -633,7 +633,7 @@ export const RastriginSurface3D: React.FC<RastriginSurface3DProps> = () => {
               </div>
 
               <a
-                href="/assets/aistudio/runs_08098b69.csv"
+                href="./assets/aistudio/runs_08098b69.csv"
                 download="runs.csv"
                 className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#1B2933] hover:bg-[#283B47] border border-[#364C59] text-[11px] font-mono text-[#2DD4BF] self-start"
               >

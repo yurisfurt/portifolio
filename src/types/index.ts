@@ -60,6 +60,18 @@ export interface EducationItem {
   description?: string;
 }
 
+export interface OtherWorkGalleryImage {
+  src: string;
+  label: string;
+  caption: string;
+}
+
+export interface OtherWorkStrategyGroup {
+  name: string;
+  range: string;
+  summary: string;
+}
+
 export interface OtherWorkItem {
   id: string;
   title: string;
@@ -71,6 +83,12 @@ export interface OtherWorkItem {
   secondaryImageSrc?: string;
   imageCaption?: string;
   secondaryImageCaption?: string;
+  gallery?: OtherWorkGalleryImage[];
+  strategySummary?: {
+    title: string;
+    subtitle?: string;
+    groups: OtherWorkStrategyGroup[];
+  };
   isTradeHighlight?: boolean;
   codeSnippet?: {
     language: string;

@@ -93,7 +93,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </div>
               <div className="p-2 sm:p-4 bg-[#1B2933]/5 dark:bg-black/30">
                 <img
-                  src="/assets/aistudio/image_89f17629.png"
+                  src="./assets/aistudio/image_89f17629.png"
                   alt="Central de Dados Programa Defesa Civil na Escola"
                   className="w-full h-auto rounded-lg border border-[#E3DED7] dark:border-[#364C59] shadow-sm"
                 />
@@ -116,7 +116,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </div>
                 <div className="p-2 sm:p-4 flex justify-center bg-[#0E1A2A]">
                   <img
-                    src="/assets/aistudio/overview_337417fc.png"
+                    src="./assets/aistudio/overview_337417fc.png"
                     alt="Smart Heuristic — Dividir o trabalho. Medir o resultado."
                     className="w-full h-auto max-h-[400px] object-contain rounded-lg border border-[#283B47]"
                   />
@@ -140,7 +140,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </div>
                 <div className="p-2 sm:p-4 flex justify-center bg-[#0E1A2A]">
                   <img
-                    src="/assets/aistudio/parameters_6dd0d8cb.png"
+                    src="./assets/aistudio/parameters_6dd0d8cb.png"
                     alt="Efeito do número de processos e TREE configurações medidas em 3D"
                     className="w-full h-auto max-h-[380px] object-contain rounded-lg border border-[#283B47]"
                   />
