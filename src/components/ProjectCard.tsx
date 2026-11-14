@@ -44,31 +44,17 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
     );
   }
 
-  // Default schematic (n8n pipeline)
+  // n8n workflow demo
   return (
-    <div className="w-full h-44 sm:h-48 bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] flex items-center justify-center relative overflow-hidden group-hover:opacity-95 transition-opacity">
-      <svg viewBox="0 0 360 160" className="w-full h-full p-4 opacity-90" preserveAspectRatio="xMidYMid meet">
-        {/* Webhook trigger */}
-        <rect x="25" y="60" width="70" height="40" rx="6" fill="#FFFFFF" stroke="#D96B27" strokeWidth="1" className="dark:fill-[#283B47] dark:stroke-[#F28C38]" />
-        <text x="60" y="84" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="10" fontFamily="monospace" fontWeight="600">Webhook</text>
-
-        <line x1="95" y1="80" x2="145" y2="80" stroke="#D96B27" className="dark:stroke-[#F28C38]" strokeWidth="1.5" strokeDasharray="3 3" />
-        <polygon points="145,80 137,76 137,84" fill="#D96B27" className="dark:fill-[#F28C38]" />
-
-        {/* n8n Router & Python processing */}
-        <rect x="145" y="45" width="85" height="70" rx="6" fill="#FFFFFF" stroke="#223747" strokeWidth="1.5" className="dark:fill-[#283B47] dark:stroke-[#F5F2EC]" />
-        <text x="187" y="75" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="12" fontFamily="monospace" fontWeight="bold">n8n</text>
-        <text x="187" y="93" textAnchor="middle" fill="#D96B27" className="dark:fill-[#F28C38]" fontSize="9" fontFamily="monospace">Pipeline</text>
-
-        <line x1="230" y1="80" x2="275" y2="80" stroke="#D96B27" className="dark:stroke-[#F28C38]" strokeWidth="1.5" strokeDasharray="3 3" />
-        <polygon points="275,80 267,76 267,84" fill="#D96B27" className="dark:fill-[#F28C38]" />
-
-        {/* Postgres DB destination */}
-        <rect x="275" y="60" width="65" height="40" rx="6" fill="#FFFFFF" stroke="#E5A94C" strokeWidth="1" className="dark:fill-[#283B47] dark:stroke-[#E8B665]" />
-        <text x="307" y="84" textAnchor="middle" fill="#223747" className="dark:fill-[#F5F2EC]" fontSize="10" fontFamily="monospace" fontWeight="600">PostgreSQL</text>
-      </svg>
+    <div className="w-full h-44 sm:h-48 bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity">
+      <img
+        src="./assets/aistudio/Video%20Project%202.gif"
+        alt="Demonstração animada do fluxo de automação n8n"
+        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
       <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59]">
-        {project.imageLabel || 'Arquitetura n8n'}
+        {project.imageLabel || 'Demonstração do fluxo n8n'}
       </span>
     </div>
   );
