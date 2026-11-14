@@ -509,7 +509,7 @@ export const translationsPt: Translations = {
       isTradeHighlight: false,
       description: 'Script em Python (CCXT) que consulta diversas corretoras e redes de transferência para simular em ciclo o resultado de comprar em uma loja, transferir para outra pela rede mais barata e vender na seguinte, enviando alertas via Telegram.',
       tags: ['Python', 'CCXT', 'Arbitragem em Ciclo', 'Taxas de Rede', 'Telegram'],
-      imageSrc: './assets/aistudio/image_ee79f82c.png',
+      imageSrc: './assets/aistudio/image_770b08b3.png',
       imageCaption: 'Script Python CCXT: consulta de redes entre corretoras e simulação de ciclo com alertas no Telegram',
       metrics: [
         { label: 'Dinâmica', value: 'Compra → Transferência → Venda em Ciclo' },
@@ -976,7 +976,7 @@ export const translationsEn: Translations = {
       isTradeHighlight: false,
       description: 'Python (CCXT) script that checks prices and transfer networks across multiple exchanges to simulate buying on one platform, transferring via the lowest-fee network to another, and selling on the next in a cycle, with Telegram alerts.',
       tags: ['Python', 'CCXT', 'Cycle Arbitrage', 'Network Fees', 'Telegram'],
-      imageSrc: './assets/aistudio/image_ee79f82c.png',
+      imageSrc: './assets/aistudio/image_770b08b3.png',
       imageCaption: 'CCXT Python Script: multi-exchange network lookup and cycle simulation with Telegram notifications',
       metrics: [
         { label: 'Cycle Flow', value: 'Buy → Transfer → Sell Cycle' },
