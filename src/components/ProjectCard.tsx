@@ -14,14 +14,14 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
     return (
       <div className="w-full h-44 sm:h-48 bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity">
         <img
-          src="./assets/aistudio/image_89f17629.png"
+          src="./assets/aistudio/image_bd5070be.png"
           alt={project.title}
-          className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1B2933]/50 via-transparent to-transparent pointer-events-none" />
         <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59] backdrop-blur-xs">
-          {project.imageLabel || 'Central Oficial PDCE'}
+          {project.imageLabel || 'Central & Portal PDCE 2027'}
         </span>
       </div>
     );
@@ -44,17 +44,18 @@ const ProjectVisualPreview: React.FC<{ project: Project }> = ({ project }) => {
     );
   }
 
-  // n8n workflow demo
+  // n8n & Google Apps Script workflow demo
   return (
     <div className="w-full h-44 sm:h-48 bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59] relative overflow-hidden group-hover:opacity-95 transition-opacity">
       <img
-        src="./assets/aistudio/Video%20Project%202.gif"
-        alt="Demonstração animada do fluxo de automação n8n"
-        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+        src="./assets/aistudio/automacao/n8n-workflow.gif"
+        alt="Demonstração animada de automação em n8n"
+        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       />
-      <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59]">
-        {project.imageLabel || 'Demonstração do fluxo n8n'}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1B2933]/45 via-transparent to-transparent pointer-events-none" />
+      <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-[#223747] dark:text-[#F5F2EC] bg-[#FFFFFF]/90 dark:bg-[#1B2933]/90 px-2 py-0.5 rounded border border-[#E3DED7] dark:border-[#364C59] backdrop-blur-xs">
+        {project.imageLabel || 'n8n & Google Apps Script'}
       </span>
     </div>
   );

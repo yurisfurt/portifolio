@@ -12,6 +12,11 @@ interface ProjectModalProps {
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const { t, language } = useLanguage();
   const [copied, setCopied] = useState(false);
+  const [automationView, setAutomationView] = useState<'apps-script' | 'n8n-gif'>('apps-script');
+
+  useEffect(() => {
+    setAutomationView('apps-script');
+  }, [project?.id]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -80,23 +85,111 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
           )}
 
-          {/* Real High-Resolution Dashboard for Defesa Civil */}
+          {/* Defesa Civil PDCE 2027: Merged Hero + Two Separate Deliverable Topics (Portal & Central) */}
           {project.id === 'defesa-civil-dashboard' && (
-            <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#F7F5F1] dark:bg-[#1B2933]">
-              <div className="p-3 bg-[#FFFFFF] dark:bg-[#283B47] border-b border-[#E3DED7] dark:border-[#364C59] flex items-center justify-between text-xs">
-                <span className="font-mono font-medium text-[#223747] dark:text-[#F5F2EC]">
-                  {language === 'pt' ? 'Painel Oficial em Produção · Defesa Civil de SC' : 'Official Portal in Production · Santa Catarina Civil Defense'}
-                </span>
-                <span className="font-mono text-[#E5A94C] dark:text-[#E8B665] text-[11px] font-semibold">
-                  Eng. Yuri Furtwaengler (Apoio Técnico)
-                </span>
+            <div className="space-y-5">
+              {/* Merged Overview Image */}
+              <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#F7F5F1] dark:bg-[#1B2933]">
+                <div className="p-3 bg-[#FFFFFF] dark:bg-[#283B47] border-b border-[#E3DED7] dark:border-[#364C59] flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <span className="font-mono font-medium text-[#223747] dark:text-[#F5F2EC]">
+                    {language === 'pt'
+                      ? 'Ecossistema PDCE 2027 · Portal de Inscrições & Central de Dados'
+                      : 'PDCE 2027 Ecosystem · Registration Portal & Data Hub'}
+                  </span>
+                  <span className="text-[11px] font-mono text-[#D96B27] dark:text-[#F28C38] font-semibold">
+                    Eng. Yuri Furtwaengler
+                  </span>
+                </div>
+                <div className="p-2 sm:p-4 bg-[#1B2933]/5 dark:bg-black/30 flex justify-center">
+                  <img
+                    src="./assets/aistudio/image_bd5070be.png"
+                    alt="Portal de Inscrições e Central de Dados PDCE 2027"
+                    className="w-full h-auto max-h-[420px] object-contain rounded-lg border border-[#E3DED7] dark:border-[#364C59] shadow-sm bg-white"
+                  />
+                </div>
               </div>
-              <div className="p-2 sm:p-4 bg-[#1B2933]/5 dark:bg-black/30">
-                <img
-                  src="./assets/aistudio/image_89f17629.png"
-                  alt="Central de Dados Programa Defesa Civil na Escola"
-                  className="w-full h-auto rounded-lg border border-[#E3DED7] dark:border-[#364C59] shadow-sm"
-                />
+
+              {/* Separate Topics: Portal de Inscrições vs Central de Dados */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Topic 1: Portal de Inscrições */}
+                <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#FFFFFF] dark:bg-[#283B47] flex flex-col">
+                  <div className="p-3.5 border-b border-[#E3DED7] dark:border-[#364C59] bg-[#F7F5F1] dark:bg-[#1B2933]">
+                    <span className="text-[10px] font-mono uppercase tracking-wider font-bold text-[#D96B27] dark:text-[#F28C38]">
+                      {language === 'pt' ? 'Tópico 01 · Google Apps Script' : 'Topic 01 · Google Apps Script'}
+                    </span>
+                    <h4 className="text-sm font-bold text-[#223747] dark:text-[#F5F2EC] mt-0.5">
+                      {language === 'pt' ? 'Portal de Inscrições PDCE 2027' : 'PDCE 2027 Registration Portal'}
+                    </h4>
+                  </div>
+
+                  <div className="bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59]">
+                    <img
+                      src="./assets/aistudio/image_4262d16d.png"
+                      alt="Portal de Inscrições PDCE 2027"
+                      className="w-full h-44 object-cover object-top"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="p-4 space-y-2 text-xs text-[#223747]/85 dark:text-[#F5F2EC]/85 leading-relaxed flex-1">
+                    <p>
+                      {language === 'pt'
+                        ? 'Site web desenvolvido integralmente em Google Apps Script para centralizar o fluxo de entrada das escolas e professores no programa.'
+                        : 'Web portal built entirely in Google Apps Script to handle school and teacher enrollment in the program.'}
+                    </p>
+                    <ul className="space-y-1 text-[11px] text-[#5B7382] dark:text-[#9EB3BF]">
+                      <li>
+                        • {language === 'pt' ? 'Inscrição online da escola e do professor' : 'Online school & teacher registration'}
+                      </li>
+                      <li>
+                        • {language === 'pt' ? 'Download de cola de respostas seguindo regra de preenchimento' : 'Rule-based answer-key cheat sheet download'}
+                      </li>
+                      <li>
+                        • {language === 'pt' ? 'Página dedicada para dúvidas dos participantes' : 'Dedicated FAQ / Q&A support page'}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Topic 2: Central de Dados */}
+                <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#FFFFFF] dark:bg-[#283B47] flex flex-col">
+                  <div className="p-3.5 border-b border-[#E3DED7] dark:border-[#364C59] bg-[#F7F5F1] dark:bg-[#1B2933]">
+                    <span className="text-[10px] font-mono uppercase tracking-wider font-bold text-[#D96B27] dark:text-[#F28C38]">
+                      {language === 'pt' ? 'Tópico 02 · Painel de Consulta' : 'Topic 02 · Lookup Dashboard'}
+                    </span>
+                    <h4 className="text-sm font-bold text-[#223747] dark:text-[#F5F2EC] mt-0.5">
+                      {language === 'pt' ? 'Central de Dados PDCE 2027' : 'PDCE 2027 Data Hub'}
+                    </h4>
+                  </div>
+
+                  <div className="bg-[#F7F5F1] dark:bg-[#1B2933] border-b border-[#E3DED7] dark:border-[#364C59]">
+                    <img
+                      src="./assets/aistudio/image_96dc0a8d.png"
+                      alt="Central de Dados Programa Defesa Civil na Escola 2027"
+                      className="w-full h-44 object-cover object-top"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="p-4 space-y-2 text-xs text-[#223747]/85 dark:text-[#F5F2EC]/85 leading-relaxed flex-1">
+                    <p>
+                      {language === 'pt'
+                        ? 'Painel público conectado à planilha oficial da Defesa Civil para consulta rápida de informações cadastrais pelos professores de toda SC.'
+                        : 'Public dashboard linked to Civil Defense’s official spreadsheet so teachers statewide can check registration records.'}
+                    </p>
+                    <ul className="space-y-1 text-[11px] text-[#5B7382] dark:text-[#9EB3BF]">
+                      <li>
+                        • {language === 'pt' ? 'Consulta de situação da escola e cadastro docente 2027' : '2027 school & teacher registration status lookup'}
+                      </li>
+                      <li>
+                        • {language === 'pt' ? 'Filtros por Município, Escola, COREDEC, CRE e COMPDEC' : 'Filtering by Municipality, School, COREDEC, CRE & COMPDEC'}
+                      </li>
+                      <li>
+                        • {language === 'pt' ? 'Solução gratuita com recursos já disponíveis ao órgão público' : 'Zero-cost tooling built on existing public resources'}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           )}
@@ -165,6 +258,128 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 <div className="p-2 bg-[#F7F5F1] dark:bg-[#1B2933]">
                   <RastriginSurface3D />
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* Automations Visual Showcase: Google Apps Script Architecture & n8n Animated GIF */}
+          {project.id === 'n8n-automation-pipeline' && (
+            <div className="space-y-3">
+              <div className="rounded-xl border border-[#E3DED7] dark:border-[#364C59] overflow-hidden bg-[#F7F5F1] dark:bg-[#1B2933]">
+                <div className="p-3 bg-[#FFFFFF] dark:bg-[#283B47] border-b border-[#E3DED7] dark:border-[#364C59] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                  <span className="font-mono font-medium text-[#223747] dark:text-[#F5F2EC]">
+                    {language === 'pt'
+                      ? 'Fluxos Automatizados · Google Apps Script & n8n'
+                      : 'Automated Workflows · Google Apps Script & n8n'}
+                  </span>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => setAutomationView('apps-script')}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold transition-colors ${
+                        automationView === 'apps-script'
+                          ? 'bg-[#D96B27] text-white dark:bg-[#F28C38] dark:text-[#1B2933]'
+                          : 'bg-[#F7F5F1] dark:bg-[#1B2933] text-[#5B7382] dark:text-[#9EB3BF] hover:text-[#223747] dark:hover:text-[#F5F2EC]'
+                      }`}
+                    >
+                      {language === 'pt' ? '1. Processo Google Apps Script' : '1. Google Apps Script Flow'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setAutomationView('n8n-gif')}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold transition-colors ${
+                        automationView === 'n8n-gif'
+                          ? 'bg-[#D96B27] text-white dark:bg-[#F28C38] dark:text-[#1B2933]'
+                          : 'bg-[#F7F5F1] dark:bg-[#1B2933] text-[#5B7382] dark:text-[#9EB3BF] hover:text-[#223747] dark:hover:text-[#F5F2EC]'
+                      }`}
+                    >
+                      {language === 'pt' ? '2. Pipeline Animado n8n' : '2. n8n Animated Pipeline'}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="p-2 sm:p-4 bg-[#1B2933]/5 dark:bg-black/30 flex justify-center">
+                  <img
+                    src={
+                      automationView === 'apps-script'
+                        ? './assets/aistudio/image_820956e5.png'
+                        : './assets/aistudio/automacao/n8n-workflow.gif'
+                    }
+                    alt={
+                      automationView === 'apps-script'
+                        ? 'Fluxo completo em Google Apps Script e Google Sheets para o PDCE 2027'
+                        : 'Demonstração animada de execução de pipeline no n8n'
+                    }
+                    className="w-full h-auto max-h-[420px] object-contain rounded-lg border border-[#E3DED7] dark:border-[#364C59] shadow-sm bg-[#0E1A2A]"
+                  />
+                </div>
+
+                <div className="px-4 py-2 bg-[#FFFFFF] dark:bg-[#283B47] border-t border-[#E3DED7] dark:border-[#364C59] text-[11px] font-mono text-[#5B7382] dark:text-[#9EB3BF]">
+                  {automationView === 'apps-script'
+                    ? language === 'pt'
+                      ? 'Processo automatizado da Defesa Civil: Portal de Inscrições → Google Sheets & Apps Script (regras, cola de respostas, dúvidas e e-mails) → Central de Dados 2027.'
+                      : 'Civil Defense automated process: Registration Portal → Google Sheets & Apps Script (validation rules, answer-key cheat sheet, FAQ & emails) → 2027 Data Hub.'
+                    : language === 'pt'
+                    ? 'Execução em n8n conectando Webhooks, tratamento de dados em Python, PostgreSQL e alertas automáticos.'
+                    : 'n8n workflow connecting HTTP Webhooks, Python normalization, PostgreSQL persistence, and automated alerts.'}
+                </div>
+              </div>
+
+              {/* 2-Card Selector for Apps Script Diagram & n8n GIF */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() => setAutomationView('apps-script')}
+                  className={`text-left rounded-xl overflow-hidden border transition-all bg-[#FFFFFF] dark:bg-[#283B47] ${
+                    automationView === 'apps-script'
+                      ? 'border-[#D96B27] dark:border-[#F28C38] ring-1 ring-[#D96B27]/40 dark:ring-[#F28C38]/40'
+                      : 'border-[#E3DED7] dark:border-[#364C59] hover:border-[#D96B27]/50 dark:hover:border-[#F28C38]/50'
+                  }`}
+                >
+                  <div className="aspect-video bg-[#F7F5F1] dark:bg-[#1B2933] overflow-hidden border-b border-[#E3DED7] dark:border-[#364C59]">
+                    <img
+                      src="./assets/aistudio/image_820956e5.png"
+                      alt="Fluxo Google Apps Script Defesa Civil"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-2.5 flex items-center justify-between gap-2">
+                    <span className="text-xs font-mono font-semibold text-[#223747] dark:text-[#F5F2EC]">
+                      Google Apps Script · PDCE 2027
+                    </span>
+                    <span className="text-[10px] font-mono text-[#5B7382] dark:text-[#9EB3BF]">
+                      {language === 'pt' ? 'Fluxo Completo' : 'Full Flow'}
+                    </span>
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setAutomationView('n8n-gif')}
+                  className={`text-left rounded-xl overflow-hidden border transition-all bg-[#FFFFFF] dark:bg-[#283B47] ${
+                    automationView === 'n8n-gif'
+                      ? 'border-[#D96B27] dark:border-[#F28C38] ring-1 ring-[#D96B27]/40 dark:ring-[#F28C38]/40'
+                      : 'border-[#E3DED7] dark:border-[#364C59] hover:border-[#D96B27]/50 dark:hover:border-[#F28C38]/50'
+                  }`}
+                >
+                  <div className="aspect-video bg-[#1B2933] overflow-hidden border-b border-[#E3DED7] dark:border-[#364C59]">
+                    <img
+                      src="./assets/aistudio/automacao/n8n-workflow.gif"
+                      alt="Pipeline n8n animado"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-2.5 flex items-center justify-between gap-2">
+                    <span className="text-xs font-mono font-semibold text-[#223747] dark:text-[#F5F2EC]">
+                      {language === 'pt' ? 'Pipeline n8n (GIF)' : 'n8n Pipeline (GIF)'}
+                    </span>
+                    <span className="text-[10px] font-mono text-[#5B7382] dark:text-[#9EB3BF]">
+                      Webhooks & ETL
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           )}

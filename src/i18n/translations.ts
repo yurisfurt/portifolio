@@ -267,7 +267,7 @@ export const translationsPt: Translations = {
     sectionTitle: 'Sobre Mim & Competências',
     sectionSubtitle: 'Foco em modelagem analítica, otimização computacional e automação de processos.',
     p1: '',
-    p2: 'Atuação prática na entrega de painéis integrados ao ecossistema Google, estudos de computação paralela e distribuição de carga em Python, além de fluxos automatizados orientados a eventos.',
+    p2: 'Atuação prática na entrega de painéis e portais integrados ao ecossistema Google (Google Apps Script e Sheets), estudos de computação paralela em Python e automações orientadas a eventos em n8n.',
     p3: 'Busco sempre eliminar atritos operacionais, estruturar dados dispersos em visões claras e construir ferramentas que realmente auxiliem as equipes na tomada de decisões seguras e embasadas.',
     educationTitle: 'Formação & Fundamentos Técnicos',
     educationSummary: 'Sólida base combinando a visão gerencial e quantitativa da Engenharia de Produção com o conhecimento prático em computação e arquitetura de sistemas.',
@@ -297,9 +297,9 @@ export const translationsPt: Translations = {
         items: ['Algoritmos Genéticos (AG)', 'Particle Swarm (PSO)', 'NumPy / SciPy', 'Funções Multimodais', 'Modelagem em Python']
       },
       {
-        title: 'Automação & Integração de Fluxos',
-        description: 'Orquestração de pipelines de dados orientados a eventos, integração de APIs, webhooks e eliminação de tarefas manuais repetitivas.',
-        items: ['n8n Workflow Automation', 'Webhooks & REST APIs', 'PostgreSQL', 'Scripts Python', 'Integração de Sistemas']
+        title: 'Automação em n8n & Google Apps Script',
+        description: 'Orquestração de pipelines em n8n (webhooks, APIs e PostgreSQL) e desenvolvimento de portais e fluxos automatizados em Google Apps Script.',
+        items: ['n8n Workflow Automation', 'Google Apps Script', 'Webhooks & REST APIs', 'Google Sheets & PostgreSQL', 'Python Scripts']
       }
     ],
     stackLabel: 'Tecnologias & Ferramentas',
@@ -340,31 +340,31 @@ export const translationsPt: Translations = {
   projectList: [
     {
       id: 'defesa-civil-dashboard',
-      title: 'Central de Dados — Programa Defesa Civil na Escola',
-      subtitle: 'Consulta Escolar e Docente · Integração Planilha & Ecossistema Google',
+      title: 'Central de Dados & Portal de Inscrições — PDCE 2027',
+      subtitle: 'Consulta Escolar + Portal de Inscrições em Google Apps Script (SC)',
       category: 'analytics',
-      categoryLabel: 'Análise de Dados & BI',
+      categoryLabel: 'Análise de Dados & Google Apps Script',
       featured: true,
       featuredType: 'dashboard',
-      imageLabel: 'Central Oficial PDCE · SC',
+      imageLabel: 'Central & Portal PDCE 2027',
       provenance: 'cv_confirmado',
       provenanceLabel: 'Projeto Real Desenvolvido',
-      summary: 'Dashboard desenvolvido em parceria com a Defesa Civil de SC para auxiliar os professores de todas as escolas do estado na consulta do cadastro da escola e dos docentes no programa, integrando a planilha oficial ao ecossistema Google por meio de ferramenta gratuita já disponível ao órgão público.',
-      tags: ['Ecossistema Google', 'Google Sheets', 'Dashboards', 'Defesa Civil SC', 'Filtros Dinâmicos'],
+      summary: 'Ecossistema desenvolvido com a Defesa Civil de SC unindo a Central de Dados PDCE 2027 (consulta do cadastro de escolas e professores em todo o estado) ao Portal de Inscrições PDCE 2027 em Google Apps Script — com inscrição online, download de cola de respostas por regra de negócio e página de dúvidas.',
+      tags: ['Google Apps Script', 'Google Sheets', 'Portal de Inscrições', 'Central de Dados', 'Defesa Civil SC'],
       specs: [
         { label: 'Entidade', value: 'Defesa Civil de Santa Catarina' },
-        { label: 'Integração', value: 'Planilha Oficial + Ecossistema Google' },
-        { label: 'Viabilidade', value: 'Ferramenta Gratuita · Escolas de SC' }
+        { label: 'Ecossistema', value: 'Central 2027 + Portal de Inscrições' },
+        { label: 'Tecnologia', value: 'Google Apps Script & Sheets (Custo Zero)' }
       ],
-      challenge: 'Possibilitar a busca rápida de informações por professores de todas as escolas de Santa Catarina sobre o cadastro escolar e docente no programa, evitando a necessidade de desenvolver e manter um sistema tradicional de alto custo.',
-      solution: 'Integração prática da planilha de controle da Defesa Civil com recursos gratuitos do ecossistema Google já disponíveis para o órgão público, entregando um dashboard funcional de baixo esforço operacional e fácil manutenção.',
+      challenge: 'Possibilitar inscrições escolares/docentes e consulta rápida de informações para todas as escolas de SC, além de orientar participantes com regras de preenchimento e dúvidas sem contratar sistemas pagos de alto custo.',
+      solution: 'Integração completa da planilha oficial da Defesa Civil ao ecossistema Google: Portal de Inscrições em Google Apps Script (cadastro, download de cola de respostas baseada em regra e página de dúvidas) conectado diretamente à Central de Dados 2027.',
       methodology: [
-        'Mapeamento das informações prioritárias buscadas pelos professores de todo o estado (código INEP, situação da escola e cadastro docente)',
-        'Integração direta entre a planilha oficial da Defesa Civil e o ecossistema Google sem contratação de licenças pagas',
-        'Estruturação da consulta com filtros ágeis por Município, Escola, COREDEC, CRE e COMPDEC',
-        'Implementação focada nos recursos já disponíveis ao órgão público, garantindo uso imediato, prático e sustentável'
+        'Portal de Inscrições PDCE 2027 em Google Apps Script para cadastro da unidade escolar e dos professores participantes',
+        'Download automatizado da cola de respostas seguindo regras de validação para orientar o preenchimento correto',
+        'Página dedicada para dúvidas frequentes integrada ao mesmo ambiente web gratuito do órgão público',
+        'Sincronização automática com a planilha oficial e consulta na Central 2027 por Município, Escola, COREDEC, CRE e COMPDEC'
       ],
-      techStack: ['Ecossistema Google', 'Google Sheets', 'Dashboards Interativos', 'Integração de Dados', 'Solução Custo Zero']
+      techStack: ['Google Apps Script', 'Google Sheets', 'Dashboards Interativos', 'Portal Web', 'Solução Custo Zero']
     },
     {
       id: 'rastrigin-optimization',
@@ -396,31 +396,31 @@ export const translationsPt: Translations = {
     },
     {
       id: 'n8n-automation-pipeline',
-      title: 'Automação de Pipelines & Integrações com n8n',
-      subtitle: 'Fluxos Orientados a Eventos, Webhooks & Tratamento de Dados',
+      title: 'Automações de Fluxos: n8n & Google Apps Script',
+      subtitle: 'Pipelines Orientados a Eventos (n8n) + Portais e Regras em Google Apps Script',
       category: 'automacao',
-      categoryLabel: 'Automação de Processos',
+      categoryLabel: 'Automação em n8n & Apps Script',
       featured: true,
       featuredType: 'n8n',
-      imageLabel: 'Arquitetura de nós n8n',
+      imageLabel: 'n8n & Google Apps Script',
       provenance: 'cv_confirmado',
       provenanceLabel: 'Projeto Desenvolvido',
-      summary: 'Arquitetura de fluxos de integração automatizados conectando gatilhos via webhooks, tratamento de dados em Python, armazenamento em banco relacional (PostgreSQL) e disparo de alertas operacionais sem intervenção manual.',
-      tags: ['n8n', 'Webhooks', 'REST APIs', 'PostgreSQL', 'Python'],
+      summary: 'Desenvolvimento de automações completas em n8n (webhooks, tratamento em Python, PostgreSQL e alertas) e em Google Apps Script — incluindo o fluxo da Defesa Civil (PDCE 2027) com portal de inscrição, download de cola de respostas por regra, página de dúvidas e sincronização automática com planilha e central.',
+      tags: ['n8n', 'Google Apps Script', 'Webhooks & APIs', 'Google Sheets', 'PostgreSQL'],
       specs: [
-        { label: 'Orquestrador', value: 'n8n Workflow Engine' },
-        { label: 'Camada de Dados', value: 'PostgreSQL Relacional' },
-        { label: 'Tratamento', value: 'Python / JSON Schema' }
+        { label: 'Orquestradores', value: 'n8n & Google Apps Script' },
+        { label: 'Caso Real (Apps Script)', value: 'Portal PDCE 2027 + Cola por Regra' },
+        { label: 'Integração & Dados', value: 'Webhooks, Sheets, PostgreSQL & Python' }
       ],
-      challenge: 'Conectar fontes de dados heterogêneas e fluxos de atendimento sem recorrer a processos manuais de importação ou planilhas estáticas suscetíveis a erro humano.',
-      solution: 'Construção de pipelines automáticos orientados a eventos com roteamento condicional de nós, validação de schema JSON, persistência estruturada e notificações instantâneas.',
+      challenge: 'Eliminar rotinas manuais de cadastro, validação, resposta a dúvidas e consolidação de dados entre formulários, APIs e painéis operacionais sem gerar custos altos de infraestrutura.',
+      solution: 'Combinação de pipelines orientados a eventos em n8n (webhooks, sanitização em Python, gravação em PostgreSQL e notificações) com automações serverless em Google Apps Script (portal de inscrições, regra de geração/download da cola de respostas, página de dúvidas e e-mails automáticos).',
       methodology: [
-        'Mapeamento dos gatilhos de entrada via Webhooks HTTP',
-        'Criação de nós de sanitização e enriquecimento de dados em Python',
-        'Gravação transacional em banco de dados relacional PostgreSQL',
-        'Configuração de tratamento de exceções e alarmística de falha'
+        'Em Google Apps Script (Defesa Civil): criação do portal de inscrição, download de cola de respostas seguindo regra de validação, página de dúvidas e sincronia com Sheets/Central',
+        'Em n8n: orquestração visual de fluxos conectados a Webhooks HTTP, APIs REST e disparo automático de notificações',
+        'Camadas de tratamento e validação de payloads em Python e JavaScript (Apps Script)',
+        'Persistência estruturada em Google Sheets ou PostgreSQL com logs e tratamento de exceções'
       ],
-      techStack: ['n8n', 'Python', 'PostgreSQL', 'Webhooks', 'Docker']
+      techStack: ['n8n', 'Google Apps Script', 'Google Sheets', 'Webhooks', 'PostgreSQL', 'Python']
     }
   ],
   // Demais Trabalhos (Lista compacta e minimizada)
@@ -735,7 +735,7 @@ export const translationsEn: Translations = {
     sectionTitle: 'About & Core Competencies',
     sectionSubtitle: 'Focused on analytical modeling, computational optimization, and process automation.',
     p1: '',
-    p2: 'Hands-on delivery across Google ecosystem dashboards, Python parallel computing and workload distribution benchmarks, and event-driven automation pipelines.',
+    p2: 'Hands-on delivery across Google ecosystem dashboards and portals (Google Apps Script & Sheets), Python parallel computing benchmarks, and event-driven automation workflows in n8n.',
     p3: 'My goal is always to eliminate operational friction, turn unstructured data into actionable clarity, and craft software solutions that support dependable, evidence-based decisions.',
     educationTitle: 'Education & Technical Foundation',
     educationSummary: 'A solid foundation pairing the strategic and quantitative mindset of Production Engineering with applied technical training in systems and computation.',
@@ -765,9 +765,9 @@ export const translationsEn: Translations = {
         items: ['Genetic Algorithms (GA)', 'Particle Swarm (PSO)', 'NumPy / SciPy', 'Multimodal Functions', 'Python Modeling']
       },
       {
-        title: 'Automation & Workflow Integration',
-        description: 'Orchestrating event-driven data pipelines, webhook connectors, API integrations, and eliminating repetitive manual workflows.',
-        items: ['n8n Workflow Automation', 'Webhooks & REST APIs', 'PostgreSQL', 'Python Scripts', 'Systems Integration']
+        title: 'Automation with n8n & Google Apps Script',
+        description: 'Orchestrating event-driven pipelines in n8n (webhooks, APIs, PostgreSQL) and building automated web portals and rule-based workflows in Google Apps Script.',
+        items: ['n8n Workflow Automation', 'Google Apps Script', 'Webhooks & REST APIs', 'Google Sheets & PostgreSQL', 'Python Scripts']
       }
     ],
     stackLabel: 'Core Stack & Technologies',
@@ -807,31 +807,31 @@ export const translationsEn: Translations = {
   projectList: [
     {
       id: 'defesa-civil-dashboard',
-      title: 'Civil Defense in Schools — Data Hub',
-      subtitle: 'School & Teacher Lookup · Spreadsheet & Google Ecosystem Integration',
+      title: 'Data Hub & Registration Portal — PDCE 2027',
+      subtitle: 'School Lookup Hub + Google Apps Script Registration Portal (SC)',
       category: 'analytics',
-      categoryLabel: 'Data Analytics & BI',
+      categoryLabel: 'Data Analytics & Google Apps Script',
       featured: true,
       featuredType: 'dashboard',
-      imageLabel: 'Official PDCE Portal · SC',
+      imageLabel: 'PDCE 2027 Hub & Portal',
       provenance: 'cv_confirmado',
       provenanceLabel: 'Authentic Project',
-      summary: 'Dashboard built with Santa Catarina Civil Defense to help teachers across all state schools quickly check school and teacher registration status in the program, integrating the official spreadsheet with the Google ecosystem using free tooling already available to the public agency.',
-      tags: ['Google Ecosystem', 'Google Sheets', 'Dashboards', 'SC Civil Defense', 'Dynamic Filters'],
+      summary: 'Ecosystem built with Santa Catarina Civil Defense uniting the PDCE 2027 Data Hub (statewide school and teacher lookup) with the PDCE 2027 Registration Portal in Google Apps Script — supporting online registration, rule-based downloadable answer-key cheat sheets, and a dedicated FAQ page.',
+      tags: ['Google Apps Script', 'Google Sheets', 'Registration Portal', 'Data Hub', 'SC Civil Defense'],
       specs: [
         { label: 'Entity', value: 'Civil Defense of Santa Catarina' },
-        { label: 'Integration', value: 'Official Sheet + Google Ecosystem' },
-        { label: 'Approach', value: 'Zero-Cost Tooling · SC Schools' }
+        { label: 'Ecosystem', value: '2027 Data Hub + Registration Portal' },
+        { label: 'Platform', value: 'Google Apps Script & Sheets (Zero Cost)' }
       ],
-      challenge: 'Enabling teachers across all schools in Santa Catarina to easily search school and faculty registration data in the program without relying on a costly custom software build and ongoing maintenance.',
-      solution: 'Direct integration between Civil Defense’s official spreadsheet and free Google ecosystem tools already available to the public agency, delivering a practical, low-overhead, and immediately usable lookup dashboard.',
+      challenge: 'Enabling statewide school and faculty enrollment alongside fast registration lookup and clear participant guidance without commissioning high-cost custom software and maintenance.',
+      solution: 'End-to-end integration linking Civil Defense’s official spreadsheet to free Google ecosystem tooling: a Google Apps Script Registration Portal (enrollment, rule-based answer-key download, and FAQ page) synced directly with the 2027 Data Hub.',
       methodology: [
-        'Identifying key lookup fields needed by teachers statewide (INEP code, school enrollment status, and teacher records)',
-        'Integrating the official Civil Defense spreadsheet directly with the Google ecosystem at zero software licensing cost',
-        'Designing fast regional filtering by Municipality, School, COREDEC, CRE, and COMPDEC',
-        'Focusing on existing public-sector resources for practical deployment and effortless ongoing updates'
+        'PDCE 2027 Registration Portal in Google Apps Script for school unit and teacher enrollment',
+        'Automated answer-key cheat sheet ("cola de respostas") download governed by custom validation rules',
+        'Built-in FAQ / Q&A page hosted within the same zero-cost public agency environment',
+        'Live sync with the official spreadsheet and 2027 Data Hub filtering by City, School, COREDEC, CRE, and COMPDEC'
       ],
-      techStack: ['Google Ecosystem', 'Google Sheets', 'Interactive Dashboards', 'Data Integration', 'Zero-Cost Solution']
+      techStack: ['Google Apps Script', 'Google Sheets', 'Interactive Dashboards', 'Web Portal', 'Zero-Cost Solution']
     },
     {
       id: 'rastrigin-optimization',
@@ -863,31 +863,31 @@ export const translationsEn: Translations = {
     },
     {
       id: 'n8n-automation-pipeline',
-      title: 'Automated Pipelines & Integration with n8n',
-      subtitle: 'Event-Driven Workflows, Webhooks & Data Cleansing',
+      title: 'Workflow Automation: n8n & Google Apps Script',
+      subtitle: 'Event-Driven Pipelines (n8n) + Google Apps Script Portals & Rules',
       category: 'automacao',
-      categoryLabel: 'Process Automation',
+      categoryLabel: 'n8n & Apps Script Automation',
       featured: true,
       featuredType: 'n8n',
-      imageLabel: 'n8n node architecture',
+      imageLabel: 'n8n & Google Apps Script',
       provenance: 'cv_confirmado',
       provenanceLabel: 'Developed Project',
-      summary: 'Architecture of automated integration flows connecting webhook entrypoints, Python data normalization, relational storage (PostgreSQL), and automated operational alerts with zero manual handoffs.',
-      tags: ['n8n', 'Webhooks', 'REST APIs', 'PostgreSQL', 'Python'],
+      summary: 'End-to-end automation engineering using n8n (webhooks, Python processing, PostgreSQL, alerts) and Google Apps Script — including the Civil Defense PDCE 2027 workflow with online registration portal, rule-based answer-key download, FAQ page, and automated spreadsheet/dashboard sync.',
+      tags: ['n8n', 'Google Apps Script', 'Webhooks & APIs', 'Google Sheets', 'PostgreSQL'],
       specs: [
-        { label: 'Orchestrator', value: 'n8n Workflow Engine' },
-        { label: 'Data Store', value: 'Relational PostgreSQL' },
-        { label: 'Transformation', value: 'Python / JSON Schema' }
+        { label: 'Platforms', value: 'n8n & Google Apps Script' },
+        { label: 'Real Case (Apps Script)', value: 'PDCE 2027 Portal + Rule-Based File' },
+        { label: 'Integration & Data', value: 'Webhooks, Sheets, PostgreSQL & Python' }
       ],
-      challenge: 'Connecting disparate data sources and service flows without relying on error-prone manual spreadsheets or fragile copy-pasting.',
-      solution: 'Engineered event-driven pipelines with JSON schema verification, conditional node routing, transactional relational database commits, and automated alert dispatchers.',
+      challenge: 'Eliminating manual registration handling, validation, Q&A guidance, and multi-source synchronization across forms, APIs, and operational dashboards without costly infrastructure.',
+      solution: 'Combining event-driven n8n pipelines (HTTP webhooks, Python sanitization, PostgreSQL persistence, and automated alerts) with serverless Google Apps Script automations (registration portal, rule-governed answer-key download, FAQ page, and automated emails).',
       methodology: [
-        'Mapping inbound triggers via HTTP Webhooks',
-        'Configuring Python data transformation and cleaning nodes',
-        'Structured database transactions in PostgreSQL',
-        'Implementing exception routing and retry mechanisms'
+        'In Google Apps Script (Civil Defense): built the registration portal, rule-based answer-key cheat sheet generator, FAQ page, and live sync to Sheets/Data Hub',
+        'In n8n: visual workflow orchestration connecting HTTP Webhooks, REST APIs, and instant operational alerting',
+        'Payload validation and transformation layers implemented in Python and JavaScript (Apps Script)',
+        'Structured storage in Google Sheets or PostgreSQL with error handling and execution logging'
       ],
-      techStack: ['n8n', 'Python', 'PostgreSQL', 'Webhooks', 'Docker']
+      techStack: ['n8n', 'Google Apps Script', 'Google Sheets', 'Webhooks', 'PostgreSQL', 'Python']
     }
   ],
   // Other Works (Compact, minimized list)
